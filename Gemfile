@@ -29,7 +29,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
+# Use Google Omniauth
+gem 'omniauth-google-oauth2'
+# Use Faraday for connections
+gem 'faraday'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -38,15 +41,12 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry'
   gem 'launchy'
-  gem 'faraday'
   gem 'figaro'
   gem 'rubocop-rails'
   gem 'capybara'
   gem 'simplecov'
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'omniauth-google-oauth2'
-  gem 'capybara'
   gem 'rspec-rails'
   gem 'webmock'
   gem 'vcr'
