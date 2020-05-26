@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+# Use Google Omniauth
+gem 'omniauth-google-oauth2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -45,8 +47,6 @@ group :development, :test do
   gem 'simplecov'
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'omniauth-google-oauth2'
-  gem 'capybara'
   gem 'rspec-rails'
   gem 'webmock'
   gem 'vcr'
