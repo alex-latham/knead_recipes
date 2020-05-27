@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20200527223920) do
   end
 
   create_table "restrictions", force: :cascade do |t|
-    t.string "restriction"
+    t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
