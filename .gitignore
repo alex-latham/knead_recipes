@@ -22,4 +22,4 @@
 /config/application.yml
 
 # Ignore coverage files
-/coverage/*
+/coverage
