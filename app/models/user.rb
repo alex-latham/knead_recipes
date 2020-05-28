@@ -10,8 +10,10 @@ class User < ApplicationRecord
 
   def add_friend(email_address)
     new_friend = User.where(email: email_address).first
+    return false if new_friend.nil?
     Friendship.create!(user_id: self.id, friend_id: new_friend.id)
     Friendship.create!(user_id: new_friend.id, friend_id: self.id)
+    return true
   end
 
   def load_friends

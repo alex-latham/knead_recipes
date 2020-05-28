@@ -27,6 +27,11 @@ RSpec.describe User, type: :model do
         expect(user_1.friendships.length).to eq(1)
         expect(user_2.friendships.length).to eq(1)
       end
+
+      it "returns false when presented with invalid email_address" do
+        user_1 = User.create!(name: "F", email: "F@example.com", bio: "Fun Guy")
+        expect(user_1.add_friend("asdf")).to eq(false)
+      end
     end
 
     describe "load_friends" do
