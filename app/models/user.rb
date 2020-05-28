@@ -7,4 +7,16 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true
   validates :bio, presence: true
+
+  def add_friend(email_address)
+    new_friend = User.where(email: email_address).first
+    Friendship.create!(user_id: self.id, friend_id: new_friend.id)
+    Friendship.create!(user_id: new_friend.id, friend_id: self.id)
+  end
+
+  def load_friends
+    friendships.map do |friend|
+      User.find(friend.friend_id)
+    end
+  end
 end
