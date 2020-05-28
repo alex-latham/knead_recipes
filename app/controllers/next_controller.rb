@@ -1,5 +1,5 @@
 class NextController < ApplicationController
   def index
-    @user = "Mike"
+    @user = 'Mike'
   end
 end
