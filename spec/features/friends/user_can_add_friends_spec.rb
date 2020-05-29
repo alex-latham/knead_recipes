@@ -18,7 +18,6 @@ describe "As a user" do
     expect(page).to have_content("Friend Added Successfully")
     expect(page).to have_content(user_2.email)
     expect(page).to_not have_content("You have no friends, try adding some :^)")
-    save_and_open_page
   end
 
   it "I cannot add a friend using an invalid email" do

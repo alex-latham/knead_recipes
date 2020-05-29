@@ -4,7 +4,6 @@ RSpec.describe User, type: :model do
   describe 'validations' do
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:email) }
-    it { should validate_presence_of(:bio) }
   end
 
   describe 'relationships' do
@@ -14,9 +13,8 @@ RSpec.describe User, type: :model do
     it { should have_many(:friendships) }
   end
 
-  describe 'methods' do
-    describe "add_friend" do
-      it "Creates a new friendship between users" do
+  describe 'class methods' do
+      it "add_friend Creates a new friendship between users" do
         user_1 = User.create!(name: "F", email: "F@example.com", bio: "Fun Guy")
         user_2 = User.create!(name: "G", email: "G@example.com", bio: "Also a Fun Guy")
         expect(user_1.friendships).to eq([])
@@ -28,14 +26,12 @@ RSpec.describe User, type: :model do
         expect(user_2.friendships.length).to eq(1)
       end
 
-      it "returns false when presented with invalid email_address" do
+      it "add_friend returns false when presented with invalid email_address" do
         user_1 = User.create!(name: "F", email: "F@example.com", bio: "Fun Guy")
         expect(user_1.add_friend("asdf")).to eq(false)
       end
-    end
 
-    describe "load_friends" do
-      it "Returns all friendships and user objects" do
+      it "load_friends Returns all friendships and user objects" do
         user_1 = User.create!(name: "F", email: "F@example.com", bio: "Fun Guy")
         user_2 = User.create!(name: "G", email: "G@example.com", bio: "Also a Fun Guy")
         user_1.add_friend(user_2.email)
@@ -43,6 +39,47 @@ RSpec.describe User, type: :model do
         user_2.reload
         expect(user_1.load_friends).to eq([user_2])
       end
+
+    it 'can create a user from google Omniauth' do
+      user = build(:user)
+
+      expect(User.count).to eq(0)
+
+      OmniAuth.config.test_mode = true
+
+      hash = OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
+        :provider => 'google_oauth2',
+        :info => { name: user.name,
+                   email: user.email
+                 }
+          })
+
+      new_user = User.from_omniauth(hash)
+      expect(new_user.name).to eq(user.name)
+      expect(new_user.email).to eq(user.email)
+
+      expect(User.count).to eq(0)
+    end
+
+    it 'can find a user from google Omniauth' do
+      user = create(:user)
+
+      expect(User.count).to eq(1)
+
+      OmniAuth.config.test_mode = true
+
+      hash = OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
+        :provider => 'google_oauth2',
+        :info => { name: user.name,
+                   email: user.email
+                 }
+          })
+
+      found_user = User.from_omniauth(hash)
+      expect(found_user.name).to eq(user.name)
+      expect(found_user.email).to eq(user.email)
+
+      expect(User.count).to eq(1)
     end
   end
 end

@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :email, presence: true
-  validates :bio, presence: true
+  # validates :bio, presence: true
 
   def add_friend(email_address)
     new_friend = User.where(email: email_address).first
@@ -19,6 +19,13 @@ class User < ApplicationRecord
   def load_friends
     friendships.map do |friend|
       User.find(friend.friend_id)
+    end
+  end
+
+  def self.from_omniauth(response)
+    where(email: response.info.email).first_or_initialize do |user|
+          user.name = response['info']['name']
+          user.email = response['info']['email']
     end
   end
 end

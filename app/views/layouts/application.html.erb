@@ -34,7 +34,7 @@
           <li><%= link_to "Home" %></li>
           <li><%= link_to "Profile" %></li>
           <li><%= link_to "Friends" %></li>
-          <li><%= link_to "Logout" %></li>
+          <li><%= link_to "Logout", logout_path, method: :delete %></li>
         </ul>
       </div>
     </div>
@@ -42,10 +42,10 @@
 
   <main role="main" class="inner cover">
     <div class="flash-message">
-        <% flash.each do |name, msg| %>
-          <%= content_tag :div, msg.html_safe, class: name %>
-        <% end %>
-      </div>
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg.html_safe, class: name %>
+  <% end %>
+</div>
     <%= yield %>
   </main>
 </div>
