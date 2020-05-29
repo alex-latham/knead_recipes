@@ -1,0 +1,8 @@
+<section class="recipes">
+  <% @recipes[:results].each do |recipe| %>
+    <div class="recipe-title">
+      <%= recipe[:title] %>
+    </div><br>
+    <%= image_tag(recipe[:image], class: "recipe-image") %><br><br>
+  <% end %>
+</section>
