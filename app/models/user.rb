@@ -9,8 +9,8 @@ class User < ApplicationRecord
 
   def self.from_omniauth(response)
     where(email: response.info.email).first_or_initialize do |user|
-      user.name = response.info.name
-      user.email = response.info.email
+      user.name = response['info']['name']
+      user.email = response['info']['email']
     end
   end
 end
