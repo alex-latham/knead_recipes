@@ -8,6 +8,8 @@
 <div class="jumbotron text-center">
   <h1>Welcome to Knead Recipes!</h1>
 </div>
-<div class="h3">
-  <%= link_to 'Log In With Google', next_index_path %>
-</div>
+<% unless current_user %>
+  <div class="h3">
+    <%= link_to 'Log In With Google', google_login_path %>
+  </div>
+<% end %>
