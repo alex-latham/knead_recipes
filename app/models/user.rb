@@ -6,5 +6,11 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :email, presence: true
-  validates :bio, presence: true
+
+  def self.from_omniauth(response)
+    where(email: response.info.email).first_or_initialize do |user|
+      user.name = response.info.name
+      user.email = response.info.email
+    end
+  end
 end
