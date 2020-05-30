@@ -1,0 +1,15 @@
+<h1>FRIENDS SKELETON PLACEHOLDER</h1>
+
+<% if @friends == [] %>
+  <p>You have no friends, try adding some :^)</p>
+<% else %>
+  <% @friends.each do |friend| %>
+    <%= link_to friend.email, "/profile/friends/#{friend.id}" %>
+  <% end %>
+<% end %>
+
+<%= form_tag '/profile/friends', method: :post do |f| %>
+  <%= label_tag :email_address, "Email Address" %>
+  <%= text_field_tag :email_address %>
+  <%= submit_tag "Add Friend" %>
+<% end %>
