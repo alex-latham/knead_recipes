@@ -51,10 +51,13 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails'
-  gem 'webmock'
-  gem 'vcr'
   gem 'shoulda-matchers'
   gem 'travis'
+end
+
+group :test do
+  gem 'webmock'
+  gem 'vcr'
 end
 
 group :development do
