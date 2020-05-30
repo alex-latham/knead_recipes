@@ -1,0 +1,277 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.spoonacular.com/recipes/complexSearch?addRecipeInformation=true&apiKey=<SPOONACULAR_KEY>&diet=vegetarian&fillIngredients=true&ignorePantry=true&includeIngredients=apples,%20cinnamon&maxReadyTime=15&minCalories=0&minCarbs=0&minCholesterol=0&minFat=0&minProtein=0&minSodium=0&minSugar=0&number=10&sort=random&type=dessert
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 30 May 2020 19:13:43 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '5975'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d4de03eb9cd349487395824936fe2e6fe1590866022; expires=Mon, 29-Jun-20
+        19:13:42 GMT; path=/; domain=.spoonacular.com; HttpOnly; SameSite=Lax
+      Allow-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, UserId, Hash, Name, Password, Accept, Accept-Language, Content-Language,
+        Content-Type, Cache-Control, Origin, X-Requested-With
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, OPTIONS, DELETE, PUT
+      Allow-Control-Allow-Methods:
+      - GET, HEAD, POST, OPTIONS, DELETE, PUT
+      X-Api-Quota-Request:
+      - '2.18'
+      X-Api-Quota-Used:
+      - '4.78'
+      Accept-Ranges:
+      - bytes
+      Cf-Cache-Status:
+      - DYNAMIC
+      Cf-Request-Id:
+      - '03089a28890000f78c85aab200000001'
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 59bac620dd57f78c-DEN
+    body:
+      encoding: ASCII-8BIT
+      string: '{"results":[{"vegetarian":true,"vegan":false,"glutenFree":true,"dairyFree":false,"veryHealthy":false,"cheap":false,"veryPopular":false,"sustainable":false,"weightWatcherSmartPoints":4,"gaps":"no","lowFodmap":false,"preparationMinutes":5,"cookingMinutes":0,"aggregateLikes":1,"spoonacularScore":39.0,"healthScore":6.0,"creditsText":"Oatmeal
+        With a Fork","sourceName":"Oatmeal With a Fork","pricePerServing":136.69,"extendedIngredients":[{"id":1116,"aisle":"Milk,
+        Eggs, Other Dairy","image":"plain-yogurt.jpg","consistency":"solid","name":"yogurt","original":"3-4
+        Tbsp good plain yogurt of your liking","originalString":"3-4 Tbsp good plain
+        yogurt of your liking","originalName":"good plain yogurt of your liking","amount":3.0,"unit":"Tbsp","meta":["plain","good"],"metaInformation":["plain","good"],"measures":{"us":{"amount":3.0,"unitShort":"Tbsps","unitLong":"Tbsps"},"metric":{"amount":3.0,"unitShort":"Tbsps","unitLong":"Tbsps"}}},{"id":1077,"aisle":"Milk,
+        Eggs, Other Dairy","image":"milk.png","consistency":"liquid","name":"milk","original":"1/4
+        cup milk","originalString":"1/4 cup milk","originalName":"milk","amount":0.25,"unit":"cup","meta":[],"metaInformation":[],"measures":{"us":{"amount":0.25,"unitShort":"cups","unitLong":"cups"},"metric":{"amount":59.147,"unitShort":"ml","unitLong":"milliliters"}}},{"id":9003,"aisle":"Produce","image":"apple.jpg","consistency":"solid","name":"apple","original":"1/2
+        chopped apple (I like to use Pink Lady)","originalString":"1/2 chopped apple
+        (I like to use Pink Lady)","originalName":"chopped apple (I like to use Pink
+        Lady)","amount":0.5,"unit":"","meta":["chopped","(I like to use Pink Lady)"],"metaInformation":["chopped","(I
+        like to use Pink Lady)"],"measures":{"us":{"amount":0.5,"unitShort":"","unitLong":""},"metric":{"amount":0.5,"unitShort":"","unitLong":""}}},{"id":1009054,"aisle":"Produce","image":"berries-mixed.jpg","consistency":"solid","name":"berries","original":"1/4
+        - 1/3 cup frozen or fresh berries","originalString":"1/4 - 1/3 cup frozen
+        or fresh berries","originalName":"frozen or fresh berries","amount":0.25,"unit":"cup","meta":["fresh"],"metaInformation":["fresh"],"measures":{"us":{"amount":0.25,"unitShort":"cups","unitLong":"cups"},"metric":{"amount":59.147,"unitShort":"ml","unitLong":"milliliters"}}},{"id":2010,"aisle":"Spices
+        and Seasonings","image":"cinnamon.jpg","consistency":"solid","name":"cinnamon","original":"good
+        dash cinnamon","originalString":"good dash cinnamon","originalName":"good
+        cinnamon","amount":1.0,"unit":"dash","meta":["good"],"metaInformation":["good"],"measures":{"us":{"amount":1.0,"unitShort":"dash","unitLong":"dash"},"metric":{"amount":1.0,"unitShort":"dash","unitLong":"dash"}}},{"id":19296,"aisle":"Nut
+        butters, Jams, and Honey;Health Foods","image":"honey.png","consistency":"liquid","name":"honey","original":"drizzle
+        honey as desired","originalString":"drizzle honey as desired","originalName":"drizzle
+        honey as desired","amount":1.0,"unit":"serving","meta":[],"metaInformation":[],"measures":{"us":{"amount":1.0,"unitShort":"serving","unitLong":"serving"},"metric":{"amount":1.0,"unitShort":"serving","unitLong":"serving"}}}],"id":1119867,"title":"My
+        Favorite Grain-Free, Chocolate-Free Treat","readyInMinutes":5,"servings":1,"sourceUrl":"https://www.oatmealwithafork.com/chocolate-free-treat/","image":"https://spoonacular.com/recipeImages/1119867-312x231.jpg","imageType":"jpg","summary":"My
+        Favorite Grain-Free, Chocolate-Free Treat is a <b>gluten free, lacto ovo vegetarian,
+        and primal</b> dessert. For <b>$1.37 per serving</b>, this recipe <b>covers
+        7%</b> of your daily requirements of vitamins and minerals. One serving contains
+        <b>165 calories</b>, <b>4g of protein</b>, and <b>4g of fat</b>. This recipe
+        serves 1. 1 person has made this recipe and would make it again. Head to the
+        store and pick up drizzle honey as desired, dash cinnamon, apple, and a few
+        other things to make it today. From preparation to the plate, this recipe
+        takes approximately <b>5 minutes</b>. It is brought to you by Oatmeal With
+        a Fork. With a spoonacular <b>score of 0%</b>, this dish is very bad (but
+        still fixable). If you like this recipe, take a look at these similar recipes:
+        <a href=\"https://spoonacular.com/recipes/chocolate-sandwich-cookies-with-chocolate-cream-filling-gluten-free-grain-free-nut-free-vegan-paleo-friendly-196382\">Chocolate
+        Sandwich Cookies with Chocolate Cream Filling (Gluten-Free, Grain-Free, Nut-Free,
+        Vegan, Paleo Friendly)</a>, <a href=\"https://spoonacular.com/recipes/creamy-vegan-corn-and-red-pepper-blender-soup-gluten-free-soy-free-nut-free-grain-free-salt-free-520519\">Creamy
+        Vegan Corn and Red Pepper Blender Soup (gluten-free, soy-free, nut-free, grain-free,
+        salt-free)</a>, and <a href=\"https://spoonacular.com/recipes/double-chocolate-chip-cookies-grain-free-sugar-free-butter-free-515640\">Double
+        Chocolate Chip Cookies {Grain free, Sugar free, butter free}</a>.","cuisines":[],"dishTypes":["dessert"],"diets":["gluten
+        free","lacto ovo vegetarian","primal"],"occasions":[],"winePairing":{"pairedWines":["cream
+        sherry","moscato dasti","port"],"pairingText":"Treat works really well with
+        Cream Sherry, Moscato d''Asti, and Port. A common wine pairing rule is to
+        make sure your wine is sweeter than your food. Delicate desserts go well with
+        Moscato d''Asti, nutty desserts with cream sherry, and caramel or chocolate
+        desserts pair well with port. The NV Solera Cream Sherry with a 4.5 out of
+        5 star rating seems like a good match. It costs about 17 dollars per bottle.","productMatches":[{"id":428475,"title":"NV
+        Solera Cream Sherry","description":"The Solera Cream Sherry has a brilliant
+        amber and deep copper hue. With butterscotch and pecan aromas, the sweet salted
+        nut and brown spice aromas carry a complex caramel accent. A sweet entry leads
+        to a rounded, lush, moderately full-bodied palate with a lengthy, flavorful
+        finish.","price":"$16.99","imageUrl":"https://spoonacular.com/productImages/428475-312x231.jpg","averageRating":0.9,"ratingCount":4.0,"score":0.823076923076923,"link":"https://www.amazon.com/NV-Solera-Cream-Sherry-750/dp/B00HSME8OW?tag=spoonacular-20"}]},"analyzedInstructions":[{"name":"","steps":[{"number":1,"step":"Grab
+        your favorite mug or dish.","ingredients":[],"equipment":[]},{"number":2,"step":"Dollop
+        the yogurt into the bottom of your dish.","ingredients":[{"id":1116,"name":"yogurt","image":"plain-yogurt.jpg"}],"equipment":[]},{"number":3,"step":"Add
+        in apple, berries, milk, and cinnamon.","ingredients":[{"id":2010,"name":"cinnamon","image":"cinnamon.jpg"},{"id":1009054,"name":"berries","image":"berries-mixed.jpg"},{"id":9003,"name":"apple","image":"apple.jpg"},{"id":1077,"name":"milk","image":"milk.png"}],"equipment":[]},{"number":4,"step":"Stir
+        a bit.","ingredients":[],"equipment":[]},{"number":5,"step":"Top with a drizzle
+        of honey and enjoy!","ingredients":[{"id":19296,"name":"honey","image":"honey.png"}],"equipment":[]}]}],"usedIngredientCount":2,"missedIngredientCount":4,"likes":0,"missedIngredients":[{"id":1116,"amount":3.0,"unit":"Tbsp","unitLong":"Tbsps","unitShort":"Tbsp","aisle":"Milk,
+        Eggs, Other Dairy","name":"yogurt","original":"3-4 Tbsp good plain yogurt
+        of your liking","originalString":"3-4 Tbsp good plain yogurt of your liking","originalName":"good
+        plain yogurt of your liking","metaInformation":["plain","good"],"meta":["plain","good"],"extendedName":"plain
+        yogurt","image":"https://spoonacular.com/cdn/ingredients_100x100/plain-yogurt.jpg"},{"id":1077,"amount":0.25,"unit":"cup","unitLong":"cups","unitShort":"cup","aisle":"Milk,
+        Eggs, Other Dairy","name":"milk","original":"1/4 cup milk","originalString":"1/4
+        cup milk","originalName":"milk","metaInformation":[],"meta":[],"image":"https://spoonacular.com/cdn/ingredients_100x100/milk.png"},{"id":1009054,"amount":0.25,"unit":"cup","unitLong":"cups","unitShort":"cup","aisle":"Produce","name":"berries","original":"1/4
+        - 1/3 cup frozen or fresh berries","originalString":"1/4 - 1/3 cup frozen
+        or fresh berries","originalName":"frozen or fresh berries","metaInformation":["fresh"],"meta":["fresh"],"extendedName":"fresh
+        berries","image":"https://spoonacular.com/cdn/ingredients_100x100/berries-mixed.jpg"},{"id":19296,"amount":1.0,"unit":"serving","unitLong":"serving","unitShort":"serving","aisle":"Nut
+        butters, Jams, and Honey;Health Foods","name":"honey","original":"drizzle
+        honey as desired","originalString":"drizzle honey as desired","originalName":"drizzle
+        honey as desired","metaInformation":[],"meta":[],"image":"https://spoonacular.com/cdn/ingredients_100x100/honey.png"}],"usedIngredients":[{"id":9003,"amount":0.5,"unit":"","unitLong":"","unitShort":"","aisle":"Produce","name":"apple","original":"1/2
+        chopped apple (I like to use Pink Lady)","originalString":"1/2 chopped apple
+        (I like to use Pink Lady)","originalName":"chopped apple (I like to use Pink
+        Lady)","metaInformation":["chopped","(I like to use Pink Lady)"],"meta":["chopped","(I
+        like to use Pink Lady)"],"image":"https://spoonacular.com/cdn/ingredients_100x100/apple.jpg"},{"id":2010,"amount":1.0,"unit":"dash","unitLong":"dash","unitShort":"dash","aisle":"Spices
+        and Seasonings","name":"cinnamon","original":"good dash cinnamon","originalString":"good
+        dash cinnamon","originalName":"good cinnamon","metaInformation":["good"],"meta":["good"],"image":"https://spoonacular.com/cdn/ingredients_100x100/cinnamon.jpg"}],"unusedIngredients":[],"nutrition":[{"title":"Calories","amount":164.643,"unit":"cal"},{"title":"Protein","amount":4.46375,"unit":"g"},{"title":"Fat","amount":4.3476,"unit":"g"},{"title":"Carbohydrates","amount":29.5809,"unit":"g"},{"title":"Cholesterol","amount":13.9,"unit":"mg"},{"title":"Sodium","amount":55.5075,"unit":"mg"},{"title":"Sugar","amount":24.3759,"unit":"g"}]},{"vegetarian":true,"vegan":false,"glutenFree":false,"dairyFree":false,"veryHealthy":false,"cheap":false,"veryPopular":false,"sustainable":false,"weightWatcherSmartPoints":20,"gaps":"no","lowFodmap":false,"preparationMinutes":5,"cookingMinutes":3,"aggregateLikes":1,"spoonacularScore":26.0,"healthScore":3.0,"creditsText":"Running
+        to the Kitchen","sourceName":"Running to the Kitchen","pricePerServing":132.05,"extendedIngredients":[{"id":9003,"aisle":"Produce","image":"apple.jpg","consistency":"solid","name":"apple","original":"1
+        large apple, peeled and thinly sliced (about 1 cup)","originalString":"1 large
+        apple, peeled and thinly sliced (about 1 cup)","originalName":"large apple,
+        peeled and thinly sliced (about","amount":1.0,"unit":"cup","meta":["peeled","thinly
+        sliced"],"metaInformation":["peeled","thinly sliced"],"measures":{"us":{"amount":1.0,"unitShort":"cup","unitLong":"cup"},"metric":{"amount":236.588,"unitShort":"ml","unitLong":"milliliters"}}},{"id":9152,"aisle":"Produce","image":"lemon-juice.jpg","consistency":"liquid","name":"juice
+        of lemon","original":"juice from 1/2 a lemon","originalString":"juice from
+        1/2 a lemon","originalName":"juice from a lemon","amount":2.0,"unit":"","meta":[],"metaInformation":[],"measures":{"us":{"amount":2.0,"unitShort":"","unitLong":""},"metric":{"amount":2.0,"unitShort":"","unitLong":""}}},{"id":2010,"aisle":"Spices
+        and Seasonings","image":"cinnamon.jpg","consistency":"solid","name":"cinnamon","original":"1/4
+        teaspoon cinnamon","originalString":"1/4 teaspoon cinnamon","originalName":"cinnamon","amount":0.25,"unit":"teaspoon","meta":[],"metaInformation":[],"measures":{"us":{"amount":0.25,"unitShort":"tsps","unitLong":"teaspoons"},"metric":{"amount":0.25,"unitShort":"tsps","unitLong":"teaspoons"}}},{"id":2025,"aisle":"Spices
+        and Seasonings","image":"ground-nutmeg.jpg","consistency":"solid","name":"nutmeg","original":"1/8
+        teaspoon nutmeg","originalString":"1/8 teaspoon nutmeg","originalName":"nutmeg","amount":0.125,"unit":"teaspoon","meta":[],"metaInformation":[],"measures":{"us":{"amount":0.125,"unitShort":"tsps","unitLong":"teaspoons"},"metric":{"amount":0.125,"unitShort":"tsps","unitLong":"teaspoons"}}},{"id":19334,"aisle":"Baking","image":"light-brown-sugar.jpg","consistency":"solid","name":"brown
+        sugar","original":"1/2 tablespoon brown sugar","originalString":"1/2 tablespoon
+        brown sugar","originalName":"brown sugar","amount":0.5,"unit":"tablespoon","meta":[],"metaInformation":[],"measures":{"us":{"amount":0.5,"unitShort":"Tbsps","unitLong":"Tbsps"},"metric":{"amount":0.5,"unitShort":"Tbsps","unitLong":"Tbsps"}}},{"id":20081,"aisle":"Baking","image":"flour.png","consistency":"solid","name":"flour","original":"1/2
+        tablespoon flour (*see note)","originalString":"1/2 tablespoon flour (*see
+        note)","originalName":"flour (*see note)","amount":0.5,"unit":"tablespoon","meta":["(*see
+        note)"],"metaInformation":["(*see note)"],"measures":{"us":{"amount":0.5,"unitShort":"Tbsps","unitLong":"Tbsps"},"metric":{"amount":0.5,"unitShort":"Tbsps","unitLong":"Tbsps"}}},{"id":1001,"aisle":"Milk,
+        Eggs, Other Dairy","image":"butter-sliced.jpg","consistency":"solid","name":"butter","original":"2
+        tablespoons room temperature butter, diced","originalString":"2 tablespoons
+        room temperature butter, diced","originalName":"room temperature butter, diced","amount":2.0,"unit":"tablespoons","meta":["diced","room
+        temperature"],"metaInformation":["diced","room temperature"],"measures":{"us":{"amount":2.0,"unitShort":"Tbsps","unitLong":"Tbsps"},"metric":{"amount":2.0,"unitShort":"Tbsps","unitLong":"Tbsps"}}},{"id":19334,"aisle":"Baking","image":"light-brown-sugar.jpg","consistency":"solid","name":"brown
+        sugar","original":"2 tablespoons brown sugar","originalString":"2 tablespoons
+        brown sugar","originalName":"brown sugar","amount":2.0,"unit":"tablespoons","meta":[],"metaInformation":[],"measures":{"us":{"amount":2.0,"unitShort":"Tbsps","unitLong":"Tbsps"},"metric":{"amount":2.0,"unitShort":"Tbsps","unitLong":"Tbsps"}}},{"id":20081,"aisle":"Baking","image":"flour.png","consistency":"solid","name":"flour","original":"1
+        tablespoon flour (*see note)","originalString":"1 tablespoon flour (*see note)","originalName":"flour
+        (*see note)","amount":1.0,"unit":"tablespoon","meta":["(*see note)"],"metaInformation":["(*see
+        note)"],"measures":{"us":{"amount":1.0,"unitShort":"Tbsp","unitLong":"Tbsp"},"metric":{"amount":1.0,"unitShort":"Tbsp","unitLong":"Tbsp"}}},{"id":8120,"aisle":"Cereal","image":"rolled-oats.jpg","consistency":"solid","name":"oats","original":"3
+        tablespoons oats","originalString":"3 tablespoons oats","originalName":"oats","amount":3.0,"unit":"tablespoons","meta":[],"metaInformation":[],"measures":{"us":{"amount":3.0,"unitShort":"Tbsps","unitLong":"Tbsps"},"metric":{"amount":3.0,"unitShort":"Tbsps","unitLong":"Tbsps"}}}],"id":1134659,"title":"Microwave
+        Apple Crisp","readyInMinutes":8,"servings":1,"sourceUrl":"https://www.runningtothekitchen.com/microwave-apple-crisp/","image":"https://spoonacular.com/recipeImages/1134659-312x231.jpg","imageType":"jpg","summary":"Microwave
+        Apple Crisp might be just the dessert you are searching for. This recipe makes
+        1 servings with <b>507 calories</b>, <b>4g of protein</b>, and <b>25g of fat</b>
+        each. For <b>$1.32 per serving</b>, this recipe <b>covers 11%</b> of your
+        daily requirements of vitamins and minerals. 1 person were glad they tried
+        this recipe. Head to the store and pick up oats, nutmeg, cinnamon, and a few
+        other things to make it today. It is brought to you by Running to the Kitchen.
+        It is a good option if you''re following a <b>lacto ovo vegetarian</b> diet.
+        From preparation to the plate, this recipe takes around <b>8 minutes</b>.
+        All things considered, we decided this recipe <b>deserves a spoonacular score
+        of 0%</b>. This score is improvable. Similar recipes are <a href=\"https://spoonacular.com/recipes/microwave-apple-crisp-612383\">Microwave
+        Apple Crisp</a>, <a href=\"https://spoonacular.com/recipes/microwave-apple-crisp-168021\">Microwave
+        Apple Crisp</a>, and <a href=\"https://spoonacular.com/recipes/microwave-cherry-crisp-373206\">Microwave
+        Cherry Crisp</a>.","cuisines":[],"dishTypes":["dessert"],"diets":["lacto ovo
+        vegetarian"],"occasions":[],"winePairing":{"pairedWines":["cream sherry","moscato
+        dasti","port"],"pairingText":"Cream Sherry, Moscato d''Asti, and Port are
+        great choices for Crisp. A common wine pairing rule is to make sure your wine
+        is sweeter than your food. Delicate desserts go well with Moscato d''Asti,
+        nutty desserts with cream sherry, and caramel or chocolate desserts pair well
+        with port. The NV Johnson Estate Cream Sherry with a 5 out of 5 star rating
+        seems like a good match. It costs about 19 dollars per bottle.","productMatches":[{"id":430626,"title":"NV
+        Johnson Estate Cream Sherry","description":"Very aromatic with notes of hazelnut,
+        vanilla, and a touch of oak followed by sweet raisins and a touch of yeast.
+        Clean lasting finish. Good now but will reward those allow it to age\"\".
+        A favorite pre-prandial beverage. Consider it with nuts before dinner as an
+        aperitif, or after dinner with dessert, especially chocolates and fruit-based
+        desserts. Also wonderful on cold afternoons, served with biscotti to dip in
+        \"\"Italian-style\"\". \"","price":"$19.49","imageUrl":"https://spoonacular.com/productImages/430626-312x231.jpg","averageRating":1.0,"ratingCount":2.0,"score":0.8571428571428572,"link":"https://www.amazon.com/Johnson-Estate-Cream-Sherry-750/dp/B00D3GQSRW?tag=spoonacular-20"}]},"analyzedInstructions":[{"name":"","steps":[{"number":1,"step":"Make
+        the filling by placing the apple slices in a medium bowl and toss with the
+        lemon juice.","ingredients":[{"id":9152,"name":"lemon juice","image":"lemon-juice.jpg"},{"id":9003,"name":"apple","image":"apple.jpg"}],"equipment":[{"id":404783,"name":"bowl","image":"bowl.jpg"}]},{"number":2,"step":"Add
+        the cinnamon, nutmeg, brown sugar and flour and toss to combine. Set aside.","ingredients":[{"id":19334,"name":"brown
+        sugar","image":"dark-brown-sugar.png"},{"id":2010,"name":"cinnamon","image":"cinnamon.jpg"},{"id":2025,"name":"nutmeg","image":"ground-nutmeg.jpg"},{"id":20081,"name":"all
+        purpose flour","image":"flour.png"}],"equipment":[]},{"number":3,"step":"Make
+        the crisp topping by placing the diced butter in another bowl.","ingredients":[{"id":1001,"name":"butter","image":"butter-sliced.jpg"}],"equipment":[{"id":404783,"name":"bowl","image":"bowl.jpg"}]},{"number":4,"step":"Add
+        the brown sugar, flour, cinnamon, nutmeg and oats and combine with a fork
+        until crumbly.","ingredients":[{"id":19334,"name":"brown sugar","image":"dark-brown-sugar.png"},{"id":2010,"name":"cinnamon","image":"cinnamon.jpg"},{"id":2025,"name":"nutmeg","image":"ground-nutmeg.jpg"},{"id":20081,"name":"all
+        purpose flour","image":"flour.png"},{"id":8120,"name":"oats","image":"rolled-oats.jpg"}],"equipment":[]},{"number":5,"step":"Assemble
+        the crisp by placing half the apple slices in a large mug or small ramekin.
+        Dot half the crisp mixture on top. Layer the remaining apple slices on top
+        of that and finish with the remaining crisp topping.","ingredients":[{"id":9003,"name":"apple","image":"apple.jpg"}],"equipment":[{"id":404781,"name":"ramekin","image":"ramekin.jpg"}]},{"number":6,"step":"Place
+        in the microwave and cook for 2-3 minutes (**see note) until apples are soft
+        and the crisp topping has melted and become crispy at the edges.","ingredients":[{"id":9003,"name":"apple","image":"apple.jpg"}],"equipment":[{"id":404762,"name":"microwave","image":"microwave.jpg"}],"length":{"number":3,"unit":"minutes"}},{"number":7,"step":"Serve
+        warm with a scoop of vanilla ice cream or whipped cream if desired.","ingredients":[],"equipment":[]}]}],"usedIngredientCount":2,"missedIngredientCount":4,"likes":0,"missedIngredients":[{"id":9152,"amount":2.0,"unit":"","unitLong":"","unitShort":"","aisle":"Produce","name":"juice
+        of lemon","original":"juice from 1/2 a lemon","originalString":"juice from
+        1/2 a lemon","originalName":"juice from a lemon","metaInformation":[],"meta":[],"extendedName":"lemon
+        (juice)","image":"https://spoonacular.com/cdn/ingredients_100x100/lemon-juice.jpg"},{"id":2025,"amount":0.125,"unit":"teaspoon","unitLong":"teaspoons","unitShort":"tsp","aisle":"Spices
+        and Seasonings","name":"nutmeg","original":"1/8 teaspoon nutmeg","originalString":"1/8
+        teaspoon nutmeg","originalName":"nutmeg","metaInformation":[],"meta":[],"image":"https://spoonacular.com/cdn/ingredients_100x100/ground-nutmeg.jpg"},{"id":1001,"amount":2.0,"unit":"tablespoons","unitLong":"tablespoons","unitShort":"Tbsp","aisle":"Milk,
+        Eggs, Other Dairy","name":"butter","original":"2 tablespoons room temperature
+        butter, diced","originalString":"2 tablespoons room temperature butter, diced","originalName":"room
+        temperature butter, diced","metaInformation":["diced","room temperature"],"meta":["diced","room
+        temperature"],"extendedName":"diced butter","image":"https://spoonacular.com/cdn/ingredients_100x100/butter-sliced.jpg"},{"id":8120,"amount":3.0,"unit":"tablespoons","unitLong":"tablespoons","unitShort":"Tbsp","aisle":"Cereal","name":"oats","original":"3
+        tablespoons oats","originalString":"3 tablespoons oats","originalName":"oats","metaInformation":[],"meta":[],"image":"https://spoonacular.com/cdn/ingredients_100x100/rolled-oats.jpg"}],"usedIngredients":[{"id":9003,"amount":1.0,"unit":"cup","unitLong":"cup","unitShort":"cup","aisle":"Produce","name":"apple","original":"1
+        large apple, peeled and thinly sliced (about 1 cup)","originalString":"1 large
+        apple, peeled and thinly sliced (about 1 cup)","originalName":"large apple,
+        peeled and thinly sliced (about","metaInformation":["peeled","thinly sliced"],"meta":["peeled","thinly
+        sliced"],"image":"https://spoonacular.com/cdn/ingredients_100x100/apple.jpg"},{"id":2010,"amount":0.25,"unit":"teaspoon","unitLong":"teaspoons","unitShort":"tsp","aisle":"Spices
+        and Seasonings","name":"cinnamon","original":"1/4 teaspoon cinnamon","originalString":"1/4
+        teaspoon cinnamon","originalName":"cinnamon","metaInformation":[],"meta":[],"image":"https://spoonacular.com/cdn/ingredients_100x100/cinnamon.jpg"}],"unusedIngredients":[],"nutrition":[{"title":"Calories","amount":507.225,"unit":"cal"},{"title":"Protein","amount":4.40723,"unit":"g"},{"title":"Fat","amount":24.5451,"unit":"g"},{"title":"Carbohydrates","amount":72.6695,"unit":"g"},{"title":"Cholesterol","amount":60.2,"unit":"mg"},{"title":"Sodium","amount":211.655,"unit":"mg"},{"title":"Sugar","amount":43.995,"unit":"g"}]},{"vegetarian":true,"vegan":true,"glutenFree":true,"dairyFree":true,"veryHealthy":false,"cheap":false,"veryPopular":true,"sustainable":false,"weightWatcherSmartPoints":5,"gaps":"no","lowFodmap":false,"preparationMinutes":10,"cookingMinutes":5,"aggregateLikes":1144,"spoonacularScore":43.0,"healthScore":3.0,"creditsText":"Simply
+        Recipes","sourceName":"Simply Recipes","pricePerServing":114.75,"extendedIngredients":[{"id":9003,"aisle":"Produce","image":"apple.jpg","consistency":"solid","name":"apples","original":"4
+        cups of peeled, sliced apples - use apples that cook up well, like Fuji or
+        Jonagold","originalString":"4 cups of peeled, sliced apples - use apples that
+        cook up well, like Fuji or Jonagold","originalName":"peeled, sliced apples
+        - use apples that cook up well, like Fuji or Jonagold","amount":4.0,"unit":"cups","meta":["peeled","sliced","well"],"metaInformation":["peeled","sliced","well"],"measures":{"us":{"amount":4.0,"unitShort":"cups","unitLong":"cups"},"metric":{"amount":946.352,"unitShort":"ml","unitLong":"milliliters"}}},{"id":19335,"aisle":"Baking","image":"sugar-in-bowl.png","consistency":"solid","name":"sugar","original":"3
+        Tbsp sugar","originalString":"3 Tbsp sugar","originalName":"sugar","amount":3.0,"unit":"Tbsp","meta":[],"metaInformation":[],"measures":{"us":{"amount":3.0,"unitShort":"Tbsps","unitLong":"Tbsps"},"metric":{"amount":3.0,"unitShort":"Tbsps","unitLong":"Tbsps"}}},{"id":2010,"aisle":"Spices
+        and Seasonings","image":"cinnamon.jpg","consistency":"solid","name":"cinnamon","original":"A
+        sprinkle of cinnamon","originalString":"A sprinkle of cinnamon","originalName":"A
+        sprinkle of cinnamon","amount":1.0,"unit":"serving","meta":[],"metaInformation":[],"measures":{"us":{"amount":1.0,"unitShort":"serving","unitLong":"serving"},"metric":{"amount":1.0,"unitShort":"serving","unitLong":"serving"}}},{"id":19911,"aisle":"Cereal","image":"maple-syrup.png","consistency":"liquid","name":"maple
+        syrup","original":"1 Tbsp maple syrup","originalString":"1 Tbsp maple syrup","originalName":"maple
+        syrup","amount":1.0,"unit":"Tbsp","meta":[],"metaInformation":[],"measures":{"us":{"amount":1.0,"unitShort":"Tbsp","unitLong":"Tbsp"},"metric":{"amount":1.0,"unitShort":"Tbsp","unitLong":"Tbsp"}}}],"id":245248,"title":"EASY
+        Baked Apple Slices","readyInMinutes":15,"servings":2,"sourceUrl":"https://www.simplyrecipes.com/recipes/moms_baked_apple_slices/","image":"https://spoonacular.com/recipeImages/245248-312x231.jpg","imageType":"jpg","summary":"EASY
+        Baked Apple Slices takes about <b>15 minutes</b> from beginning to end. This
+        dessert has <b>229 calories</b>, <b>1g of protein</b>, and <b>0g of fat</b>
+        per serving. This gluten free, dairy free, lacto ovo vegetarian, and vegan
+        recipe serves 2 and costs <b>$1.15 per serving</b>. This recipe from Simply
+        Recipes requires apples - use apples that cook up, sugar, a sprinkle of cinnamon,
+        and maple syrup. 1144 people were glad they tried this recipe. Overall, this
+        recipe earns a <b>very bad (but still fixable) spoonacular score of 0%</b>.
+        Try <a href=\"https://spoonacular.com/recipes/easy-baked-apple-slices-1143588\">Easy
+        Baked Apple Slices</a>, <a href=\"https://spoonacular.com/recipes/baked-apple-slices-437570\">Baked
+        Apple Slices</a>, and <a href=\"https://spoonacular.com/recipes/cinnamon-baked-apple-slices-1042462\">Cinnamon
+        Baked Apple Slices</a> for similar recipes.","cuisines":[],"dishTypes":["dessert"],"diets":["gluten
+        free","dairy free","lacto ovo vegetarian","vegan"],"occasions":[],"winePairing":{"pairedWines":["cream
+        sherry","moscato dasti","port"],"pairingText":"Cream Sherry, Moscato d''Asti,
+        and Port are my top picks for Baked Apple. A common wine pairing rule is to
+        make sure your wine is sweeter than your food. Delicate desserts go well with
+        Moscato d''Asti, nutty desserts with cream sherry, and caramel or chocolate
+        desserts pair well with port. You could try NV Solera Cream Sherry. Reviewers
+        quite like it with a 4.5 out of 5 star rating and a price of about 17 dollars
+        per bottle.","productMatches":[{"id":428475,"title":"NV Solera Cream Sherry","description":"The
+        Solera Cream Sherry has a brilliant amber and deep copper hue. With butterscotch
+        and pecan aromas, the sweet salted nut and brown spice aromas carry a complex
+        caramel accent. A sweet entry leads to a rounded, lush, moderately full-bodied
+        palate with a lengthy, flavorful finish.","price":"$16.99","imageUrl":"https://spoonacular.com/productImages/428475-312x231.jpg","averageRating":0.9,"ratingCount":4.0,"score":0.823076923076923,"link":"https://www.amazon.com/NV-Solera-Cream-Sherry-750/dp/B00HSME8OW?tag=spoonacular-20"}]},"analyzedInstructions":[{"name":"","steps":[{"number":1,"step":"Sprinkle
+        apples with cinnamon and sugar: Put apple slices in a glass bowl. Sprinkle
+        on top the 3 Tbsp of sugar.","ingredients":[{"id":2010,"name":"cinnamon","image":"cinnamon.jpg"},{"id":9003,"name":"apple","image":"apple.jpg"},{"id":19335,"name":"sugar","image":"sugar-in-bowl.png"}],"equipment":[{"id":404783,"name":"bowl","image":"bowl.jpg"}]},{"number":2,"step":"Add
+        a light sprinkle of cinnamon.","ingredients":[{"id":2010,"name":"cinnamon","image":"cinnamon.jpg"}],"equipment":[]}]},{"name":"Microwave
+        on high for 5 minutes or more","steps":[{"number":1,"step":"Bake in microwave
+        oven for 5 minutes on high heat. Adjust the time for your microwave and how
+        many apples you are doing. Ours has a powerful high setting so 4 cups of apples
+        only takes 5 minutes.","ingredients":[{"id":9003,"name":"apple","image":"apple.jpg"}],"equipment":[{"id":404762,"name":"microwave","image":"microwave.jpg"},{"id":404784,"name":"oven","image":"oven.jpg"}],"length":{"number":10,"unit":"minutes"}},{"number":2,"step":"If
+        you use more apples, you will probably need to cook it a little longer. I
+        suggest starting with 5 minutes and testing for doneness with a fork. If it
+        needs more cooking time, give it more.","ingredients":[{"id":9003,"name":"apple","image":"apple.jpg"}],"equipment":[],"length":{"number":5,"unit":"minutes"}},{"number":3,"step":"Add
+        maple syrup to taste: When done, remove and mix so the sugar coats well all
+        the apple pieces.","ingredients":[{"id":19911,"name":"maple syrup","image":"maple-syrup.png"},{"id":9003,"name":"apple","image":"apple.jpg"},{"id":19335,"name":"sugar","image":"sugar-in-bowl.png"}],"equipment":[]},{"number":4,"step":"Add
+        maple syrup to taste, about 1 Tbsp.","ingredients":[{"id":19911,"name":"maple
+        syrup","image":"maple-syrup.png"}],"equipment":[]},{"number":5,"step":"Delicious
+        with whipped cream on top, or with vanilla ice cream on the side.","ingredients":[],"equipment":[]}]}],"usedIngredientCount":2,"missedIngredientCount":1,"likes":0,"missedIngredients":[{"id":19911,"amount":1.0,"unit":"Tbsp","unitLong":"Tbsp","unitShort":"Tbsp","aisle":"Cereal","name":"maple
+        syrup","original":"1 Tbsp maple syrup","originalString":"1 Tbsp maple syrup","originalName":"maple
+        syrup","metaInformation":[],"meta":[],"image":"https://spoonacular.com/cdn/ingredients_100x100/maple-syrup.png"}],"usedIngredients":[{"id":9003,"amount":4.0,"unit":"cups","unitLong":"cups","unitShort":"cup","aisle":"Produce","name":"apples","original":"4
+        cups of peeled, sliced apples - use apples that cook up well, like Fuji or
+        Jonagold","originalString":"4 cups of peeled, sliced apples - use apples that
+        cook up well, like Fuji or Jonagold","originalName":"peeled, sliced apples
+        - use apples that cook up well, like Fuji or Jonagold","metaInformation":["peeled","sliced","well"],"meta":["peeled","sliced","well"],"image":"https://spoonacular.com/cdn/ingredients_100x100/apple.jpg"},{"id":2010,"amount":1.0,"unit":"serving","unitLong":"serving","unitShort":"serving","aisle":"Spices
+        and Seasonings","name":"cinnamon","original":"A sprinkle of cinnamon","originalString":"A
+        sprinkle of cinnamon","originalName":"A sprinkle of cinnamon","metaInformation":[],"meta":[],"image":"https://spoonacular.com/cdn/ingredients_100x100/cinnamon.jpg"}],"unusedIngredients":[],"nutrition":[{"title":"Calories","amount":229.13,"unit":"cal"},{"title":"Protein","amount":0.6899,"unit":"g"},{"title":"Fat","amount":0.4374,"unit":"g"},{"title":"Carbohydrates","amount":60.0653,"unit":"g"},{"title":"Cholesterol","amount":0.0,"unit":"mg"},{"title":"Sodium","amount":3.68,"unit":"mg"},{"title":"Sugar","amount":49.9527,"unit":"g"}]}],"offset":0,"number":10,"totalResults":3}'
+    http_version: null
+  recorded_at: Sat, 30 May 2020 19:13:43 GMT
+recorded_with: VCR 5.1.0
