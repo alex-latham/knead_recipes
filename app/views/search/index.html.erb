@@ -1,32 +1,32 @@
 <%= form_tag "/search" do %>
-  <%= label_tag :ingredients %>
-  <%= text_field_tag :ingredients %><br>
-  <h2>DIET</h2><br>
-  <%= check_box_tag :vegetarian, true%>
+  <h2>INGREDIENTS</h2>
+  <%= text_field_tag :ingredients, nil, placeholder: "Enter your ingredients:" %><br>
+  <h2>DIET</h2>
+  <%= check_box_tag 'diet[]', 'vegetarian' %>
   <%= label_tag :vegetarian %><br>
-  <%= check_box_tag :keto, true %>
-  <%= label_tag :keto %><br>
-  <%= check_box_tag :vegan, true %>
+  <%= check_box_tag 'diet[]', 'ketogenic' %>
+  <%= label_tag :ketogenic %><br>
+  <%= check_box_tag 'diet[]', 'vegan' %>
   <%= label_tag :vegan %><br>
-  <%= check_box_tag "gluten free", true %>
+  <%= check_box_tag 'diet[]', 'gluten free' %>
   <%= label_tag :gluten_free %><br>
-  <%= check_box_tag "dairy free", true %>
+  <%= check_box_tag 'diet[]', 'dairy free' %>
   <%= label_tag :dairy_free %><br>
   <h2>PREP TIME</h2>
-  <%= radio_button_tag :time, 120 %>
+  <%= check_box_tag :time, 120 %>
   <%= label_tag "< 2 Hours" %><br>
-  <%= radio_button_tag :time, 60 %>
+  <%= check_box_tag :time, 60 %>
   <%= label_tag "< 1 Hour" %><br>
-  <%= radio_button_tag :time, 30 %>
+  <%= check_box_tag :time, 30 %>
   <%= label_tag "< 30 Minutes" %><br>
-  <%= radio_button_tag :time, 15 %>
+  <%= check_box_tag :time, 15 %>
   <%= label_tag "< 15 Minutes" %><br>
   <h2>TYPE</h2>
-  <%= radio_button_tag :type, "main course" %>
+  <%= check_box_tag :type, "main course" %>
   <%= label_tag "Main Course" %><br>
-  <%= radio_button_tag :type, "side dish" %>
+  <%= check_box_tag :type, "side dish" %>
   <%= label_tag "Side Dish" %><br>
-  <%= radio_button_tag :type, "dessert" %>
-  <%= label_tag "Dessert" %><br>
+  <%= check_box_tag :type, "dessert" %>
+  <%= label_tag "Dessert" %><br><br>
   <%= submit_tag "Search Recipes" %>
 <% end  %><br>
