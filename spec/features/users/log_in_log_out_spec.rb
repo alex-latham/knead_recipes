@@ -70,7 +70,7 @@ RSpec.describe 'as a user I can log in' do
 
     click_link 'Log In With Google'
 
-    visit root_path
+    expect(current_path).to eq(root_path)
 
     click_on "Menu"
     click_link "Logout"
