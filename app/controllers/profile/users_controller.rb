@@ -5,6 +5,10 @@ class Profile::UsersController < ApplicationController
     @user = current_user
   end
 
+  def edit
+    @user = current_user
+  end
+
   private
 
   def require_user
