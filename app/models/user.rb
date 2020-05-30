@@ -6,7 +6,6 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :email, presence: true
-  # validates :bio, presence: true
 
   def add_friend(email_address)
     new_friend = User.where(email: email_address).first
