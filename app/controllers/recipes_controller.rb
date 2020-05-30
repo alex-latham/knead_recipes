@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
       Recipe.new(recipe_json)
     end
     if @recipes.empty?
-      flash[:error] = "Sorry, we couldn't find any recipes matching your
+      flash["alert alert-danger"] = "Sorry, we couldn't find any recipes matching your
       specification. Here's some random recipes you might like."
       redirect_to '/recipes'
     end
