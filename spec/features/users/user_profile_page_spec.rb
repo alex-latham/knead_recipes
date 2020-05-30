@@ -14,7 +14,7 @@ describe 'as a registered user I have a login page' do
   end
 
   it 'has my information and links to edit info, my favroties, and my friends' do
-    user = create(:user, bio: "You know I'm bad, I'm bad, you know it, you know")
+    user = create(:user, bio: "Livin' life without fear, puttin' five carats in my baby girl ear")
 
     expect(User.count).to eq(1)
 
