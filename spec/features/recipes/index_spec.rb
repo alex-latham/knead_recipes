@@ -1,6 +1,10 @@
 require "rails_helper"
 
 describe "recipes controller" do
+  before(:each) do
+    @user = create(:user)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+  end
   it "can display up to 10 recipes on index page" do
     VCR.use_cassette("pork_time_120_main_course_10_results") do
       visit "/search"

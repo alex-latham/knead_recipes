@@ -1,6 +1,10 @@
 require "rails_helper"
 
 describe "searching recipes" do
+  before(:each) do
+    @user = create(:user)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+  end
   it "can search recipes by an ingredient" do
     VCR.use_cassette('apples_cinnamon_vegetarian_time_15_dessert_3_results') do
       visit "/search"
@@ -29,7 +33,7 @@ describe "searching recipes" do
 
   it "doesn't return recipes with contradicting parameters" do
     VCR.use_cassette("pork_vegetarian") do
-      visit "/search"
+      visit "/"
       fill_in :ingredients, with: "pork"
       find(:xpath, "//input[@value='vegetarian']").click
       click_on "Search Recipes"
