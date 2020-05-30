@@ -1,17 +1,29 @@
 <h1>Edit Profile</h1>
-<%= @user.name %>
-<%= @user.email %>
-<h2>DIET</h2>
-<%= form_tag("/profile/edit/#{current_user.id}", method: :patch) do %>
-  <%= check_box_tag :vegetarian, @restrictions, @restrictions.include?('vegetarian') %>
-  <%= label_tag "vegetarian" %>
-  <%= check_box_tag :keto, @restrictions, @restrictions.include?('keto') %>
-  <%= label_tag "keto" %>
-  <%= check_box_tag :vegan, @restrictions, @restrictions.include?('vegan')%>
-  <%= label_tag "vegan" %>
-  <%= check_box_tag :gluten_free, @restrictions, @restrictions.include?('gluten free') %>
-  <%= label_tag "gluten free" %>
-  <%= check_box_tag :dairy_free, @restrictions, @restrictions.include?('dairy free') %>
-  <%= label_tag "dairy free" %>
-  <%= submit_tag "Update Profile" %>
-<% end %>
+<div class="container">
+<div class="row"  style="padding:13px 15px;">
+<div class="row">
+    <div class="col-xs-6">
+      <%= @user.name %>
+      <%= @user.email %>
+    </div>
+    <div class="col-xs-6">
+      <h2>DIET</h2>
+      <%= form_tag("/profile/edit/#{current_user.id}", method: :patch) do %>
+      <div class="form-group">
+        <%= check_box_tag :vegetarian, @restrictions, @restrictions.include?('vegetarian') %>
+        <%= label_tag "vegetarian" %>
+        <%= check_box_tag :keto, @restrictions, @restrictions.include?('keto') %>
+        <%= label_tag "keto" %>
+        <%= check_box_tag :vegan, @restrictions, @restrictions.include?('vegan')%>
+        <%= label_tag "vegan" %>
+        <%= check_box_tag :gluten_free, @restrictions, @restrictions.include?('gluten free') %>
+        <%= label_tag "gluten free" %>
+        <%= check_box_tag :dairy_free, @restrictions, @restrictions.include?('dairy free') %>
+        <%= label_tag "dairy free" %>
+      </div>
+        <%= submit_tag "Update Profile", :class => "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
