@@ -22,7 +22,7 @@ RSpec.describe 'as a user I can log in' do
 
     expect(page).to have_content("Logged in as #{user.name}")
 
-    expect(current_path).to eq(root_path)
+    expect(current_path).to eq(profile_path)
 
     expect(page).to_not have_link 'Log In With Google'
 
@@ -49,7 +49,7 @@ RSpec.describe 'as a user I can log in' do
 
     expect(page).to have_content("Logged in as #{user.name}")
 
-    expect(current_path).to eq(root_path)
+    expect(current_path).to eq(profile_path)
 
     expect(User.count).to eq(1)
   end
@@ -70,7 +70,7 @@ RSpec.describe 'as a user I can log in' do
 
     click_link 'Log In With Google'
 
-    visit root_path
+    expect(current_path).to eq(profile_path)
 
     click_on "Menu"
     click_link "Logout"

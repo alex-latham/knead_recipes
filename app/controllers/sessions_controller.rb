@@ -5,10 +5,11 @@ class SessionsController < ApplicationController
     if user.save
       session[:user_id] = user.id
       flash[:success] = "Logged in as #{user.name}"
+      redirect_to profile_path
     else
       flash[:error] = user.errors.full_messages.to_sentence
+      redirect_back(fallback_location: "/")
     end
-    redirect_to root_path
   end
 
   def destroy

@@ -13,10 +13,6 @@ describe 'as a registered user I have a login page' do
     expect(page).to have_content("404")
   end
 
-  # it 'can be seen when I log in via oauth' do
-  #
-  # end
-
   it 'has my information and links to edit info, my favroties, and my friends' do
     user = create(:user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
