@@ -1,8 +1,8 @@
-<section class="recipes">
-  <% @recipes.each do |recipe| %>
-    <div class="recipe-title">
-      <%= recipe.title %>
-    </div><br>
-    <%= image_tag(recipe.image, class: "recipe-image") %><br><br>
-  <% end %>
-</section>
+<% @recipes.each do |recipe| %>
+  <div class="recipes">
+    <%= link_to recipe_path(recipe.id) do %>
+      <%= recipe.title %><br>
+      <%= image_tag recipe.image %><br><br>
+    <% end %>
+  </div>
+<% end %>

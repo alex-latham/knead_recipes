@@ -24,9 +24,7 @@ describe "searching recipes" do
 
       click_on "Search Recipes"
       expect(page).to have_current_path("/recipes?diet%5B%5D=vegetarian&ingredients=apples%2C+cinnamon&time=15&type=dessert")
-      within(".recipes") do
-        expect(page).to have_css('.recipe-image', count: 3)
-      end
+      expect(page).to have_css('.recipes', count: 3)
     end
   end
 
@@ -34,9 +32,7 @@ describe "searching recipes" do
     VCR.use_cassette("no_params") do
       visit "/"
       click_on "Search Recipes"
-      within(".recipes") do
-        expect(page).to have_css('.recipe-image', count: 10)
-      end
+      expect(page).to have_css('.recipes', count: 10)
     end
   end
 
@@ -48,8 +44,7 @@ describe "searching recipes" do
       click_on "Search Recipes"
 
       expect(page).to have_content("Sorry, we couldn't find any recipes matching your specification. Here's some random recipes you might like.")
-      expect(page).to have_css('.recipe-image', count: 10)
-      expect(page).to have_css('.recipe-title', count: 10)
+      expect(page).to have_css('.recipes', count: 10)
     end
   end
 end
