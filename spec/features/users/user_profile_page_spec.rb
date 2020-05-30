@@ -15,8 +15,23 @@ describe 'as a registered user I have a login page' do
 
   it 'has my information and links to edit info, my favroties, and my friends' do
     user = create(:user)
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-    visit '/profile'
+
+    expect(User.count).to eq(1)
+
+    OmniAuth.config.test_mode = true
+
+    OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
+      :provider => 'google_oauth2',
+      :info => { name: user.name,
+                 email: user.email
+               }
+        })
+
+    visit root_path
+
+    click_link 'Log In With Google'
+
+    expect(current_path).to eq(profile_path)
 
     expect(page).to have_content user.name
     expect(page).to have_content user.email
@@ -24,11 +39,24 @@ describe 'as a registered user I have a login page' do
     expect(page).to have_link("Favorites")
     expect(page).to have_link("Friends")
   end
+
+  it 'has links to edit my profile, my favorites, and my friends' do
+    user = create(:user)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    visit profile_path
+
+    click_link "Edit Profile"
+      expect(current_path).to eq(profile_edit_path)
+
+    visit profile_path
+
+    # click_link "Favorites"
+    #   expect(current_path).to eq(favorites_path)
+    #
+    # visit profile_path
+    #
+    # click_link "Friends"
+    #   expect(current_path).to eq(friends_path)
+  end
 end
-
-
-# As a logged in user
-# I can click on my profile picture
-# And my path is "/profile"
-# I see my Google Username and Email
-# And I see tabs to edit my profile info, favorites, friends
