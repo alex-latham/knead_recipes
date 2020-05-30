@@ -18,14 +18,11 @@ describe 'as a registered user I have a login page' do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     visit '/profile'
 
-    expect(page).to have_content("User Profile")
-
-    # expect(page).to_not have_css("user-name")
-    # expect(page).to_not have_css("user-bio")
-    # expect(page).to_not have_css("user-email")
-    # expect(page).to_not have_link("Edit Profile")
-    # expect(page).to_not have_link("Favorites")
-    # expect(page).to_not have_link("Freinds")
+    expect(page).to have_content user.name
+    expect(page).to have_content user.email
+    expect(page).to have_link("Edit Profile")
+    expect(page).to have_link("Favorites")
+    expect(page).to have_link("Friends")
   end
 end
 
