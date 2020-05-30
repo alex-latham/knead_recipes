@@ -1,6 +1,4 @@
 class SearchController < ApplicationController
-  def index; end
-
   def create
     redirect_to recipes_path(params: search_params)
   end
@@ -11,10 +9,6 @@ class SearchController < ApplicationController
     params.permit(:ingredients,
                   :time,
                   :type,
-                  :vegetarian,
-                  :keto,
-                  'dairy free',
-                  'gluten free',
-                  :vegan)
+                  diet: [])
   end
 end

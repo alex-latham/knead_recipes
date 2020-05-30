@@ -5,11 +5,11 @@ Rails.application.routes.draw do
 
   delete '/logout', to: 'sessions#destroy'
 
-  resources :search, only: [:index, :create]
+  resources :search, only: [:create]
 
-  resources :recipes, only: [:index]
+  resources :recipes, only: [:index, :show]
 
-  resources :welcome, only: [:index, :show]
+  resources :welcome, only: [:index]
 
   namespace :profile do
     get '/', to: 'users#show'
