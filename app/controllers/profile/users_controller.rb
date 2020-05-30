@@ -11,6 +11,7 @@ class Profile::UsersController < ApplicationController
   end
 
   def update
+    current_user.update(formatted_params)
     current_user.restrictions.delete_all
     restrictions = update_params.keys
     restrictions.each do |restriction|
@@ -26,6 +27,12 @@ class Profile::UsersController < ApplicationController
   end
 
   def update_params
-    params.permit(:vegetarian, :gluten_free, :vegan, :dairy_free, :keto)
+    params.permit(:vegetarian, :gluten_free, :vegan, :dairy_free, :keto, :bio)
+  end
+
+  def formatted_params
+    if update_params.keys.include?('bio')
+      {bio: update_params['bio']}
+    end
   end
 end
