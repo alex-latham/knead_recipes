@@ -5,7 +5,6 @@ class FriendsController < ApplicationController
   end
 
   def create
-
     if current_user.add_friend(params[:email_address])
       current_user.reload
       flash[:success] = "Friend Added Successfully"
