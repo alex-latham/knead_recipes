@@ -42,7 +42,7 @@ describe 'as a user when I visit my profile' do
     expect(page).to have_field(:keto, checked: false)
   end
 
-  it 'can also updae my bio/infomration' do
+  it 'can also updae my bio/information' do
       user = create(:user, bio: "It was all a dream, I used to read word up magazine")
         old_bio = user.bio
 
