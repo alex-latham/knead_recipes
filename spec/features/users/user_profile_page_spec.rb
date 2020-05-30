@@ -14,7 +14,7 @@ describe 'as a registered user I have a login page' do
   end
 
   it 'has my information and links to edit info, my favroties, and my friends' do
-    user = create(:user)
+    user = create(:user, bio: "You know I'm bad, I'm bad, you know it, you know")
 
     expect(User.count).to eq(1)
 
@@ -35,6 +35,7 @@ describe 'as a registered user I have a login page' do
 
     expect(page).to have_content user.name
     expect(page).to have_content user.email
+    expect(page).to have_content user.bio
     expect(page).to have_link("Edit Profile")
     expect(page).to have_link("Favorites")
     expect(page).to have_link("Friends")
@@ -49,7 +50,7 @@ describe 'as a registered user I have a login page' do
     click_link "Edit Profile"
       expect(current_path).to eq(profile_edit_path)
 
-    visit profile_path
+    # visit profile_path
 
     # click_link "Favorites"
     #   expect(current_path).to eq(favorites_path)
