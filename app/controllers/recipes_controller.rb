@@ -1,5 +1,3 @@
-require './app/models/poros/recipe'
-
 class RecipesController < ApplicationController
   def index
     recipes = SpoonacularService.new(search_params).parse_recipes

@@ -1,7 +1,3 @@
-require_relative 'recipe_ingredient'
-require_relative 'recipe_nutrition'
-require_relative 'recipe_instructions'
-
 class Recipe
   attr_reader :id,
               :title,
