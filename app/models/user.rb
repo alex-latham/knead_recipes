@@ -9,8 +9,7 @@ class User < ApplicationRecord
 
   def add_friend(email_address)
     new_friend = User.find_by(email: email_address)
-    return false if new_friend.nil?
-    return false if load_friends.include?(new_friend)
+    return false if new_friend.nil? || load_friends.include?(new_friend)
 
     Friendship.create!(user_id: id, friend_id: new_friend.id)
     Friendship.create!(user_id: new_friend.id, friend_id: id)
