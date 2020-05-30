@@ -4,7 +4,7 @@
 <%= @user.bio %>
 <%= link_to "Edit Profile", profile_edit_path %>
 <%= link_to "Favorites" %>
-<%= link_to "Friends" %>
+<%= link_to "My Friends", "/profile/friends" %>
 <h4>Dietary Restrictions</h4>
 <% @user.restrictions.each do |restriction| %>
   <%= restriction.name %>
