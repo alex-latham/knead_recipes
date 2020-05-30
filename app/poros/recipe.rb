@@ -17,6 +17,13 @@ class Recipe
     @nutrition = get_nutrition(recipe_json[:nutrition])
   end
 
+  def self.search(search_params)
+    recipes_json = SpoonacularService.new.complex_search(search_params)
+    recipes_json[:results].map do |recipe_json|
+      Recipe.new(recipe_json)
+    end
+  end
+
   private
 
   def get_ingredients(ingredient_json)
