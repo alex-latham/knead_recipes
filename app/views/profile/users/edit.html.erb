@@ -5,15 +5,15 @@
 <%= label_tag :bio %>
 <%= text_field_tag :bio, "#{@user.bio}"%>
 <h2>DIET</h2>
-  <%= check_box_tag :vegetarian, @restrictions, @restrictions.include?('vegetarian') %>
+  <%= check_box_tag :vegetarian, nil, @restrictions.include?('vegetarian') %>
   <%= label_tag "vegetarian" %>
-  <%= check_box_tag :keto, @restrictions, @restrictions.include?('keto') %>
+  <%= check_box_tag :keto, nil, @restrictions.include?('keto') %>
   <%= label_tag "keto" %>
-  <%= check_box_tag :vegan, @restrictions, @restrictions.include?('vegan')%>
+  <%= check_box_tag :vegan, nil, @restrictions.include?('vegan')%>
   <%= label_tag "vegan" %>
-  <%= check_box_tag :gluten_free, @restrictions, @restrictions.include?('gluten free') %>
+  <%= check_box_tag :gluten_free, nil, @restrictions.include?('gluten free') %>
   <%= label_tag "gluten free" %>
-  <%= check_box_tag :dairy_free, @restrictions, @restrictions.include?('dairy free') %>
+  <%= check_box_tag :dairy_free, nil, @restrictions.include?('dairy free') %>
   <%= label_tag "dairy free" %>
   <%= submit_tag "Update Profile", :class => "btn btn-primary" %>
 <% end %>
