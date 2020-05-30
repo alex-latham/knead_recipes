@@ -11,10 +11,6 @@ class SearchController < ApplicationController
     params.permit(:ingredients,
                   :time,
                   :type,
-                  :vegetarian,
-                  :keto,
-                  'dairy free',
-                  'gluten free',
-                  :vegan)
+                  :diet => [])
   end
 end
