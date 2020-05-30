@@ -5,7 +5,8 @@ class RecipesController < ApplicationController
     request = connection.get('/recipes/complexSearch')
     @recipes = JSON.parse(request.body, symbolize_names: true)
     if @recipes[:totalResults] == 0
-      flash[:error] = "Sorry, we couldn't find any matching your specification. Here's some random recipes you might like."
+      flash[:error] = "Sorry, we couldn't find any recipes matching your
+        specification. Here's some random recipes you might like."
       redirect_to "/recipes"
     end
   end

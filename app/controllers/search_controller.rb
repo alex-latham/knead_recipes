@@ -1,6 +1,4 @@
 class SearchController < ApplicationController
-  def index; end
-
   def create
     redirect_to recipes_path(params: search_params)
   end
