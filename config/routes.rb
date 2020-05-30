@@ -11,6 +11,18 @@ Rails.application.routes.draw do
 
   delete '/logout', to: 'sessions#destroy'
 
+  resources :search, only: [:index, :create]
+
+  resources :recipes, only: [:index]
+
+  resources :welcome, only: [:index, :show]
+
+  namespace :profile do
+    get '/', to: 'users#show'
+    get '/edit', to: 'users#edit'
+    patch '/edit/:id', to: 'users#update'
+  end
+
   get 'auth/google_oauth2', as: 'google_login'
   get 'auth/google_oauth2/callback', to: 'sessions#create'
 

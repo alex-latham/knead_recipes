@@ -12,6 +12,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+.DS_Store
 
 /node_modules
 /yarn-error.log
@@ -19,7 +20,9 @@
 .byebug_history
 
 # Ignore application configuration
-/config/application.yml
 
 # Ignore coverage files
 /coverage
+
+# Ignore application configuration
+/config/application.yml
