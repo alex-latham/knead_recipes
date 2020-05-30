@@ -8,12 +8,13 @@ class User < ApplicationRecord
   validates :email, presence: true
 
   def add_friend(email_address)
-    new_friend = User.where(email: email_address).first
+    new_friend = User.find_by(email: email_address)
     return false if new_friend.nil?
-    return false if self.load_friends.include?(new_friend)
-    Friendship.create!(user_id: self.id, friend_id: new_friend.id)
-    Friendship.create!(user_id: new_friend.id, friend_id: self.id)
-    return true
+    return false if load_friends.include?(new_friend)
+
+    Friendship.create!(user_id: id, friend_id: new_friend.id)
+    Friendship.create!(user_id: new_friend.id, friend_id: id)
+    true
   end
 
   def load_friends
@@ -24,8 +25,8 @@ class User < ApplicationRecord
 
   def self.from_omniauth(response)
     where(email: response.info.email).first_or_initialize do |user|
-          user.name = response['info']['name']
-          user.email = response['info']['email']
+      user.name = response['info']['name']
+      user.email = response['info']['email']
     end
   end
 end
