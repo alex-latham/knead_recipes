@@ -10,6 +10,10 @@ Rails.application.routes.draw do
 
   resources :welcome, only: [:index, :show]
 
+  namespace :profile do
+    get '/', to: 'users#show'
+  end
+
   get 'auth/google_oauth2', as: 'google_login'
   get 'auth/google_oauth2/callback', to: 'sessions#create'
 end
