@@ -30,6 +30,7 @@ describe 'as a user when I visit my profile' do
     click_button "Update Profile"
 
     expect(current_path).to eq profile_path
+    expect(page).to have_content("Profile Successfully Updated")
     expect(page).to have_content("vegetarian")
     expect(page).to have_content("gluten free")
 
@@ -54,6 +55,8 @@ describe 'as a user when I visit my profile' do
       click_button "Update Profile"
 
       expect(current_path).to eq profile_path
+
+      expect(page).to have_content("Profile Successfully Updated")
 
       expect(page).to_not have_content old_bio
       expect(page).to have_content user.bio

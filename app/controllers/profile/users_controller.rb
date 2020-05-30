@@ -16,6 +16,7 @@ class Profile::UsersController < ApplicationController
     diet_params.each do |restriction|
       current_user.restrictions.create(name: restriction.gsub('_', ' '))
     end
+    flash[:success] = "Profile Successfully Updated"
     redirect_to profile_path
   end
 
