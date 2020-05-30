@@ -15,6 +15,7 @@ describe 'as a user when I visit my profile' do
 
   it 'I can see my current dietary preferences' do
     user = create(:user)
+    user.restrictions.create(name: 'vegetarian')
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
     visit profile_edit_path
@@ -30,5 +31,6 @@ describe 'as a user when I visit my profile' do
 
     expect(current_path).to eq profile_path
     expect(page).to have_content("vegetarian")
+    expect(page).to have_content("gluten free")
   end
 end
