@@ -1,8 +1,7 @@
-<h1>User Profile</h1>
+<h1>User Prof ile</h1>
   <%= link_to "Edit Profile", profile_edit_path, :class => "btn btn-outline-success" %>
-  <%= link_to "Favorites", root_path, :class => "btn btn-outline-success"%>
+  <%= link_to "Favorites", root_path, :class => "btn btn-outline-success" %>
   <%= link_to "My Friends", profile_friends_path, :class => "btn btn-outline-success" %>
-
 
 <div class="container" style="margin-top:30px">
   <div class="row">
@@ -10,14 +9,22 @@
       <div class="info-<%= @user.id %>">
         <h3><%= @user.name %></h3>
         <b><%= @user.email %></b><br>
-        <b>About me:</b><br>
-        <p><%= @user.bio %></p>
+        <% if @user.bio %>
+          <b>About me:</b><br>
+          <p><%= @user.bio %></p>
+        <% else %>
+          <p>You haven't added any personal info yet, try adding some :^)</p>
+        <% end %>
       </div>
     </div>
     <div class="col-sm-6">
       <h2>Dietary Restrictions</h2>
-      <% @user.restrictions.each do |restriction| %>
-        <%= restriction.name %><br>
+      <% if current_user.restrictions.length.zero? %>
+        <p>You have no dietary restrictions selected</p>
+      <% else %>
+        <% @user.restrictions.each do |restriction| %>
+          <%= restriction.name %><br>
+        <% end %>
       <% end %>
     </div>
   </div>

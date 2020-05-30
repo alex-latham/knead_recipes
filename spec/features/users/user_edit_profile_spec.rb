@@ -21,7 +21,6 @@ describe 'as a user when I visit my profile' do
     visit profile_edit_path
 
     expect(page).to have_content user.name
-
     expect(page).to have_content user.email
 
     check 'vegetarian'
@@ -60,5 +59,20 @@ describe 'as a user when I visit my profile' do
 
       expect(page).to_not have_content old_bio
       expect(page).to have_content user.bio
+  end
+
+  it 'by default I do not have any dietary restrictions or bio' do
+    user = User.create(name: "Paisley McFarney",
+                       email: "MCPaisley@worldofplumbus.com")
+
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    visit profile_path
+
+    expect(page).to have_content user.name
+    expect(page).to have_content user.email
+    expect(page).to have_content "You haven't added any personal info yet, try adding some :^)"
+    expect(page).to have_content "You have no dietary restrictions selected"
+
   end
 end
