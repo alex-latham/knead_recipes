@@ -6,9 +6,8 @@ class SearchController < ApplicationController
   private
 
   def search_params
-    params.permit(:ingredients,
-                  :time,
-                  :type,
-                  diet: [])
+    params[:time] = params[:time].to_i
+    params[:diet] = params[:diet].join(',') if params[:diet].present?
+    params.permit(:ingredients, :time, :type, :diet)
   end
 end
