@@ -13,7 +13,7 @@ describe 'as a registered user I have a login page' do
     expect(page).to have_content("404")
   end
 
-  it 'has my information and links to edit info, my favroties, and my friends' do
+  it 'has my information and links to edit info, my favorites, and my friends' do
     user = create(:user, bio: "Livin' life without fear, puttin' five carats in my baby girl ear")
 
     expect(User.count).to eq(1)
@@ -55,9 +55,10 @@ describe 'as a registered user I have a login page' do
 
     click_link "Edit Profile"
       expect(current_path).to eq(profile_edit_path)
-
+      
+    # We will need to test these links but functionality is not built in for them yet
     # visit profile_path
-
+    #
     # click_link "Favorites"
     #   expect(current_path).to eq(favorites_path)
     #
