@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   namespace :profile do
     get '/', to: 'users#show'
+    get '/edit', to: 'users#edit'
+    patch '/edit/:id', to: 'users#update'
   end
 
   get 'auth/google_oauth2', as: 'google_login'
