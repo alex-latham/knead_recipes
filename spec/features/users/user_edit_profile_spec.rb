@@ -24,7 +24,7 @@ describe 'as a user when I visit my profile' do
     expect(page).to have_content user.email
 
     check 'vegetarian'
-    # check 'gluten_free'
+    check 'gluten_free'
 
     click_button "Update Profile"
 
