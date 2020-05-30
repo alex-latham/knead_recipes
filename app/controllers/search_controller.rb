@@ -9,6 +9,6 @@ class SearchController < ApplicationController
     params.permit(:ingredients,
                   :time,
                   :type,
-                  :diet => [])
+                  diet: [])
   end
 end

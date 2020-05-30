@@ -37,7 +37,7 @@ describe "searching recipes" do
   end
 
   it "doesn't return recipes with contradicting parameters" do
-    VCR.use_cassette("pork_vegetarian") do
+    VCR.use_cassette("pork_vegetarian_0_results") do
       visit "/"
       fill_in :ingredients, with: "pork"
       find(:xpath, "//input[@value='vegetarian']").click

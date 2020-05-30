@@ -3,7 +3,7 @@ class SpoonacularService
     @params = format_params(params)
   end
 
-  def get_recipes
+  def parse_recipes
     connection = Faraday.new(url: 'https://api.spoonacular.com/',
                              params: request_params)
     request = connection.get('/recipes/complexSearch')
@@ -26,8 +26,10 @@ class SpoonacularService
     params.to_h.each_with_object({}) do |(key, value), acc|
       if key == 'diet'
         acc[key] = value.join(',')
+      elsif key == 'time'
+        acc[key] = value.to_i
       else
-        key == 'time' ? acc[key] = value.to_i : acc[key] = value
+        acc[key] = value
       end
     end
   end

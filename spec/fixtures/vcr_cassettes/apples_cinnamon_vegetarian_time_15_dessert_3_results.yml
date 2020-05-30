@@ -19,16 +19,16 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 30 May 2020 02:17:44 GMT
+      - Sat, 30 May 2020 08:39:54 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '5977'
+      - '5660'
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d783a2018f23492576fd25e61611171041590805063; expires=Mon, 29-Jun-20
-        02:17:43 GMT; path=/; domain=.spoonacular.com; HttpOnly; SameSite=Lax
+      - __cfduid=d152b78b7220ff7f23ac9116604d6d7f61590827993; expires=Mon, 29-Jun-20
+        08:39:53 GMT; path=/; domain=.spoonacular.com; HttpOnly; SameSite=Lax
       Allow-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Origin:
@@ -43,19 +43,19 @@ http_interactions:
       X-Api-Quota-Request:
       - '2.18'
       X-Api-Quota-Used:
-      - '71.58000000000001'
+      - '141.9199999999999'
       Accept-Ranges:
       - bytes
       Cf-Cache-Status:
       - DYNAMIC
       Cf-Request-Id:
-      - 0304f7ff3b0000c7c5ceb62200000001
+      - 030655e1760000f77ce53ba200000001
       Expect-Ct:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Server:
       - cloudflare
       Cf-Ray:
-      - 59b4f5decf47c7c5-DEN
+      - 59b725af2e05f77c-DEN
     body:
       encoding: ASCII-8BIT
       string: '{"results":[{"vegetarian":true,"vegan":false,"glutenFree":true,"dairyFree":false,"veryHealthy":false,"cheap":false,"veryPopular":false,"sustainable":false,"weightWatcherSmartPoints":4,"gaps":"no","lowFodmap":false,"preparationMinutes":5,"cookingMinutes":0,"aggregateLikes":1,"spoonacularScore":39.0,"healthScore":6.0,"creditsText":"Oatmeal
@@ -95,17 +95,17 @@ http_interactions:
         salt-free)</a>, and <a href=\"https://spoonacular.com/recipes/double-chocolate-chip-cookies-grain-free-sugar-free-butter-free-515640\">Double
         Chocolate Chip Cookies {Grain free, Sugar free, butter free}</a>.","cuisines":[],"dishTypes":["dessert"],"diets":["gluten
         free","lacto ovo vegetarian","primal"],"occasions":[],"winePairing":{"pairedWines":["cream
-        sherry","moscato dasti","port"],"pairingText":"Cream Sherry, Moscato d''Asti,
-        and Port are my top picks for Treat. A common wine pairing rule is to make
-        sure your wine is sweeter than your food. Delicate desserts go well with Moscato
+        sherry","moscato dasti","port"],"pairingText":"Treat can be paired with Cream
+        Sherry, Moscato d''Asti, and Port. A common wine pairing rule is to make sure
+        your wine is sweeter than your food. Delicate desserts go well with Moscato
         d''Asti, nutty desserts with cream sherry, and caramel or chocolate desserts
-        pair well with port. You could try NV Solera Cream Sherry. Reviewers quite
-        like it with a 4.5 out of 5 star rating and a price of about 17 dollars per
-        bottle.","productMatches":[{"id":428475,"title":"NV Solera Cream Sherry","description":"The
-        Solera Cream Sherry has a brilliant amber and deep copper hue. With butterscotch
-        and pecan aromas, the sweet salted nut and brown spice aromas carry a complex
-        caramel accent. A sweet entry leads to a rounded, lush, moderately full-bodied
-        palate with a lengthy, flavorful finish.","price":"$16.99","imageUrl":"https://spoonacular.com/productImages/428475-312x231.jpg","averageRating":0.9,"ratingCount":4.0,"score":0.823076923076923,"link":"https://www.amazon.com/NV-Solera-Cream-Sherry-750/dp/B00HSME8OW?tag=spoonacular-20"}]},"analyzedInstructions":[{"name":"","steps":[{"number":1,"step":"Grab
+        pair well with port. The NV Solera Cream Sherry with a 4.5 out of 5 star rating
+        seems like a good match. It costs about 17 dollars per bottle.","productMatches":[{"id":428475,"title":"NV
+        Solera Cream Sherry","description":"The Solera Cream Sherry has a brilliant
+        amber and deep copper hue. With butterscotch and pecan aromas, the sweet salted
+        nut and brown spice aromas carry a complex caramel accent. A sweet entry leads
+        to a rounded, lush, moderately full-bodied palate with a lengthy, flavorful
+        finish.","price":"$16.99","imageUrl":"https://spoonacular.com/productImages/428475-312x231.jpg","averageRating":0.9,"ratingCount":4.0,"score":0.823076923076923,"link":"https://www.amazon.com/NV-Solera-Cream-Sherry-750/dp/B00HSME8OW?tag=spoonacular-20"}]},"analyzedInstructions":[{"name":"","steps":[{"number":1,"step":"Grab
         your favorite mug or dish.","ingredients":[],"equipment":[]},{"number":2,"step":"Dollop
         the yogurt into the bottom of your dish.","ingredients":[{"id":1116,"name":"yogurt","image":"plain-yogurt.jpg"}],"equipment":[]},{"number":3,"step":"Add
         in apple, berries, milk, and cinnamon.","ingredients":[{"id":2010,"name":"cinnamon","image":"cinnamon.jpg"},{"id":1009054,"name":"berries","image":"berries-mixed.jpg"},{"id":9003,"name":"apple","image":"apple.jpg"},{"id":1077,"name":"milk","image":"milk.png"}],"equipment":[]},{"number":4,"step":"Stir
@@ -174,15 +174,13 @@ http_interactions:
         Moscato d''Asti, and Port. A common wine pairing rule is to make sure your
         wine is sweeter than your food. Delicate desserts go well with Moscato d''Asti,
         nutty desserts with cream sherry, and caramel or chocolate desserts pair well
-        with port. You could try NV Johnson Estate Cream Sherry. Reviewers quite like
-        it with a 5 out of 5 star rating and a price of about 19 dollars per bottle.","productMatches":[{"id":430626,"title":"NV
-        Johnson Estate Cream Sherry","description":"Very aromatic with notes of hazelnut,
-        vanilla, and a touch of oak followed by sweet raisins and a touch of yeast.
-        Clean lasting finish. Good now but will reward those allow it to age\"\".
-        A favorite pre-prandial beverage. Consider it with nuts before dinner as an
-        aperitif, or after dinner with dessert, especially chocolates and fruit-based
-        desserts. Also wonderful on cold afternoons, served with biscotti to dip in
-        \"\"Italian-style\"\". \"","price":"$19.49","imageUrl":"https://spoonacular.com/productImages/430626-312x231.jpg","averageRating":1.0,"ratingCount":2.0,"score":0.8571428571428572,"link":"https://www.amazon.com/Johnson-Estate-Cream-Sherry-750/dp/B00D3GQSRW?tag=spoonacular-20"}]},"analyzedInstructions":[{"name":"","steps":[{"number":1,"step":"Make
+        with port. One wine you could try is NV Solera Cream Sherry. It has 4.5 out
+        of 5 stars and a bottle costs about 17 dollars.","productMatches":[{"id":428475,"title":"NV
+        Solera Cream Sherry","description":"The Solera Cream Sherry has a brilliant
+        amber and deep copper hue. With butterscotch and pecan aromas, the sweet salted
+        nut and brown spice aromas carry a complex caramel accent. A sweet entry leads
+        to a rounded, lush, moderately full-bodied palate with a lengthy, flavorful
+        finish.","price":"$16.99","imageUrl":"https://spoonacular.com/productImages/428475-312x231.jpg","averageRating":0.9,"ratingCount":4.0,"score":0.823076923076923,"link":"https://www.amazon.com/NV-Solera-Cream-Sherry-750/dp/B00HSME8OW?tag=spoonacular-20"}]},"analyzedInstructions":[{"name":"","steps":[{"number":1,"step":"Make
         the filling by placing the apple slices in a medium bowl and toss with the
         lemon juice.","ingredients":[{"id":9152,"name":"lemon juice","image":"lemon-juice.jpg"},{"id":9003,"name":"apple","image":"apple.jpg"}],"equipment":[{"id":404783,"name":"bowl","image":"bowl.jpg"}]},{"number":2,"step":"Add
         the cinnamon, nutmeg, brown sugar and flour and toss to combine. Set aside.","ingredients":[{"id":19334,"name":"brown
@@ -239,9 +237,9 @@ http_interactions:
         Baked Apple Slices</a> for similar recipes.","cuisines":[],"dishTypes":["dessert"],"diets":["gluten
         free","dairy free","lacto ovo vegetarian","vegan"],"occasions":[],"winePairing":{"pairedWines":["cream
         sherry","moscato dasti","port"],"pairingText":"Cream Sherry, Moscato d''Asti,
-        and Port are my top picks for Baked Apple. A common wine pairing rule is to
-        make sure your wine is sweeter than your food. Delicate desserts go well with
-        Moscato d''Asti, nutty desserts with cream sherry, and caramel or chocolate
+        and Port are great choices for Baked Apple. A common wine pairing rule is
+        to make sure your wine is sweeter than your food. Delicate desserts go well
+        with Moscato d''Asti, nutty desserts with cream sherry, and caramel or chocolate
         desserts pair well with port. One wine you could try is NV Solera Cream Sherry.
         It has 4.5 out of 5 stars and a bottle costs about 17 dollars.","productMatches":[{"id":428475,"title":"NV
         Solera Cream Sherry","description":"The Solera Cream Sherry has a brilliant
@@ -273,5 +271,5 @@ http_interactions:
         and Seasonings","name":"cinnamon","original":"A sprinkle of cinnamon","originalString":"A
         sprinkle of cinnamon","originalName":"A sprinkle of cinnamon","metaInformation":[],"meta":[],"image":"https://spoonacular.com/cdn/ingredients_100x100/cinnamon.jpg"}],"unusedIngredients":[],"nutrition":[{"title":"Calories","amount":229.13,"unit":"cal"},{"title":"Protein","amount":0.6899,"unit":"g"},{"title":"Fat","amount":0.4374,"unit":"g"},{"title":"Carbohydrates","amount":60.0653,"unit":"g"},{"title":"Cholesterol","amount":0.0,"unit":"mg"},{"title":"Sodium","amount":3.68,"unit":"mg"},{"title":"Sugar","amount":49.9527,"unit":"g"}]}],"offset":0,"number":10,"totalResults":3}'
     http_version: null
-  recorded_at: Sat, 30 May 2020 02:17:44 GMT
+  recorded_at: Sat, 30 May 2020 08:39:54 GMT
 recorded_with: VCR 5.1.0
