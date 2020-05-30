@@ -31,6 +31,12 @@ describe 'as a registered user I have a login page' do
 
     click_link 'Log In With Google'
 
+    expect(current_path).to eq(root_path)
+
+    click_on "Menu"
+
+    click_link "Profile"
+
     expect(current_path).to eq(profile_path)
 
     expect(page).to have_content user.name
