@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :search, only: [:create]
 
-  resources :recipes, only: [:index]
+  resources :recipes, only: [:index, :show]
 
   resources :welcome, only: [:index, :show]
 
