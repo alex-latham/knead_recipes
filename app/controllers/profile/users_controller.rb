@@ -7,14 +7,14 @@ class Profile::UsersController < ApplicationController
 
   def edit
     @user = current_user
-    @restrictions = current_user.restrictions.map { |r| r.name}
+    @restrictions = current_user.restrictions.map(&:name)
   end
 
   def update
     current_user.update(bio_params)
     current_user.restrictions.delete_all
     diet_params.each do |restriction|
-      current_user.restrictions.create(name: restriction.gsub("_", " "))
+      current_user.restrictions.create(name: restriction.gsub('_', ' '))
     end
     redirect_to profile_path
   end
@@ -22,7 +22,7 @@ class Profile::UsersController < ApplicationController
   private
 
   def require_user
-    render file: "/public/404" unless current_user
+    render file: '/public/404' unless current_user
   end
 
   def diet_params

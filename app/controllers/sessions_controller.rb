@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       redirect_to profile_path
     else
       flash[:error] = user.errors.full_messages.to_sentence
-      redirect_back(fallback_location: "/")
+      redirect_back(fallback_location: '/')
     end
   end
 
