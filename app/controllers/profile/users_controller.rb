@@ -11,10 +11,9 @@ class Profile::UsersController < ApplicationController
   end
 
   def update
-    current_user.update(formatted_params)
+    current_user.update(bio_params)
     current_user.restrictions.delete_all
-    restrictions = update_params.keys
-    restrictions.each do |restriction|
+    diet_params.each do |restriction|
       current_user.restrictions.create(name: restriction.gsub("_", " "))
     end
     redirect_to profile_path
@@ -26,13 +25,11 @@ class Profile::UsersController < ApplicationController
     render file: "/public/404" unless current_user
   end
 
-  def update_params
-    params.permit(:vegetarian, :gluten_free, :vegan, :dairy_free, :keto, :bio)
+  def diet_params
+    params.permit(:vegetarian, :gluten_free, :vegan, :dairy_free, :keto)
   end
 
-  def formatted_params
-    if update_params.keys.include?('bio')
-      {bio: update_params['bio']}
-    end
+  def bio_params
+    params.permit(:bio)
   end
 end
