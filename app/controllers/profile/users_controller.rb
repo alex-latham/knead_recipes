@@ -10,7 +10,11 @@ class Profile::UsersController < ApplicationController
   end
 
   def update
-    require "pry"; binding.pry
+    current_user.restrictions.delete_all
+    restrictions = update_params.keys
+    restrictions.each do |restriction|
+      current_user.restrictions.create(name: restriction)
+    end
     redirect_to profile_path
   end
 
