@@ -1,4 +1,4 @@
-class FriendsController < ApplicationController
+class Profile::FriendsController < ApplicationController
   def index
     @friends = current_user.load_friends
   end

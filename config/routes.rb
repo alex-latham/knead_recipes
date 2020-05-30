@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  get '/', to: 'welcome#index'
-  get '/profile/friends', to: 'friends#index'
-  post '/profile/friends', to: 'friends#create'
   resources :welcome, only: [:index, :show]
 
   root 'welcome#index'
@@ -20,8 +17,8 @@ Rails.application.routes.draw do
     get '/', to: 'users#show'
     get '/edit', to: 'users#edit'
     patch '/edit/:id', to: 'users#update'
-    # get '/friends', to: 'friends#index'
-    # post '/friends', to: 'friends#create'
+    get '/friends', to: 'friends#index'
+    post '/friends', to: 'friends#create'
   end
 
   get 'auth/google_oauth2', as: 'google_login'
