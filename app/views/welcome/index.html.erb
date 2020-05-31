@@ -12,7 +12,7 @@
 <% if current_user %>
   <%= form_tag "/search" do %>
     <h2>INGREDIENTS</h2>
-      <%= text_field_tag :ingredients, nil, placeholder: "Enter your ingredients:" %><br>
+      <%= text_field_tag :ingredients, nil, placeholder: "Enter your ingredients" %><br>
     <h2>DIET</h2>
       <%= check_box_tag 'diet[]', 'vegetarian' %>
       <%= label_tag :vegetarian %><br>
