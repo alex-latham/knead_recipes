@@ -23,7 +23,7 @@ class User < ApplicationRecord
   end
 
   def restriction_list
-    self.restrictions.map(&:name)
+    restrictions.map(&:name)
   end
 
   def self.from_omniauth(response)
