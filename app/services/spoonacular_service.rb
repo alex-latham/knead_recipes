@@ -4,6 +4,11 @@ class SpoonacularService
     get_json('/recipes/complexSearch', params)
   end
 
+  def search_by_id(id)
+    params = {apiKey: ENV['SPOONACULAR_KEY'], includeNutrition: true}
+    get_json("/recipes/#{id}/information", params)
+  end
+
   private
 
   def complex_search_params(search_params)

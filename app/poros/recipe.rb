@@ -24,10 +24,16 @@ class Recipe
     end
   end
 
+  def self.search_by_id(id)
+    recipe_json = SpoonacularService.new.search_by_id(id)
+    recipe_json[:nutrition] = recipe_json[:nutrition][:nutrients]
+    Recipe.new(recipe_json)
+  end
+
   private
 
-  def get_ingredients(ingredient_json)
-    RecipeIngredient.new(ingredient_json)
+  def get_ingredients(recipe_json)
+    RecipeIngredient.new(recipe_json)
   end
 
   def get_instructions(instructions_json)
@@ -35,6 +41,6 @@ class Recipe
   end
 
   def get_nutrition(nutrition_json)
-    RecipeNutrition.new(nutrition_json)
+    RecipeNutrition.from_json(nutrition_json)
   end
 end

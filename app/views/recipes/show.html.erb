@@ -1,0 +1,35 @@
+<h2><%= @recipe.title %></h2>
+<%= button_to 'Favorite', favorites_path(@recipe) %>
+<%= image_tag @recipe.image %><br>
+<p>Prep time: <%= @recipe.time %> minutes</p>
+
+<section id="ingredients">
+  <h3>Ingredients:</h3>
+  <ul>
+    <% @recipe.ingredients.list.each do |ingredient| %>
+      <li><%= ingredient %></li>
+    <% end %>
+  </ul>
+</section>
+
+<section id="instructions">
+  <h3>Instructions:</h3>
+  <ol>
+    <% @recipe.instructions.list.each do |instruction| %>
+      <li><%= instruction %></li>
+    <% end %>
+  </ol>
+</section>
+
+<section id="nutrition">
+  <h3>Nutrition Information:</h3>
+  <ul>
+    <li><%= @recipe.nutrition.calories %> calories</li>
+    <li><%= @recipe.nutrition.protein %> g protein</li>
+    <li><%= @recipe.nutrition.fat %> g fat</li>
+    <li><%= @recipe.nutrition.carbohydrates %> g carbohydrates</li>
+    <li><%= @recipe.nutrition.cholesterol %> mg cholesterol</li>
+    <li><%= @recipe.nutrition.sodium %> mg sodium</li>
+    <li><%= @recipe.nutrition.sugar %> g sugar</li>
+  </ul>
+</section>
