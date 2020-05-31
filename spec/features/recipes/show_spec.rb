@@ -9,7 +9,7 @@ RSpec.describe User do
       visit recipe_path(4584)
 
       expect(page).to have_content('Blackened Salmon With Hash Browns and Green Onions')
-      expect(page).to have_button('Favorite')
+      expect(page).to have_button('Add to Favorites')
       expect(page).to have_css("img[src*='https://spoonacular.com/recipeImages/4584-556x370.jpg']")
       expect(page).to have_content('Prep time: 41 minutes')
 

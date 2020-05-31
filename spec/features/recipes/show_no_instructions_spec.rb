@@ -9,7 +9,7 @@ RSpec.describe User do
       visit recipe_path(30342)
 
       expect(page).to have_content('Roasted Curried Cauliflower')
-      expect(page).to have_button('Favorite')
+      expect(page).to have_button('Add to Favorites')
       expect(page).to have_css("img[src*='https://spoonacular.com/recipeImages/30342-556x370.jpg']")
       expect(page).to have_content('Prep time: 45 minutes')
 

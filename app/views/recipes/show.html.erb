@@ -1,5 +1,9 @@
 <h2><%= @recipe.title %></h2>
-<%= button_to 'Favorite', favorites_path, params: { recipe_id: @recipe.id } %>
+<% if current_user.favorites.pluck(:recipe_id).include?(@recipe.id) %>
+  <%= button_to 'Delete from Favorites', favorite_path(@recipe.id), method: :delete %>
+<% else %>
+  <%= button_to 'Add to Favorites', favorites_path, params: { recipe_id: @recipe.id } %>
+<% end %>
 <%= image_tag @recipe.image %><br>
 <p>Prep time: <%= @recipe.time %> minutes</p>
 

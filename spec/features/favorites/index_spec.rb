@@ -26,4 +26,13 @@ RSpec.describe User do
       end
     end
   end
+
+  it 'is told when they have no favorites' do
+    user = create(:user)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    visit favorites_path
+
+    expect(page).to have_content('You have not favorited any recipes.')
+  end
 end
