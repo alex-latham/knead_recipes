@@ -2,28 +2,30 @@
 <div class="container">
   <h3><%= @user.name %></h3>
   <b><%= @user.email %></b>
-<div class="row">
-  <div class="col-sm-4"></div>
-  <div class="col-sm-4">
-    <%= form_tag("/profile/edit/#{current_user.id}", method: :patch, :class => 'form-group') do %>
-    <h3><%= label_tag "About Me" %></h3><br>
-    <%= text_area_tag :bio, "#{@user.bio}", :class => "form-control", :rows => 5 %>
-    <h3>Default Diet Preferences</h3>
-    <div class="form-check">
-      <%= check_box_tag :vegetarian, nil, @restrictions.include?('vegetarian') %>
-      <%= label_tag "vegetarian" %><br>
-      <%= check_box_tag :ketogenic, nil, @restrictions.include?('ketogenic') %>
-      <%= label_tag "ketogenic" %><br>
-      <%= check_box_tag :vegan, nil, @restrictions.include?('vegan')%>
-      <%= label_tag "vegan" %><br>
-      <%= check_box_tag :gluten_free, nil, @restrictions.include?('gluten free') %>
-      <%= label_tag "gluten free" %><br>
-      <%= check_box_tag :dairy_free, nil, @restrictions.include?('dairy free') %>
-      <%= label_tag "dairy free" %><br>
+  <div class="row">
+    <div class="col-sm-4">
     </div>
-    <%= submit_tag "Update Profile", :class => "btn btn-primary" %>
-    <% end %>
+    <div class="col-sm-4">
+      <%= form_tag("/profile/edit/#{current_user.id}", method: :patch, :class => 'form-group') do %>
+      <h3><%= label_tag "About Me" %></h3><br>
+      <%= text_area_tag :bio, "#{@user.bio}", :class => "form-control", :rows => 5 %>
+      <h3>Default Diet Preferences</h3>
+      <div class="form-check">
+        <%= check_box_tag :vegetarian, nil, @restrictions.include?('vegetarian') %>
+        <%= label_tag "vegetarian" %><br>
+        <%= check_box_tag :ketogenic, nil, @restrictions.include?('ketogenic') %>
+        <%= label_tag "ketogenic" %><br>
+        <%= check_box_tag :vegan, nil, @restrictions.include?('vegan')%>
+        <%= label_tag "vegan" %><br>
+        <%= check_box_tag :gluten_free, nil, @restrictions.include?('gluten free') %>
+        <%= label_tag "gluten free" %><br>
+        <%= check_box_tag :dairy_free, nil, @restrictions.include?('dairy free') %>
+        <%= label_tag "dairy free" %><br>
+      </div>
+      <%= submit_tag "Update Profile", :class => "btn btn-primary" %>
+      <% end %>
+    </div>
+    <div class="col-sm-4">
+    </div>
   </div>
-  <div class="col-sm-4"></div>
-</div>
 </div>
