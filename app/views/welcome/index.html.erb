@@ -3,15 +3,15 @@
     <h2>INGREDIENTS</h2>
       <%= text_field_tag :ingredients, nil, placeholder: "Enter your ingredients:" %><br>
     <h2>DIET</h2>
-      <%= check_box_tag 'diet[]', 'vegetarian' %>
+      <%= check_box_tag 'diet[]', 'vegetarian', current_user.restriction_list.include?('vegetarian') %>
       <%= label_tag :vegetarian %><br>
-      <%= check_box_tag 'diet[]', 'ketogenic' %>
+      <%= check_box_tag 'diet[]', 'ketogenic', current_user.restriction_list.include?('ketogenic') %>
       <%= label_tag :ketogenic %><br>
-      <%= check_box_tag 'diet[]', 'vegan' %>
+      <%= check_box_tag 'diet[]', 'vegan', current_user.restriction_list.include?('vegan') %>
       <%= label_tag :vegan %><br>
-      <%= check_box_tag 'diet[]', 'gluten free' %>
+      <%= check_box_tag 'diet[]', 'gluten free', current_user.restriction_list.include?('gluten free') %>
       <%= label_tag :gluten_free %><br>
-      <%= check_box_tag 'diet[]', 'dairy free' %>
+      <%= check_box_tag 'diet[]', 'dairy free', current_user.restriction_list.include?('dairy free') %>
       <%= label_tag :dairy_free %><br>
     <h2>PREP TIME</h2>
       <%= check_box_tag :time, 120 %>
