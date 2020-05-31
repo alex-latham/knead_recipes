@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     get '/edit', to: 'users#edit'
     patch '/edit/:id', to: 'users#update'
     get '/friends', to: 'friends#index'
+    get '/friends/:id', to: 'friends#show'
     post '/friends', to: 'friends#create'
   end
 
