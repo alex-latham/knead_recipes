@@ -21,7 +21,6 @@ describe 'as a user when I visit my profile' do
     visit profile_edit_path
 
     expect(page).to have_content user.name
-
     expect(page).to have_content user.email
 
     check 'vegetarian'
@@ -30,6 +29,7 @@ describe 'as a user when I visit my profile' do
     click_button "Update Profile"
 
     expect(current_path).to eq profile_path
+    
     expect(page).to have_content("Profile Successfully Updated")
     expect(page).to have_content("vegetarian")
     expect(page).to have_content("gluten free")
@@ -39,10 +39,10 @@ describe 'as a user when I visit my profile' do
     expect(page).to have_field(:vegetarian, checked: true)
     expect(page).to have_field(:gluten_free, checked: true)
     expect(page).to have_field(:dairy_free, checked: false)
-    expect(page).to have_field(:keto, checked: false)
+    expect(page).to have_field(:ketogenic, checked: false)
   end
 
-  it 'can also updae my bio/information' do
+  it 'can also update my bio/information' do
       user = create(:user, bio: "It was all a dream, I used to read word up magazine")
         old_bio = user.bio
 
@@ -60,5 +60,20 @@ describe 'as a user when I visit my profile' do
 
       expect(page).to_not have_content old_bio
       expect(page).to have_content user.bio
+  end
+
+  it 'by default I do not have any dietary restrictions or bio' do
+    user = User.create(name: "Paisley McFarney",
+                       email: "MCPaisley@worldofplumbus.com")
+
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    visit profile_path
+
+    expect(page).to have_content user.name
+    expect(page).to have_content user.email
+    expect(page).to have_content "You haven't added any personal info yet, try adding some :^)"
+    expect(page).to have_content "You have no dietary restrictions selected"
+
   end
 end

@@ -9,7 +9,7 @@ describe 'as a registered user I have a login page' do
     expect(page).to_not have_css("user-email")
     expect(page).to_not have_link("Edit Profile")
     expect(page).to_not have_link("Favorites")
-    expect(page).to_not have_link("Freinds")
+    expect(page).to_not have_link("Friends")
     expect(page).to have_content("404")
   end
 
@@ -55,7 +55,7 @@ describe 'as a registered user I have a login page' do
 
     click_link "Edit Profile"
       expect(current_path).to eq(profile_edit_path)
-      
+
     # We will need to test these links but functionality is not built in for them yet
     # visit profile_path
     #

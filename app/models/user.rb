@@ -22,10 +22,13 @@ class User < ApplicationRecord
     end
   end
 
+  def restriction_list
+    restrictions.map(&:name)
+  end
+
   def self.from_omniauth(response)
-    where(email: response.info.email).first_or_initialize do |user|
+    find_or_initialize_by(email: response['info']['email']) do |user|
       user.name = response['info']['name']
-      user.email = response['info']['email']
     end
   end
 end

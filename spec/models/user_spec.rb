@@ -49,7 +49,7 @@ RSpec.describe User, type: :model do
         expect(user_1.load_friends).to eq([user_2])
       end
 
-    it 'can create a user from google Omniauth' do
+    it 'can initalize a new user from google Omniauth' do
       user = build(:user)
       expect(User.count).to eq(0)
 
@@ -65,6 +65,7 @@ RSpec.describe User, type: :model do
       new_user = User.from_omniauth(hash)
       expect(new_user.name).to eq(user.name)
       expect(new_user.email).to eq(user.email)
+      expect(new_user.id).to be_nil
 
       expect(User.count).to eq(0)
     end
@@ -87,6 +88,21 @@ RSpec.describe User, type: :model do
       expect(found_user.email).to eq(user.email)
 
       expect(User.count).to eq(1)
+    end
+  end
+
+  describe 'instance methods' do
+    it 'can return all dietary restrictions of a user in an array' do
+      user = create(:user)
+      veg = Restriction.create(name: 'vegetarian')
+      gf = Restriction.create(name: 'gluten_free')
+      user.restrictions << veg
+      user.restrictions << gf
+
+      expect(user.restriction_list).to be_an(Array)
+      expect(user.restriction_list).to include('vegetarian')
+      expect(user.restriction_list).to include('gluten_free')
+      expect(user.restriction_list.length).to eq(2)
     end
   end
 end

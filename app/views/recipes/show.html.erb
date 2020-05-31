@@ -1,0 +1,43 @@
+<h2><%= @recipe.title %></h2>
+<% if current_user.favorites.pluck(:recipe_id).include?(@recipe.id) %>
+  <%= button_to 'Delete from Favorites', favorite_path(@recipe.id), method: :delete %>
+<% else %>
+  <%= button_to 'Add to Favorites', favorites_path, params: { recipe_id: @recipe.id } %>
+<% end %>
+<%= image_tag @recipe.image %><br>
+<p>Prep time: <%= @recipe.time %> minutes</p>
+
+<section id="ingredients">
+  <h3>Ingredients:</h3>
+  <ul>
+    <% @recipe.ingredients.list.each do |ingredient| %>
+      <li><%= ingredient %></li>
+    <% end %>
+  </ul>
+</section>
+
+<section id="instructions">
+  <h3>Instructions:</h3>
+  <% if @recipe.instructions.list.nil? %>
+    <p>Instructions are unavailable for this recipe.</p>
+  <% else %>
+    <ol>
+      <% @recipe.instructions.list.each do |instruction| %>
+        <li><%= instruction %></li>
+      <% end %>
+    </ol>
+  <% end %>
+</section>
+
+<section id="nutrition">
+  <h3>Nutrition Information:</h3>
+  <ul>
+    <li><%= @recipe.nutrition.calories %> calories</li>
+    <li><%= @recipe.nutrition.protein %> g protein</li>
+    <li><%= @recipe.nutrition.fat %> g fat</li>
+    <li><%= @recipe.nutrition.carbohydrates %> g carbohydrates</li>
+    <li><%= @recipe.nutrition.cholesterol %> mg cholesterol</li>
+    <li><%= @recipe.nutrition.sodium %> mg sodium</li>
+    <li><%= @recipe.nutrition.sugar %> g sugar</li>
+  </ul>
+</section>
