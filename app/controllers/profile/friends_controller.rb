@@ -3,6 +3,10 @@ class Profile::FriendsController < ApplicationController
     @friends = current_user.load_friends
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
   def create
     if current_user.add_friend(params[:email_address])
       current_user.reload
