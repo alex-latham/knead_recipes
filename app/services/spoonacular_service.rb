@@ -15,7 +15,7 @@ class SpoonacularService
       ids: recipe_ids,
       includeNutrition: true
     }
-    get_json("/recipes/informationBulk", params)
+    get_json('/recipes/informationBulk', params)
   end
 
   private

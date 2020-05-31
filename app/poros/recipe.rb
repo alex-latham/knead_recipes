@@ -34,7 +34,7 @@ class Recipe
 
   def self.search_by_ids(recipe_ids)
     return nil if recipe_ids == ''
-    
+
     recipes_json = SpoonacularService.new.search_by_ids(recipe_ids)
     recipes_json.map do |recipe_json|
       recipe_json[:nutrition] = recipe_json[:nutrition][:nutrients]
