@@ -23,7 +23,7 @@ describe "searching recipes" do
       find(:xpath, "//input[@value='dessert']").click
 
       click_on "Search Recipes"
-      expect(page).to have_current_path("/recipes?diet%5B%5D=vegetarian&ingredients=apples%2C+cinnamon&time=15&type=dessert")
+      expect(page).to have_current_path("/recipes?diet=vegetarian&ingredients=apples%2C+cinnamon&time=15&type=dessert")
       expect(page).to have_css('.recipes', count: 3)
     end
   end
@@ -43,7 +43,7 @@ describe "searching recipes" do
       find(:xpath, "//input[@value='vegetarian']").click
       click_on "Search Recipes"
 
-      expect(page).to have_content("Sorry, we couldn't find any recipes matching your specification. Here's some random recipes you might like.")
+      expect(page).to have_content("Sorry, we couldn't find any recipes matching your specification. Here are some random recipes you might like.")
       expect(page).to have_css('.recipes', count: 10)
     end
   end

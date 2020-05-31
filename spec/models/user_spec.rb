@@ -49,7 +49,7 @@ RSpec.describe User, type: :model do
         expect(user_1.load_friends).to eq([user_2])
       end
 
-    it 'can create a user from google Omniauth' do
+    it 'can initalize a new user from google Omniauth' do
       user = build(:user)
       expect(User.count).to eq(0)
 
@@ -65,6 +65,7 @@ RSpec.describe User, type: :model do
       new_user = User.from_omniauth(hash)
       expect(new_user.name).to eq(user.name)
       expect(new_user.email).to eq(user.email)
+      expect(new_user.id).to be_nil
 
       expect(User.count).to eq(0)
     end

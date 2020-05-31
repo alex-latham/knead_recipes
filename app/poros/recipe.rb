@@ -17,10 +17,35 @@ class Recipe
     @nutrition = get_nutrition(recipe_json[:nutrition])
   end
 
+  def self.search(search_params)
+    recipes_json = SpoonacularService.new.complex_search(search_params)
+    recipes_json[:results].map do |recipe_json|
+      Recipe.new(recipe_json)
+    end
+  end
+
+  def self.search_by_id(recipe_id)
+    recipe_json = SpoonacularService.new.search_by_id(recipe_id)
+    return nil if recipe_json[:code] == 404
+
+    recipe_json[:nutrition] = recipe_json[:nutrition][:nutrients]
+    Recipe.new(recipe_json)
+  end
+
+  def self.search_by_ids(recipe_ids)
+    return nil if recipe_ids == ''
+
+    recipes_json = SpoonacularService.new.search_by_ids(recipe_ids)
+    recipes_json.map do |recipe_json|
+      recipe_json[:nutrition] = recipe_json[:nutrition][:nutrients]
+      Recipe.new(recipe_json)
+    end
+  end
+
   private
 
-  def get_ingredients(ingredient_json)
-    RecipeIngredient.new(ingredient_json)
+  def get_ingredients(recipe_json)
+    RecipeIngredient.new(recipe_json)
   end
 
   def get_instructions(instructions_json)
@@ -28,6 +53,6 @@ class Recipe
   end
 
   def get_nutrition(nutrition_json)
-    RecipeNutrition.new(nutrition_json)
+    RecipeNutrition.from_json(nutrition_json)
   end
 end

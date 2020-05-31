@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   resources :welcome, only: [:index]
 
+  resources :favorites, only: [:index, :create, :destroy]
+
   namespace :profile do
     get '/', to: 'users#show'
     get '/edit', to: 'users#edit'
