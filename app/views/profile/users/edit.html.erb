@@ -7,8 +7,8 @@
 <h2>DIET</h2>
   <%= check_box_tag :vegetarian, nil, @restrictions.include?('vegetarian') %>
   <%= label_tag "vegetarian" %>
-  <%= check_box_tag :keto, nil, @restrictions.include?('keto') %>
-  <%= label_tag "keto" %>
+  <%= check_box_tag :ketogenic, nil, @restrictions.include?('ketogenic') %>
+  <%= label_tag "ketogenic" %>
   <%= check_box_tag :vegan, nil, @restrictions.include?('vegan')%>
   <%= label_tag "vegan" %>
   <%= check_box_tag :gluten_free, nil, @restrictions.include?('gluten free') %>

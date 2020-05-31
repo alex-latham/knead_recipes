@@ -38,7 +38,7 @@ describe 'as a user when I visit my profile' do
     expect(page).to have_field(:vegetarian, checked: true)
     expect(page).to have_field(:gluten_free, checked: true)
     expect(page).to have_field(:dairy_free, checked: false)
-    expect(page).to have_field(:keto, checked: false)
+    expect(page).to have_field(:ketogenic, checked: false)
   end
 
   it 'can also updae my bio/information' do
