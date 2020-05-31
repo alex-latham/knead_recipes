@@ -27,7 +27,7 @@ class Profile::UsersController < ApplicationController
   end
 
   def diet_params
-    params.permit(:vegetarian, :gluten_free, :vegan, :dairy_free, :keto)
+    params.permit(:vegetarian, :gluten_free, :vegan, :dairy_free, :ketogenic)
   end
 
   def bio_params

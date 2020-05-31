@@ -42,6 +42,16 @@
   </header>
 
   <main role="main" class="inner cover">
+    <style>
+      .jumbotron {
+      background-image: url("https://res.cloudinary.com/sanitarium/image/fetch/q_auto/https://www.sanitarium.com.au/getmedia%2Fae51f174-984f-4a70-ad3d-3f6b517b6da1%2Ffruits-vegetables-healthy-fats.jpg%3Fwidth%3D1180%26height%3D524%26ext%3D.jpg");
+      background-size: cover;
+      color: white;
+    }
+    </style>
+    <div class="jumbotron text-center">
+      <h1>Welcome to Knead Recipes!</h1>
+    </div>
     <div class="flash-message">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg.html_safe, class: name %>

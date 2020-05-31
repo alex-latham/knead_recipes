@@ -90,4 +90,19 @@ RSpec.describe User, type: :model do
       expect(User.count).to eq(1)
     end
   end
+
+  describe 'instance methods' do
+    it 'can return all dietary restrictions of a user in an array' do
+      user = create(:user)
+      veg = Restriction.create(name: 'vegetarian')
+      gf = Restriction.create(name: 'gluten_free')
+      user.restrictions << veg
+      user.restrictions << gf
+
+      expect(user.restriction_list).to be_an(Array)
+      expect(user.restriction_list).to include('vegetarian')
+      expect(user.restriction_list).to include('gluten_free')
+      expect(user.restriction_list.length).to eq(2)
+    end
+  end
 end
