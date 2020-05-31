@@ -11,17 +11,18 @@ describe 'user preferences in search' do
     veg = find(:xpath, "//input[@value='vegetarian']")
     vegan = find(:xpath, "//input[@value='vegan']")
     dairy = find(:xpath, "//input[@value='dairy free']")
-    
+
     expect(veg).to_not be_checked
     expect(vegan).to_not be_checked
     expect(dairy).to_not be_checked
 
-    veg = Restriction.create(name: 'vegetarian')
+    veggie = Restriction.create(name: 'vegetarian')
     gf = Restriction.create(name: 'gluten_free')
-    user.restrictions << veg
+    user.restrictions << veggie
     user.restrictions << gf
 
-    visit root_path
+    dairy.click
+
     expect(veg).to_not be_checked
     expect(vegan).to_not be_checked
     expect(dairy).to be_checked
