@@ -1,4 +1,6 @@
 class SearchController < ApplicationController
+  before_action :require_user
+
   def create
     redirect_to recipes_path(params: search_params)
   end

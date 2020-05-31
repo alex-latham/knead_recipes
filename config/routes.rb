@@ -9,8 +9,6 @@ Rails.application.routes.draw do
 
   resources :recipes, only: [:index, :show]
 
-  resources :welcome, only: [:index]
-
   resources :favorites, only: [:index, :create, :destroy]
 
   namespace :profile do

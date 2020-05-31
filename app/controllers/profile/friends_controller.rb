@@ -1,4 +1,6 @@
 class Profile::FriendsController < ApplicationController
+  before_action :require_user
+
   def index
     @friends = current_user.load_friends
   end
