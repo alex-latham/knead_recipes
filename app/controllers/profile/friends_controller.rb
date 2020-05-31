@@ -6,9 +6,9 @@ class Profile::FriendsController < ApplicationController
   def create
     if current_user.add_friend(params[:email_address])
       current_user.reload
-      flash[:success] = 'Friend Added Successfully'
+      flash['alert alert-success'] = 'Friend Added Successfully'
     else
-      flash[:error] = 'Invalid Email Entered, Try Again'
+      flash['alert alert-danger'] = 'Invalid Email Entered, Try Again'
     end
     redirect_to '/profile/friends'
   end
