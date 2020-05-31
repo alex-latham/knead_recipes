@@ -4,9 +4,18 @@ class SpoonacularService
     get_json('/recipes/complexSearch', params)
   end
 
-  def search_by_id(id)
+  def search_by_id(recipe_id)
     params = { apiKey: ENV['SPOONACULAR_KEY'], includeNutrition: true }
-    get_json("/recipes/#{id}/information", params)
+    get_json("/recipes/#{recipe_id}/information", params)
+  end
+
+  def search_by_ids(recipe_ids)
+    params = {
+      apiKey: ENV['SPOONACULAR_KEY'],
+      ids: recipe_ids,
+      includeNutrition: true
+    }
+    get_json("/recipes/informationBulk", params)
   end
 
   private

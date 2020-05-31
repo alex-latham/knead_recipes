@@ -14,11 +14,15 @@
 
 <section id="instructions">
   <h3>Instructions:</h3>
-  <ol>
-    <% @recipe.instructions.list.each do |instruction| %>
-      <li><%= instruction %></li>
-    <% end %>
-  </ol>
+  <% if @recipe.instructions.list.nil? %>
+    <p>Instructions are unavailable for this recipe.</p>
+  <% else %>
+    <ol>
+      <% @recipe.instructions.list.each do |instruction| %>
+        <li><%= instruction %></li>
+      <% end %>
+    </ol>
+  <% end %>
 </section>
 
 <section id="nutrition">

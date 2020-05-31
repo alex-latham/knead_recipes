@@ -24,12 +24,20 @@ class Recipe
     end
   end
 
-  def self.search_by_id(id)
-    recipe_json = SpoonacularService.new.search_by_id(id)
+  def self.search_by_id(recipe_id)
+    recipe_json = SpoonacularService.new.search_by_id(recipe_id)
     return nil if recipe_json[:code] == 404
 
     recipe_json[:nutrition] = recipe_json[:nutrition][:nutrients]
     Recipe.new(recipe_json)
+  end
+
+  def self.search_by_ids(ids)
+    recipes_json = SpoonacularService.new.search_by_ids(ids)
+    recipes_json.map do |recipe_json|
+      recipe_json[:nutrition] = recipe_json[:nutrition][:nutrients]
+      Recipe.new(recipe_json)
+    end
   end
 
   private
