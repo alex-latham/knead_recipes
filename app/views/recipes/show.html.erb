@@ -1,5 +1,5 @@
 <h2><%= @recipe.title %></h2>
-<%= button_to 'Favorite', favorites_path(@recipe) %>
+<%= button_to 'Favorite', favorites_path, params: { recipe_id: @recipe.id } %>
 <%= image_tag @recipe.image %><br>
 <p>Prep time: <%= @recipe.time %> minutes</p>
 
