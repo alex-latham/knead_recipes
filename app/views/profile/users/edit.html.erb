@@ -1,31 +1,19 @@
 <h1>Edit Profile</h1>
-<div class="container" style="margin-top:30px">
-  <div class="row">
-    <div class="col-sm-4">
-      <h3><%= @user.name %></h3>
-      <b><%= @user.email %></b>
-    </div>
-    <div class="col-sm-4">
-      <%= form_tag("/profile/edit/#{current_user.id}", method: :patch) do %>
-      <h3><%= label_tag "About Me" %></h3><br>
-      <div class="form-group">
-          <%= text_area_tag :bio, "#{@user.bio}", :class => "form-control", :rows => 7 %>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <h3>Default Diet Preferences</h3>
-      <%= check_box_tag :vegetarian, nil, @restrictions.include?('vegetarian') %>
-      <%= label_tag "vegetarian" %><br>
-      <%= check_box_tag :ketogenic, nil, @restrictions.include?('ketogenic') %>
-      <%= label_tag "ketogenic" %><br>
-      <%= check_box_tag :vegan, nil, @restrictions.include?('vegan')%>
-      <%= label_tag "vegan" %><br>
-      <%= check_box_tag :gluten_free, nil, @restrictions.include?('gluten free') %>
-      <%= label_tag "gluten free" %><br>
-      <%= check_box_tag :dairy_free, nil, @restrictions.include?('dairy free') %>
-      <%= label_tag "dairy free" %><br>
-    </div>
-  </div>
-</div>
+<h3><%= @user.name %></h3>
+<b><%= @user.email %></b>
+<%= form_tag("/profile/edit/#{current_user.id}", method: :patch) do %>
+<h3><%= label_tag "About Me" %></h3><br>
+<%= text_area_tag :bio, "#{@user.bio}", :class => "form-control", :rows => 5 %>
+<h3>Default Diet Preferences</h3>
+<%= check_box_tag :vegetarian, nil, @restrictions.include?('vegetarian') %>
+<%= label_tag "vegetarian" %><br>
+<%= check_box_tag :ketogenic, nil, @restrictions.include?('ketogenic') %>
+<%= label_tag "ketogenic" %><br>
+<%= check_box_tag :vegan, nil, @restrictions.include?('vegan')%>
+<%= label_tag "vegan" %><br>
+<%= check_box_tag :gluten_free, nil, @restrictions.include?('gluten free') %>
+<%= label_tag "gluten free" %><br>
+<%= check_box_tag :dairy_free, nil, @restrictions.include?('dairy free') %>
+<%= label_tag "dairy free" %><br>
 <%= submit_tag "Update Profile", :class => "btn btn-primary" %>
 <% end %>
