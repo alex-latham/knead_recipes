@@ -29,6 +29,7 @@ describe 'as a user when I visit my profile' do
     click_button "Update Profile"
 
     expect(current_path).to eq profile_path
+    
     expect(page).to have_content("Profile Successfully Updated")
     expect(page).to have_content("vegetarian")
     expect(page).to have_content("gluten free")
@@ -41,7 +42,7 @@ describe 'as a user when I visit my profile' do
     expect(page).to have_field(:ketogenic, checked: false)
   end
 
-  it 'can also updae my bio/information' do
+  it 'can also update my bio/information' do
       user = create(:user, bio: "It was all a dream, I used to read word up magazine")
         old_bio = user.bio
 
