@@ -11,18 +11,16 @@ RSpec.describe User do
 
       user.reload
 
-      visit favorites_path
+      visit profile_favorites_path
 
       within('#recipe-4584') do
         expect(page).to have_link('Blackened Salmon With Hash Browns and Green Onions', href: recipe_path(4584))
         expect(page).to have_css("img[src*='https://spoonacular.com/recipeImages/4584-556x370.jpg']")
-        expect(page).to have_button('Delete')
       end
 
       within('#recipe-4514') do
         expect(page).to have_link('Salmon With Honey-coriander Glaze', href: recipe_path(4514))
         expect(page).to have_css("img[src*='https://spoonacular.com/recipeImages/4514-556x370.jpg']")
-        expect(page).to have_button('Delete')
       end
     end
   end
@@ -31,7 +29,7 @@ RSpec.describe User do
     user = create(:user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-    visit favorites_path
+    visit profile_favorites_path
 
     expect(page).to have_content('You have not favorited any recipes.')
   end
