@@ -7,12 +7,14 @@ describe "As a user" do
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user_1)
 
-    visit "/profile/friends"
-    fill_in "Email Address", with: user_2.email
+    visit profile_friends_path
+    fill_in :email_address, with: user_2.email
     click_button "Add Friend"
+
     expect(page).to have_link(user_2.email)
+
     click_link(user_2.email)
-    
+
     expect(page).to have_content(user_2.name)
     expect(page).to have_content(user_2.email)
     expect(page).to have_content(user_2.bio)

@@ -6,9 +6,9 @@
     <div class="col-sm-4">
     </div>
     <div class="col-sm-4">
-      <%= form_tag("/profile/edit/#{current_user.id}", method: :patch, :class => 'form-group') do %>
+      <%= form_tag profile_path, method: :patch, :class => 'form-group' do %>
       <h3><%= label_tag "About Me" %></h3><br>
-      <%= text_area_tag :bio, "#{@user.bio}", :class => "form-control", :rows => 5 %>
+      <%= text_area_tag :bio, @user.bio, :class => "form-control", :rows => 5 %>
       <h3>Default Diet Preferences</h3>
       <div class="form-check">
         <%= check_box_tag :vegetarian, nil, @restrictions.include?('vegetarian') %>

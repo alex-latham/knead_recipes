@@ -1,14 +1,13 @@
-<h2>Favorites</h2>
-<% unless @recipes.nil? %>
+<h2><%= @user.name %>'s Favorite Recipes</h2>
+<% if @recipes.nil? %>
+  <p><%= @user.name %> has not favorited any recipes.</p>
+<% else %>
   <% @recipes.each do |recipe| %>
     <div id="recipe-<%= recipe.id %>">
-      <%= link_to recipe_path(recipe.id) do %>
+      <%= link_to recipe_path(recipe) do %>
         <%= recipe.title %><br>
         <%= image_tag recipe.image %><br>
       <% end %>
-      <%= button_to 'Delete', favorite_path(recipe.id), method: :delete %>
     </div>
   <% end %>
-<% else %>
-  <p>You have not favorited any recipes.</p>
 <% end %>
