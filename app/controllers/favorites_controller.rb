@@ -3,7 +3,7 @@ class FavoritesController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    recipe_ids = Favorite.where(user: @user).pluck(:recipe_id).join(',')
+    recipe_ids = Favorite.get_recipe_ids(@user)
     @recipes = Recipe.search_by_ids(recipe_ids)
   end
 end

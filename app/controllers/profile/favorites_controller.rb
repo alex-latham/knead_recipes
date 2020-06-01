@@ -2,7 +2,7 @@ class Profile::FavoritesController < ApplicationController
   before_action :require_user
 
   def index
-    recipe_ids = Favorite.where(user: current_user).pluck(:recipe_id).join(',')
+    recipe_ids = Favorite.get_recipe_ids(current_user)
     @recipes = Recipe.search_by_ids(recipe_ids)
   end
 
