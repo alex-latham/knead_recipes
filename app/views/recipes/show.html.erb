@@ -1,4 +1,5 @@
 <h2><%= @recipe.title %></h2>
+
 <% unless current_user.favorites.pluck(:recipe_id).include?(@recipe.id) %>
   <%= button_to 'Favorite', profile_favorites_path, params: { id: @recipe.id } %>
 <% end %>
