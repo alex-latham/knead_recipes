@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :email, presence: true
+  validates :username, uniqueness: true
+  validates :image, presence: true
 
   def add_friend(email_address)
     new_friend = User.find_by(email: email_address)
@@ -30,6 +32,8 @@ class User < ApplicationRecord
   def self.from_omniauth(response)
     find_or_initialize_by(email: response['info']['email']) do |user|
       user.name = response['info']['name']
+      user.username = response['info']['email'].split('@').first if user.username.nil?
+      user.image = response['info']['image']
     end
   end
 end

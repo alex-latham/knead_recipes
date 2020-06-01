@@ -4,6 +4,8 @@ RSpec.describe User, type: :model do
   describe 'validations' do
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:email) }
+    it { should validate_uniqueness_of(:username) }
+    it { should validate_presence_of(:image) }
   end
 
   describe 'relationships' do
@@ -16,8 +18,8 @@ RSpec.describe User, type: :model do
 
   describe 'class methods' do
       it "add_friend Creates a new friendship between users" do
-        user_1 = User.create!(name: "F", email: "F@example.com", bio: "Fun Guy")
-        user_2 = User.create!(name: "G", email: "G@example.com", bio: "Also a Fun Guy")
+        user_1 = User.create!(name: "F", email: "F@example.com", bio: "Fun Guy", username: '321')
+        user_2 = User.create!(name: "G", email: "G@example.com", bio: "Also a Fun Guy", username: '123')
         expect(user_1.friendships).to eq([])
         expect(user_2.friendships).to eq([])
         user_1.add_friend(user_2.email)
@@ -28,8 +30,8 @@ RSpec.describe User, type: :model do
       end
 
       it "add_friend returns false when presented email address of current friend" do
-        user_1 = User.create!(name: "F", email: "F@example.com", bio: "Fun Guy")
-        user_2 = User.create!(name: "G", email: "G@example.com", bio: "Also a Fun Guy")
+        user_1 = User.create!(name: "F", email: "F@example.com", bio: "Fun Guy", username: '321')
+        user_2 = User.create!(name: "G", email: "G@example.com", bio: "Also a Fun Guy", username: '123')
         user_1.add_friend(user_2.email)
         user_1.reload
         user_2.reload
@@ -42,8 +44,8 @@ RSpec.describe User, type: :model do
       end
 
       it "load_friends returns all friendships as user objects" do
-        user_1 = User.create!(name: "F", email: "F@example.com", bio: "Fun Guy")
-        user_2 = User.create!(name: "G", email: "G@example.com", bio: "Also a Fun Guy")
+        user_1 = User.create!(name: "F", email: "F@example.com", bio: "Fun Guy", username: '321')
+        user_2 = User.create!(name: "G", email: "G@example.com", bio: "Also a Fun Guy", username: '123')
         user_1.add_friend(user_2.email)
         user_1.reload
         user_2.reload
