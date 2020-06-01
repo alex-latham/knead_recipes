@@ -11,7 +11,9 @@ RSpec.describe 'as a user I can log in' do
     OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
       :provider => 'google_oauth2',
       :info => { name: user.name,
-                 email: user.email
+                 email: user.email,
+                 username: user.username,
+                 image: user.image
                }
         })
 
@@ -38,7 +40,9 @@ RSpec.describe 'as a user I can log in' do
     OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
       :provider => 'google_oauth2',
       :info => { name: user.name,
-                 email: user.email
+                 email: user.email,
+                 username: user.username,
+                 image: user.image
                }
         })
 
@@ -61,7 +65,9 @@ RSpec.describe 'as a user I can log in' do
     OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
       :provider => 'google_oauth2',
       :info => { name: user.name,
-                 email: user.email
+                 email: user.email,
+                 username: user.username,
+                 image: user.image
                }
         })
 

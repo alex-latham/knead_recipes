@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe "As a user" do
   it "I can add a new friend from /profile/friends" do
-    user_1 = User.create!(name: "F", email: "F@example.com", bio: "Fun Guy")
-    user_2 = User.create!(name: "G", email: "G@example.com", bio: "Also a Fun Guy")
+    user_1 = User.create!(name: "F", email: "F@example.com", bio: "Fun Guy", username: '321')
+    user_2 = User.create!(name: "G", email: "G@example.com", bio: "Also a Fun Guy", username: '123')
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user_1)
 
@@ -26,8 +26,8 @@ describe "As a user" do
   end
 
   it "I cannot add a friend using an invalid email" do
-    user_1 = User.create!(name: "F", email: "F@example.com", bio: "Fun Guy")
-    user_2 = User.create!(name: "G", email: "G@example.com", bio: "Also a Fun Guy")
+    user_1 = User.create!(name: "F", email: "F@example.com", bio: "Fun Guy", username: '321')
+    user_2 = User.create!(name: "G", email: "G@example.com", bio: "Also a Fun Guy", username: '123')
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user_1)
 
@@ -40,8 +40,8 @@ describe "As a user" do
   end
 
   it "I cannot add a friend that is already on my friends list" do
-    user_1 = User.create!(name: "F", email: "F@example.com", bio: "Fun Guy")
-    user_2 = User.create!(name: "G", email: "G@example.com", bio: "Also a Fun Guy")
+    user_1 = User.create!(name: "F", email: "F@example.com", bio: "Fun Guy", username: '321')
+    user_2 = User.create!(name: "G", email: "G@example.com", bio: "Also a Fun Guy", username: '123')
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user_1)
 
