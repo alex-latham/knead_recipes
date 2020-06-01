@@ -33,4 +33,30 @@ RSpec.describe User do
 
     expect(page).to have_content('You have not favorited any recipes.')
   end
+
+  it "can view others' favorite recipes" do
+    VCR.use_cassette("others' favorites") do
+      user1 = create(:user)
+      user2 = create(:user)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
+
+      Favorite.create(user: user2, recipe_id: 4584)
+      Favorite.create(user: user2, recipe_id: 4514)
+
+      user2.reload
+
+      visit user_favorites_path(user2)
+      save_and_open_page
+
+      within('#recipe-4584') do
+        expect(page).to have_link('Blackened Salmon With Hash Browns and Green Onions', href: recipe_path(4584))
+        expect(page).to have_css("img[src*='https://spoonacular.com/recipeImages/4584-556x370.jpg']")
+      end
+
+      within('#recipe-4514') do
+        expect(page).to have_link('Salmon With Honey-coriander Glaze', href: recipe_path(4514))
+        expect(page).to have_css("img[src*='https://spoonacular.com/recipeImages/4514-556x370.jpg']")
+      end
+    end
+  end
 end

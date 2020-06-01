@@ -1,10 +1,11 @@
 <h2><%= @user.name %>'s Favorite Recipes</h2>
+
 <% if @recipes.nil? %>
   <p><%= @user.name %> has not favorited any recipes.</p>
 <% else %>
   <% @recipes.each do |recipe| %>
     <div id="recipe-<%= recipe.id %>">
-      <%= link_to recipe_path(recipe) do %>
+      <%= link_to recipe_path(recipe.id) do %>
         <%= recipe.title %><br>
         <%= image_tag recipe.image %><br>
       <% end %>
