@@ -21,7 +21,7 @@ describe "As a user" do
 
     expect(current_path).to eq(profile_friends_path)
     expect(page).to have_content("Friend Added Successfully")
-    expect(page).to have_content(user_2.email)
+    expect(page).to have_link(user_2.email, href: user_path(user_2))
     expect(page).to_not have_content("You have no friends, try adding some :^)")
   end
 

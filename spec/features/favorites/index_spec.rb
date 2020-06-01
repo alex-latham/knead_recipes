@@ -46,7 +46,6 @@ RSpec.describe User do
       user2.reload
 
       visit user_favorites_path(user2)
-      save_and_open_page
 
       within('#recipe-4584') do
         expect(page).to have_link('Blackened Salmon With Hash Browns and Green Onions', href: recipe_path(4584))
