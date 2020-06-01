@@ -16,7 +16,7 @@ RSpec.describe User do
       expect(user.favorites.length).to eq(2)
 
       within('#recipe-4584') do
-        click_button 'Delete'
+        click_button 'Remove from Favorites'
       end
 
       user.reload

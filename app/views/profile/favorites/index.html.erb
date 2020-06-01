@@ -9,7 +9,7 @@
         <%= recipe.title %><br>
         <%= image_tag recipe.image %><br>
       <% end %>
-      <%= button_to 'Delete', profile_favorite_path(recipe.id), method: :delete %>
+      <%= button_to 'Remove from Favorites', profile_favorite_path(recipe.id), method: :delete %>
     </div>
   <% end %>
 <% end %>
