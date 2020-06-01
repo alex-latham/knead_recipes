@@ -11,6 +11,7 @@ RSpec.describe User, type: :model do
     it { should have_many(:user_restrictions) }
     it { should have_many(:restrictions).through(:user_restrictions) }
     it { should have_many(:friendships) }
+    it { should have_many(:friends).through(:friendships) }
   end
 
   describe 'class methods' do

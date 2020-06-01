@@ -1,10 +1,8 @@
 class Profile::FriendsController < ApplicationController
+  before_action :require_user
+
   def index
     @friends = current_user.load_friends
-  end
-
-  def show
-    @user = User.find(params[:id])
   end
 
   def create
@@ -14,6 +12,6 @@ class Profile::FriendsController < ApplicationController
     else
       flash['alert alert-danger'] = 'Invalid Email Entered, Try Again'
     end
-    redirect_to '/profile/friends'
+    redirect_to profile_friends_path
   end
 end

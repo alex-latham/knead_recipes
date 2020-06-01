@@ -22,10 +22,6 @@ class Profile::UsersController < ApplicationController
 
   private
 
-  def require_user
-    render file: '/public/404' unless current_user
-  end
-
   def diet_params
     params.permit(:vegetarian, :gluten_free, :vegan, :dairy_free, :ketogenic)
   end

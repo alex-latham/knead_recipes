@@ -1,9 +1,11 @@
+<h2>Results</h2>
+
 <% @recipes.each do |recipe| %>
   <div class="recipes">
     <%= link_to recipe_path(recipe.id) do %>
       <%= recipe.title %><br>
       <%= image_tag recipe.image %><br>
     <% end %>
-    You're missing <%= recipe.ingredients.missing_ingredients %> Ingredients.<br><br>
+    <p>You're missing <%= recipe.ingredients.missing_ingredients %> Ingredients.</p>
   </div>
 <% end %>

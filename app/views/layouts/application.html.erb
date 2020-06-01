@@ -34,7 +34,7 @@
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Profile", profile_path if current_user %></li>
           <li><%= link_to "Friends", profile_friends_path  if current_user %></li>
-          <li><%= link_to "Favorites", favorites_path  if current_user %></li>
+          <li><%= link_to "Favorites", profile_favorites_path  if current_user %></li>
           <li><%= link_to "Logout", logout_path, method: :delete if current_user %></li>
         </ul>
       </div>

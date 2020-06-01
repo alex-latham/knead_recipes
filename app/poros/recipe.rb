@@ -33,7 +33,7 @@ class Recipe
   end
 
   def self.search_by_ids(recipe_ids)
-    return nil if recipe_ids == ''
+    return nil if recipe_ids.empty?
 
     recipes_json = SpoonacularService.new.search_by_ids(recipe_ids)
     recipes_json.map do |recipe_json|

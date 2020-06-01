@@ -1,7 +1,7 @@
-<h2><%= @user.name %>'s Favorite Recipes</h2>
+<h2>My Favorites</h2>
 
 <% if @recipes.nil? %>
-  <p><%= @user.name %> has not favorited any recipes.</p>
+  <p>You have not favorited any recipes.</p>
 <% else %>
   <% @recipes.each do |recipe| %>
     <div id="recipe-<%= recipe.id %>">
@@ -9,6 +9,7 @@
         <%= recipe.title %><br>
         <%= image_tag recipe.image %><br>
       <% end %>
+      <%= button_to 'Remove from Favorites', profile_favorite_path(recipe.id), method: :delete %>
     </div>
   <% end %>
 <% end %>
