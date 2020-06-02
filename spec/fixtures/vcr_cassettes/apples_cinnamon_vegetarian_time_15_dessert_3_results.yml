@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.spoonacular.com/recipes/complexSearch?addRecipeInformation=true&apiKey=<SPOONACULAR_KEY>&diet=vegetarian&fillIngredients=true&ignorePantry=true&includeIngredients=apples,%20cinnamon&maxReadyTime=15&minCalories=0&minCarbs=0&minCholesterol=0&minFat=0&minProtein=0&minSodium=0&minSugar=0&number=12&sort=min-missing-ingredients&type=dessert
+    uri: http://localhost:9393/recipes/complexSearch?diet=vegetarian&ingredients=apples,%20cinnamon&time=15&type=dessert
     body:
       encoding: US-ASCII
       string: ''
@@ -16,48 +16,26 @@ http_interactions:
   response:
     status:
       code: 200
-      message: OK
+      message: 'OK '
     headers:
-      Date:
-      - Tue, 02 Jun 2020 03:27:53 GMT
       Content-Type:
-      - application/json
+      - text/html;charset=utf-8
       Content-Length:
-      - '5769'
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=d4a1067eaf0d54ffa3677587e22a303a91591068472; expires=Thu, 02-Jul-20
-        03:27:52 GMT; path=/; domain=.spoonacular.com; HttpOnly; SameSite=Lax
-      Allow-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Headers:
-      - Authorization, UserId, Hash, Name, Password, Accept, Accept-Language, Content-Language,
-        Content-Type, Cache-Control, Origin, X-Requested-With
-      Access-Control-Allow-Methods:
-      - GET, HEAD, POST, OPTIONS, DELETE, PUT
-      Allow-Control-Allow-Methods:
-      - GET, HEAD, POST, OPTIONS, DELETE, PUT
-      X-Api-Quota-Request:
-      - '2.18'
-      X-Api-Quota-Used:
-      - '95.41999999999997'
-      Accept-Ranges:
-      - bytes
-      Cf-Cache-Status:
-      - DYNAMIC
-      Cf-Request-Id:
-      - 0314ab4e4f0000c7c5ee17b200000001
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      - '30531'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
       Server:
-      - cloudflare
-      Cf-Ray:
-      - 59ce14c3bcdac7c5-DEN
+      - WEBrick/1.4.2 (Ruby/2.5.3/2018-10-18)
+      Date:
+      - Tue, 02 Jun 2020 17:12:03 GMT
+      Connection:
+      - Keep-Alive
     body:
-      encoding: ASCII-8BIT
+      encoding: UTF-8
       string: '{"results":[{"vegetarian":true,"vegan":false,"glutenFree":true,"dairyFree":false,"veryHealthy":false,"cheap":false,"veryPopular":false,"sustainable":false,"weightWatcherSmartPoints":4,"gaps":"no","lowFodmap":false,"preparationMinutes":5,"cookingMinutes":0,"aggregateLikes":1,"spoonacularScore":39.0,"healthScore":6.0,"creditsText":"Oatmeal
         With a Fork","sourceName":"Oatmeal With a Fork","pricePerServing":136.69,"extendedIngredients":[{"id":1116,"aisle":"Milk,
         Eggs, Other Dairy","image":"plain-yogurt.jpg","consistency":"solid","name":"yogurt","original":"3-4
@@ -99,15 +77,13 @@ http_interactions:
         Cream Sherry, Moscato d''Asti, and Port. A common wine pairing rule is to
         make sure your wine is sweeter than your food. Delicate desserts go well with
         Moscato d''Asti, nutty desserts with cream sherry, and caramel or chocolate
-        desserts pair well with port. The NV Johnson Estate Cream Sherry with a 5
-        out of 5 star rating seems like a good match. It costs about 19 dollars per
-        bottle.","productMatches":[{"id":430626,"title":"NV Johnson Estate Cream Sherry","description":"Very
-        aromatic with notes of hazelnut, vanilla, and a touch of oak followed by sweet
-        raisins and a touch of yeast. Clean lasting finish. Good now but will reward
-        those allow it to age\"\". A favorite pre-prandial beverage. Consider it with
-        nuts before dinner as an aperitif, or after dinner with dessert, especially
-        chocolates and fruit-based desserts. Also wonderful on cold afternoons, served
-        with biscotti to dip in \"\"Italian-style\"\". \"","price":"$19.49","imageUrl":"https://spoonacular.com/productImages/430626-312x231.jpg","averageRating":1.0,"ratingCount":2.0,"score":0.8571428571428572,"link":"https://www.amazon.com/Johnson-Estate-Cream-Sherry-750/dp/B00D3GQSRW?tag=spoonacular-20"}]},"analyzedInstructions":[{"name":"","steps":[{"number":1,"step":"Grab
+        desserts pair well with port. The NV Solera Cream Sherry with a 4.5 out of
+        5 star rating seems like a good match. It costs about 17 dollars per bottle.","productMatches":[{"id":428475,"title":"NV
+        Solera Cream Sherry","description":"The Solera Cream Sherry has a brilliant
+        amber and deep copper hue. With butterscotch and pecan aromas, the sweet salted
+        nut and brown spice aromas carry a complex caramel accent. A sweet entry leads
+        to a rounded, lush, moderately full-bodied palate with a lengthy, flavorful
+        finish.","price":"$16.99","imageUrl":"https://spoonacular.com/productImages/428475-312x231.jpg","averageRating":0.9,"ratingCount":4.0,"score":0.823076923076923,"link":"https://www.amazon.com/NV-Solera-Cream-Sherry-750/dp/B00HSME8OW?tag=spoonacular-20"}]},"analyzedInstructions":[{"name":"","steps":[{"number":1,"step":"Grab
         your favorite mug or dish.","ingredients":[],"equipment":[]},{"number":2,"step":"Dollop
         the yogurt into the bottom of your dish.","ingredients":[{"id":1116,"name":"yogurt","image":"plain-yogurt.jpg"}],"equipment":[]},{"number":3,"step":"Add
         in apple, berries, milk, and cinnamon.","ingredients":[{"id":2010,"name":"cinnamon","image":"cinnamon.jpg"},{"id":1009054,"name":"berries","image":"berries-mixed.jpg"},{"id":9003,"name":"apple","image":"apple.jpg"},{"id":1077,"name":"milk","image":"milk.png"}],"equipment":[]},{"number":4,"step":"Stir
@@ -172,12 +148,12 @@ http_interactions:
         Apple Crisp</a>, and <a href=\"https://spoonacular.com/recipes/microwave-cherry-crisp-373206\">Microwave
         Cherry Crisp</a>.","cuisines":[],"dishTypes":["dessert"],"diets":["lacto ovo
         vegetarian"],"occasions":[],"winePairing":{"pairedWines":["cream sherry","moscato
-        dasti","port"],"pairingText":"Cream Sherry, Moscato d''Asti, and Port are
-        my top picks for Crisp. A common wine pairing rule is to make sure your wine
-        is sweeter than your food. Delicate desserts go well with Moscato d''Asti,
-        nutty desserts with cream sherry, and caramel or chocolate desserts pair well
-        with port. One wine you could try is NV Johnson Estate Cream Sherry. It has
-        5 out of 5 stars and a bottle costs about 19 dollars.","productMatches":[{"id":430626,"title":"NV
+        dasti","port"],"pairingText":"Crisp works really well with Cream Sherry, Moscato
+        d''Asti, and Port. A common wine pairing rule is to make sure your wine is
+        sweeter than your food. Delicate desserts go well with Moscato d''Asti, nutty
+        desserts with cream sherry, and caramel or chocolate desserts pair well with
+        port. One wine you could try is NV Johnson Estate Cream Sherry. It has 5 out
+        of 5 stars and a bottle costs about 19 dollars.","productMatches":[{"id":430626,"title":"NV
         Johnson Estate Cream Sherry","description":"Very aromatic with notes of hazelnut,
         vanilla, and a touch of oak followed by sweet raisins and a touch of yeast.
         Clean lasting finish. Good now but will reward those allow it to age\"\".
@@ -240,19 +216,17 @@ http_interactions:
         Apple Slices</a>, and <a href=\"https://spoonacular.com/recipes/cinnamon-baked-apple-slices-1042462\">Cinnamon
         Baked Apple Slices</a> for similar recipes.","cuisines":[],"dishTypes":["dessert"],"diets":["gluten
         free","dairy free","lacto ovo vegetarian","vegan"],"occasions":[],"winePairing":{"pairedWines":["cream
-        sherry","moscato dasti","port"],"pairingText":"Baked Apple on the menu? Try
-        pairing with Cream Sherry, Moscato d''Asti, and Port. A common wine pairing
-        rule is to make sure your wine is sweeter than your food. Delicate desserts
-        go well with Moscato d''Asti, nutty desserts with cream sherry, and caramel
-        or chocolate desserts pair well with port. One wine you could try is NV Johnson
-        Estate Cream Sherry. It has 5 out of 5 stars and a bottle costs about 19 dollars.","productMatches":[{"id":430626,"title":"NV
-        Johnson Estate Cream Sherry","description":"Very aromatic with notes of hazelnut,
-        vanilla, and a touch of oak followed by sweet raisins and a touch of yeast.
-        Clean lasting finish. Good now but will reward those allow it to age\"\".
-        A favorite pre-prandial beverage. Consider it with nuts before dinner as an
-        aperitif, or after dinner with dessert, especially chocolates and fruit-based
-        desserts. Also wonderful on cold afternoons, served with biscotti to dip in
-        \"\"Italian-style\"\". \"","price":"$19.49","imageUrl":"https://spoonacular.com/productImages/430626-312x231.jpg","averageRating":1.0,"ratingCount":2.0,"score":0.8571428571428572,"link":"https://www.amazon.com/Johnson-Estate-Cream-Sherry-750/dp/B00D3GQSRW?tag=spoonacular-20"}]},"analyzedInstructions":[{"name":"","steps":[{"number":1,"step":"Sprinkle
+        sherry","moscato dasti","port"],"pairingText":"Cream Sherry, Moscato d''Asti,
+        and Port are my top picks for Baked Apple. A common wine pairing rule is to
+        make sure your wine is sweeter than your food. Delicate desserts go well with
+        Moscato d''Asti, nutty desserts with cream sherry, and caramel or chocolate
+        desserts pair well with port. The NV Solera Cream Sherry with a 4.5 out of
+        5 star rating seems like a good match. It costs about 17 dollars per bottle.","productMatches":[{"id":428475,"title":"NV
+        Solera Cream Sherry","description":"The Solera Cream Sherry has a brilliant
+        amber and deep copper hue. With butterscotch and pecan aromas, the sweet salted
+        nut and brown spice aromas carry a complex caramel accent. A sweet entry leads
+        to a rounded, lush, moderately full-bodied palate with a lengthy, flavorful
+        finish.","price":"$16.99","imageUrl":"https://spoonacular.com/productImages/428475-312x231.jpg","averageRating":0.9,"ratingCount":4.0,"score":0.823076923076923,"link":"https://www.amazon.com/NV-Solera-Cream-Sherry-750/dp/B00HSME8OW?tag=spoonacular-20"}]},"analyzedInstructions":[{"name":"","steps":[{"number":1,"step":"Sprinkle
         apples with cinnamon and sugar: Put apple slices in a glass bowl. Sprinkle
         on top the 3 Tbsp of sugar.","ingredients":[{"id":2010,"name":"cinnamon","image":"cinnamon.jpg"},{"id":9003,"name":"apple","image":"apple.jpg"},{"id":19335,"name":"sugar","image":"sugar-in-bowl.png"}],"equipment":[{"id":404783,"name":"bowl","image":"bowl.jpg"}]},{"number":2,"step":"Add
         a light sprinkle of cinnamon.","ingredients":[{"id":2010,"name":"cinnamon","image":"cinnamon.jpg"}],"equipment":[]}]},{"name":"Microwave
@@ -277,5 +251,5 @@ http_interactions:
         and Seasonings","name":"cinnamon","original":"A sprinkle of cinnamon","originalString":"A
         sprinkle of cinnamon","originalName":"A sprinkle of cinnamon","metaInformation":[],"meta":[],"image":"https://spoonacular.com/cdn/ingredients_100x100/cinnamon.jpg"}],"unusedIngredients":[],"nutrition":[{"title":"Calories","amount":229.13,"unit":"cal"},{"title":"Protein","amount":0.6899,"unit":"g"},{"title":"Fat","amount":0.4374,"unit":"g"},{"title":"Carbohydrates","amount":60.0653,"unit":"g"},{"title":"Cholesterol","amount":0.0,"unit":"mg"},{"title":"Sodium","amount":3.68,"unit":"mg"},{"title":"Sugar","amount":49.9527,"unit":"g"}]}],"offset":0,"number":12,"totalResults":3}'
     http_version: null
-  recorded_at: Tue, 02 Jun 2020 03:27:54 GMT
+  recorded_at: Tue, 02 Jun 2020 17:12:03 GMT
 recorded_with: VCR 5.1.0
