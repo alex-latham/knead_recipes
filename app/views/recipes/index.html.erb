@@ -1,14 +1,7 @@
-<style>
-  .equal {
-  display: flex;
-  flex-wrap: wrap;
-}
-</style>
 <div class="container">
   <div class="row">
   <% @recipes.each do |recipe| %>
     <div class="col-sm-4">
-      <div class="equal">
       <div class="recipes">
         <div class="thumbnail">
           <%= image_tag recipe.image %>
@@ -20,7 +13,6 @@
         </div>
       </div>
     </div>
-  </div>
   <% end %>
   </div>
 </div>
