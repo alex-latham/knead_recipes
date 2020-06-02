@@ -1,16 +1,26 @@
+<style>
+  .equal {
+  display: flex;
+  flex-wrap: wrap;
+}
+</style>
 <div class="container">
   <div class="row">
   <% @recipes.each do |recipe| %>
     <div class="col-sm-4">
-      <div class="thumbnail">
-        <%= image_tag recipe.image %>
-        <h4><%= recipe.title %></h4>
-        <div class="caption">
-        <p>You will need <%= recipe.ingredients.missing_ingredients %> more ingredients to make this dish.</p>
-        <%= link_to "Show me the recipe", recipe_path(recipe.id), :class => 'btn btn-default' %>
+      <div class="equal">
+      <div class="recipes">
+        <div class="thumbnail">
+          <%= image_tag recipe.image %>
+          <h4><%= recipe.title %></h4>
+          <div class="caption">
+          <p>You will need <%= recipe.ingredients.missing_ingredients %> more ingredients to make this dish.</p>
+          <%= link_to "Show me the recipe", recipe_path(recipe.id), :class => 'btn btn-default' %>
+          </div>
         </div>
       </div>
     </div>
+  </div>
   <% end %>
   </div>
 </div>
