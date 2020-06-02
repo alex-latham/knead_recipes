@@ -13,3 +13,12 @@
  */
  // Custom bootstrap variables must be set or imported *before* bootstrap.
  @import "bootstrap";
+
+.row.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row.display-flex > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
