@@ -22,7 +22,7 @@ RSpec.describe User, type: :model do
         user_2 = User.create!(name: "G", email: "G@example.com", bio: "Also a Fun Guy", username: '123')
         expect(user_1.friendships).to eq([])
         expect(user_2.friendships).to eq([])
-        user_1.add_friend(user_2.email)
+        user_1.add_friend(user_2.username)
         user_1.reload
         user_2.reload
         expect(user_1.friendships.length).to eq(1)
@@ -32,7 +32,7 @@ RSpec.describe User, type: :model do
       it "add_friend returns false when presented email address of current friend" do
         user_1 = User.create!(name: "F", email: "F@example.com", bio: "Fun Guy", username: '321')
         user_2 = User.create!(name: "G", email: "G@example.com", bio: "Also a Fun Guy", username: '123')
-        user_1.add_friend(user_2.email)
+        user_1.add_friend(user_2.username)
         user_1.reload
         user_2.reload
         expect(user_1.add_friend(user_2.email)).to eq(false)
@@ -46,7 +46,7 @@ RSpec.describe User, type: :model do
       it "load_friends returns all friendships as user objects" do
         user_1 = User.create!(name: "F", email: "F@example.com", bio: "Fun Guy", username: '321')
         user_2 = User.create!(name: "G", email: "G@example.com", bio: "Also a Fun Guy", username: '123')
-        user_1.add_friend(user_2.email)
+        user_1.add_friend(user_2.username)
         user_1.reload
         user_2.reload
         expect(user_1.load_friends).to eq([user_2])

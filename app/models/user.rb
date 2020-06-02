@@ -10,8 +10,8 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   validates :image, presence: true
 
-  def add_friend(email_address)
-    new_friend = User.find_by(email: email_address)
+  def add_friend(username)
+    new_friend = User.find_by(username: username)
     return false if new_friend.nil? || load_friends.include?(new_friend)
 
     Friendship.create!(user_id: id, friend_id: new_friend.id)
