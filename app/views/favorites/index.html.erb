@@ -1,5 +1,4 @@
-
-<h2><%= @user.name %>'s Favorite Recipes</h2>
+<h2><%= @user.username %>'s Favorite Recipes</h2>
 <div class="container">
   <div class="row">
     <% unless @recipes.nil? %>
@@ -11,13 +10,11 @@
         <%= image_tag recipe.image %><br>
         </div>
       <%= link_to "Show me the recipe", recipe_path(recipe.id), :class => 'btn btn-default' %>
-      <%= link_to 'Delete from Favorites', favorite_path(recipe.id), method: :delete, :class => 'btn btn-primary' %>
       </div>
     </div>
     <% end %>
     <% else %>
-    <p>You have not favorited any recipes.</p>
+    <p><%= @user.username %> has not favorited any recipes.</p>
   <% end %>
   </div>
 </div>
-
