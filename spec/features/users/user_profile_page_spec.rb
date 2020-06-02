@@ -33,8 +33,6 @@ describe 'as a registered user I have a login page' do
 
     expect(current_path).to eq(root_path)
 
-    click_on "Menu"
-
     click_link "Profile"
 
     expect(current_path).to eq(profile_path)
@@ -56,15 +54,12 @@ describe 'as a registered user I have a login page' do
     click_link "Edit Profile"
       expect(current_path).to eq(profile_edit_path)
 
-    # We will need to test these links but functionality is not built in for them yet
-    # visit profile_path
-    #
-    # click_link "Favorites"
-    #   expect(current_path).to eq(favorites_path)
-    #
-    # visit profile_path
-    #
-    # click_link "Friends"
-    #   expect(current_path).to eq(friends_path)
+    click_link "Favorites"
+      expect(current_path).to eq(profile_favorites_path)
+
+    visit profile_path
+
+    click_link "Friends"
+      expect(current_path).to eq(profile_friends_path)
   end
 end

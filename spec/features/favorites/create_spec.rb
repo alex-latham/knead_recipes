@@ -10,7 +10,10 @@ RSpec.describe User do
 
       expect(user.favorites.length).to eq(0)
 
-      click_button('Favorite')
+      click_button('Add to Favorites')
+
+      expect(current_path).to eq recipe_path(4584)
+
       expect(page).to have_content('This recipe has been added to your favorites')
 
       user.reload

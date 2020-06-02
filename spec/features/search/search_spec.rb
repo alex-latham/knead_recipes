@@ -32,7 +32,8 @@ describe "searching recipes" do
     VCR.use_cassette("no_params") do
       visit "/"
       click_on "Search Recipes"
-      expect(page).to have_css('.recipes', count: 10)
+      expect(page).to have_css('.recipes', count: 12)
+
     end
   end
 
@@ -44,7 +45,7 @@ describe "searching recipes" do
       click_on "Search Recipes"
 
       expect(page).to have_content("Sorry, we couldn't find any recipes matching your specification. Here are some random recipes you might like.")
-      expect(page).to have_css('.recipes', count: 10)
+      expect(page).to have_css('.recipes', count: 12)
     end
   end
 end

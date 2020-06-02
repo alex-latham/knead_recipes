@@ -22,24 +22,8 @@
 
   <body class="text-center">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  <header class="masthead mb-auto">
-    <div class="inner">
-      <div class="btn-group">
-        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-          Menu
-          <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu">
-          <!-- dropdown menu links -->
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Profile", profile_path if current_user %></li>
-          <li><%= link_to "Friends", profile_friends_path  if current_user %></li>
-          <li><%= link_to "Favorites", profile_favorites_path  if current_user %></li>
-          <li><%= link_to "Logout", logout_path, method: :delete if current_user %></li>
-        </ul>
-      </div>
-    </div>
-  </header>
+
+  <header class="masthead mb-auto"></header>
 
   <main role="main" class="inner cover">
     <style>
@@ -52,6 +36,21 @@
     <div class="jumbotron text-center">
       <h1>Welcome to Knead Recipes!</h1>
     </div>
+
+    <div class="container">
+      <ul class="nav nav-pills">
+        <ul class="nav navbar-nav navbar-left">
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Profile", profile_path if current_user %></li>
+          <li><%= link_to "Friends", profile_friends_path  if current_user %></li>
+          <li><%= link_to "Favorites", profile_favorites_path  if current_user %></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Logout", logout_path, method: :delete if current_user %></li>
+        </ul>
+      </ul>
+    </div>
+    
     <div class="flash-message">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg.html_safe, class: name %>

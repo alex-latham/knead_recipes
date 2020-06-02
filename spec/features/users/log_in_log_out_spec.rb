@@ -77,7 +77,6 @@ RSpec.describe 'as a user I can log in' do
 
     expect(current_path).to eq(root_path)
 
-    click_on "Menu"
     click_link "Logout"
 
     expect(page).to have_content("You have been successfully logged out.")

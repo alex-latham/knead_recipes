@@ -14,7 +14,7 @@ describe "recipes controller" do
       find(:xpath, "//input[@value='main course']").click
       click_on "Search Recipes"
       expect(page).to have_current_path("/recipes?ingredients=pork&time=120&type=main+course")
-      expect(page).to have_css('.recipes', count: 10)
+      expect(page).to have_css('.recipes', count: 12)
     end
   end
 

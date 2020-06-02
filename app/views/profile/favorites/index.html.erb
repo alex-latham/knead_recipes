@@ -1,15 +1,21 @@
 <h2>My Favorites</h2>
-
-<% if @recipes.nil? %>
-  <p>You have not favorited any recipes.</p>
-<% else %>
-  <% @recipes.each do |recipe| %>
-    <div id="recipe-<%= recipe.id %>">
-      <%= link_to recipe_path(recipe.id) do %>
-        <%= recipe.title %><br>
+<div class="container">
+  <div class="row">
+    <% unless @recipes.nil? %>
+    <% @recipes.each do |recipe| %>
+    <div class="col-sm-4">
+      <div class="recipe-<%= recipe.id %>">
+        <h4><%= recipe.title %></h4>
+        <div class="thumbnail">
         <%= image_tag recipe.image %><br>
-      <% end %>
-      <%= button_to 'Remove from Favorites', profile_favorite_path(recipe.id), method: :delete %>
+        </div>
+      <%= link_to "Show me the recipe", recipe_path(recipe.id), :class => 'btn btn-default' %>
+      <%= link_to 'Delete from Favorites', profile_favorite_path(recipe.id), method: :delete, :class => 'btn btn-primary' %>
+      </div>
     </div>
+    <% end %>
+    <% else %>
+    <p>You have not favorited any recipes.</p>
   <% end %>
-<% end %>
+  </div>
+</div>

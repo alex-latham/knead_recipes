@@ -1,14 +1,20 @@
-<h2><%= @user.name %>'s Favorite Recipes</h2>
-
-<% if @recipes.nil? %>
-  <p><%= @user.name %> has not favorited any recipes.</p>
-<% else %>
-  <% @recipes.each do |recipe| %>
-    <div id="recipe-<%= recipe.id %>">
-      <%= link_to recipe_path(recipe.id) do %>
-        <%= recipe.title %><br>
+<h2><%= @user.username %>'s Favorite Recipes</h2>
+<div class="container">
+  <div class="row">
+    <% unless @recipes.nil? %>
+    <% @recipes.each do |recipe| %>
+    <div class="col-sm-4">
+      <div class="recipe-<%= recipe.id %>">
+        <h4><%= recipe.title %></h4>
+        <div class="thumbnail">
         <%= image_tag recipe.image %><br>
-      <% end %>
+        </div>
+      <%= link_to "Show me the recipe", recipe_path(recipe.id), :class => 'btn btn-default' %>
+      </div>
     </div>
+    <% end %>
+    <% else %>
+    <p><%= @user.username %> has not favorited any recipes.</p>
   <% end %>
-<% end %>
+  </div>
+</div>
