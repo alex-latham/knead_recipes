@@ -6,10 +6,12 @@
 
 <div class="container" style="margin-top:30px">
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-4">
       <div class="info-<%= @user.id %>">
-        <h3><%= @user.name %></h3>
-        <b><%= @user.email %></b><br>
+        <h3>Name: <%= @user.name %></h3>
+        <b>Email: <%= @user.email %></b><br>
+        <b>Username: <%= @user.username %></b><br>
+
         <% if @user.bio %>
           <b>About me:</b><br>
           <p><%= @user.bio %></p>
@@ -18,7 +20,10 @@
         <% end %>
       </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-4">
+      <%= image_tag @user.image %>
+    </div>
+    <div class="col-sm-4">
       <h2>Dietary Restrictions</h2>
       <% if current_user.restrictions.length.zero? %>
         <p>You have no dietary restrictions selected</p>

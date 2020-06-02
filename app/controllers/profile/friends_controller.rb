@@ -6,7 +6,7 @@ class Profile::FriendsController < ApplicationController
   end
 
   def create
-    if current_user.add_friend(params[:email_address])
+    if current_user.add_friend(params[:username])
       current_user.reload
       flash['alert alert-success'] = 'Friend Added Successfully'
     else

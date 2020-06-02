@@ -7,10 +7,7 @@ describe 'as a user when I visit my profile' do
 
     visit profile_path
 
-    click_link "Edit Profile"
-      expect(current_path).to eq(profile_edit_path)
-
-    visit profile_path
+    expect(page).to have_link('Edit Profile', href: profile_edit_path)
   end
 
   it 'I can set my dietary preferences and they will stay checked when I revisit' do
@@ -22,6 +19,8 @@ describe 'as a user when I visit my profile' do
 
     expect(page).to have_content user.name
     expect(page).to have_content user.email
+    expect(page).to have_content user.bio
+    expect(page).to have_content user.username
 
     check 'vegetarian'
     check 'gluten_free'
@@ -29,7 +28,7 @@ describe 'as a user when I visit my profile' do
     click_button "Update Profile"
 
     expect(current_path).to eq profile_path
-    
+
     expect(page).to have_content("Profile Successfully Updated")
     expect(page).to have_content("vegetarian")
     expect(page).to have_content("gluten free")
@@ -43,23 +42,28 @@ describe 'as a user when I visit my profile' do
   end
 
   it 'can also update my bio/information' do
-      user = create(:user, bio: "It was all a dream, I used to read word up magazine")
-        old_bio = user.bio
+    user = create(:user, bio: "It was all a dream, I used to read word up magazine")
+    old_bio = user.bio
 
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-      visit profile_edit_path
+    visit profile_edit_path
 
-      fill_in 'bio', with: "I'm blowin' up like you thought I would, call the crib same number same hood it's all good"
+    expect(page).to have_content(user.username)
 
-      click_button "Update Profile"
+    fill_in 'bio', with: "I'm blowin' up like you thought I would, call the crib same number same hood it's all good"
+    fill_in 'username', with: 'newusername'
 
-      expect(current_path).to eq profile_path
+    click_button "Update Profile"
 
-      expect(page).to have_content("Profile Successfully Updated")
+    expect(current_path).to eq profile_path
 
-      expect(page).to_not have_content old_bio
-      expect(page).to have_content user.bio
+    expect(page).to have_content("Profile Successfully Updated")
+
+    expect(page).to_not have_content(old_bio)
+    expect(page).to have_content(user.bio)
+    expect(page).to have_content('newusername')
+    expect(page).to have_css("img[src*='https://i.kym-cdn.com/photos/images/newsfeed/001/076/734/879.jpg']")
   end
 
   it 'by default I do not have any dietary restrictions or bio' do
@@ -74,6 +78,5 @@ describe 'as a user when I visit my profile' do
     expect(page).to have_content user.email
     expect(page).to have_content "You haven't added any personal info yet, try adding some :^)"
     expect(page).to have_content "You have no dietary restrictions selected"
-
   end
 end

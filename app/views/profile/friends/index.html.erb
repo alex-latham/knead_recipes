@@ -1,8 +1,8 @@
 <h2>My Friends</h2>
 
 <%= form_tag profile_friends_path do %>
-  <%= label_tag :email_address %>
-  <%= text_field_tag :email_address %>
+  <%= label_tag :username %>
+  <%= text_field_tag :username %>
   <%= submit_tag "Add Friend" %>
 <% end %>
 
@@ -10,7 +10,7 @@
   <p>You have no friends, try adding some :^)</p>
 <% else %>
   <% @friends.each do |friend| %>
-    <%= link_to friend.email, user_path(friend) %>
+    <%= link_to friend.username, user_path(friend.username) %>
   <% end %>
 <% end %>
 

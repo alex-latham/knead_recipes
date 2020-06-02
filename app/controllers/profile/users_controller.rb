@@ -11,7 +11,7 @@ class Profile::UsersController < ApplicationController
   end
 
   def update
-    current_user.update(bio_params)
+    current_user.update(profile_params)
     current_user.restrictions.delete_all
     diet_params.each do |restriction|
       current_user.restrictions.create(name: restriction.gsub('_', ' '))
@@ -26,7 +26,7 @@ class Profile::UsersController < ApplicationController
     params.permit(:vegetarian, :gluten_free, :vegan, :dairy_free, :ketogenic)
   end
 
-  def bio_params
-    params.permit(:bio)
+  def profile_params
+    params.permit(:bio, :username)
   end
 end
