@@ -17,6 +17,6 @@ class FavoritesController < ApplicationController
     favorite = Favorite.find_by(recipe_id: params[:id])
     favorite.destroy
     flash['alert alert-success'] = 'This recipe has been removed from your favorites'
-    redirect_to favorites_path
+    redirect_to profile_favorites_path
   end
 end

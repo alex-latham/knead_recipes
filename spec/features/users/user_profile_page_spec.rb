@@ -55,7 +55,7 @@ describe 'as a registered user I have a login page' do
       expect(current_path).to eq(profile_edit_path)
 
     click_link "Favorites"
-      expect(current_path).to eq(favorites_path)
+      expect(current_path).to eq(profile_favorites_path)
 
     visit profile_path
 
