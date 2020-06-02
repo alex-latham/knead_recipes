@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  before_action :require_user
+
   def index
     @recipes = Recipe.search(search_params)
     return unless @recipes.empty?

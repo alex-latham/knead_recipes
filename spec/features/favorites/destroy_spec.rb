@@ -11,7 +11,7 @@ RSpec.describe User do
 
       user.reload
 
-      visit favorites_path
+      visit profile_favorites_path
 
       expect(user.favorites.length).to eq(2)
 

@@ -11,7 +11,7 @@ RSpec.describe User do
 
       user.reload
 
-      visit favorites_path
+      visit profile_favorites_path
 
       within('.recipe-4584') do
         expect(page).to have_link('Show me the recipe', href: recipe_path(4584))
@@ -31,7 +31,7 @@ RSpec.describe User do
     user = create(:user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-    visit favorites_path
+    visit profile_favorites_path
 
     expect(page).to have_content('You have not favorited any recipes.')
   end
