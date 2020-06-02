@@ -29,7 +29,7 @@ class SpoonacularService
       addRecipeInformation: true, fillIngredients: true, ignorePantry: true,
       minCalories: 0, minCholesterol: 0, minFat: 0, minProtein: 0, minCarbs: 0,
       minSugar: 0, minSodium: 0,
-      number: 10, sort: 'random'
+      number: 12, sort: 'min-missing-ingredients'
     }.compact
   end
 
