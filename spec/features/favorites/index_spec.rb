@@ -13,16 +13,16 @@ RSpec.describe User do
 
       visit favorites_path
 
-      within('#recipe-4584') do
-        expect(page).to have_link('Blackened Salmon With Hash Browns and Green Onions', href: recipe_path(4584))
+      within('.recipe-4584') do
+        expect(page).to have_link('Show me the recipe', href: recipe_path(4584))
         expect(page).to have_css("img[src*='https://spoonacular.com/recipeImages/4584-556x370.jpg']")
-        expect(page).to have_button('Delete')
+        expect(page).to have_link('Delete from Favorites')
       end
 
-      within('#recipe-4514') do
-        expect(page).to have_link('Salmon With Honey-coriander Glaze', href: recipe_path(4514))
+      within('.recipe-4514') do
+        expect(page).to have_link('Show me the recipe', href: recipe_path(4514))
         expect(page).to have_css("img[src*='https://spoonacular.com/recipeImages/4514-556x370.jpg']")
-        expect(page).to have_button('Delete')
+        expect(page).to have_link('Delete from Favorites')
       end
     end
   end
