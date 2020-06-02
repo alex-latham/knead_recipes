@@ -16,11 +16,6 @@ Rails.application.routes.draw do
     resources :friends, only: [:index, :create, :destroy]
   end
 
-  # resources :users, only: [:show] do
-  #   resources :favorites, only: [:index]
-  #   resources :friends, only: [:index]
-  # end
-
   get '/:username', to: 'users#show', as: :user
   get '/:username/favorites', to: 'favorites#index', as: :user_favorites
   get '/:username/friends', to: 'friends#index', as: :user_friends
