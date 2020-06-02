@@ -2,12 +2,12 @@ class SessionsController < ApplicationController
   def create
     response = request.env['omniauth.auth']
     user = User.from_omniauth(response)
-    # if user.save
+    if user.save
       session[:user_id] = user.id
       flash['alert alert-success'] = "Logged in as #{user.name}"
-    # else
-    #   flash['alert alert-danger'] = user.errors.full_messages.to_sentence
-    # end
+    else
+      flash['alert alert-danger'] = user.errors.full_messages.to_sentence
+    end
     redirect_to root_path
   end
 
