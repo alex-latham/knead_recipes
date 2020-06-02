@@ -1,15 +1,16 @@
 <div class="container">
   <div class="row">
   <% @recipes.each do |recipe| %>
-  <div class="col-md-4">
-    <div class="thumbnail">
-      <%= image_tag recipe.image %>
-      <h4><%= link_to recipe.title, recipe_path(recipe.id) %></h4>
-      <div class="caption">
-      <p>You're missing <%= recipe.ingredients.missing_ingredients %> Ingredients.</p>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <%= image_tag recipe.image %>
+        <h4><%= recipe.title %></h4>
+        <div class="caption">
+        <p>You will need <%= recipe.ingredients.missing_ingredients %> more ingredients to make this dish.</p>
+        <%= link_to "Show me the recipe", recipe_path(recipe.id), :class => 'btn btn-default' %>
+        </div>
       </div>
     </div>
-  </div>
   <% end %>
   </div>
 </div>
