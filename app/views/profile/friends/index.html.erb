@@ -1,16 +1,19 @@
-<h2>My Friends</h2>
+<h1>My Friends</h1>
 
-<%= form_tag profile_friends_path do %>
-  <%= label_tag :username %>
-  <%= text_field_tag :username %>
-  <%= submit_tag "Add Friend" %>
-<% end %>
+<div class="container">
+  <div class="well">
+    <%= form_tag profile_friends_path do %>
+      <%= label_tag :username %>
+      <%= text_field_tag :username %>
+      <%= submit_tag "Add Friend" %>
+    <% end %>
 
-<% if @friends.empty? %>
-  <p>You have no friends, try adding some :^)</p>
-<% else %>
-  <% @friends.each do |friend| %>
-    <%= link_to friend.username, user_path(friend.username) %>
-  <% end %>
-<% end %>
-
+    <% if @friends.empty? %>
+      <p>You have no friends, try adding some :^)</p>
+    <% else %>
+      <% @friends.each do |friend| %>
+        <%= link_to friend.username, user_path(friend.username), :class => 'btn btn-standard' %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
