@@ -31,7 +31,7 @@ http_interactions:
       Server:
       - WEBrick/1.4.2 (Ruby/2.5.3/2018-10-18)
       Date:
-      - Wed, 03 Jun 2020 22:03:57 GMT
+      - Wed, 03 Jun 2020 23:30:51 GMT
       Connection:
       - Keep-Alive
     body:
@@ -116,5 +116,5 @@ http_interactions:
         with Balsamic-Honey Glaze</a> for similar recipes.","diets":["gluten free","dairy
         free","pescatarian"]}]'
     http_version: null
-  recorded_at: Wed, 03 Jun 2020 22:03:57 GMT
+  recorded_at: Wed, 03 Jun 2020 23:30:51 GMT
 recorded_with: VCR 5.1.0

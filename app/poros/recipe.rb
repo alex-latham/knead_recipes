@@ -36,6 +36,8 @@ class Recipe
   end
 
   def self.search_by_ids(recipe_ids)
+    return nil if recipe_ids.empty?
+
     recipes = SpoonacularService.new.search_by_ids(recipe_ids)
     return nil if recipes.nil?
 

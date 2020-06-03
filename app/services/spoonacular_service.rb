@@ -20,7 +20,7 @@ class SpoonacularService
 
   def get_json(url, params = nil)
     response = conn.get(url, params)
-    require "pry"; binding.pry
+
     return nil if response.body.empty?
 
     JSON.parse(response.body, symbolize_names: true)
