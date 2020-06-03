@@ -1,15 +1,17 @@
-<h2><%= @user.username %>'s Favorite Recipes</h2>
+<h1><%= @user.username %>'s Favorite Recipes</h1>
 <div class="container">
   <div class="row">
     <% unless @recipes.nil? %>
     <% @recipes.each do |recipe| %>
     <div class="col-sm-4">
-      <div class="recipe-<%= recipe.id %>">
-        <h4><%= recipe.title %></h4>
-        <div class="thumbnail">
-        <%= image_tag recipe.image %><br>
+      <div class="panel panel-default">
+        <div class="recipe-<%= recipe.id %>">
+          <h4><%= recipe.title %></h4>
+          <div class="thumbnail">
+          <%= image_tag recipe.image %><br>
+          </div>
+          <%= link_to "Show me the recipe", recipe_path(recipe.id), :class => 'btn btn-default' %>
         </div>
-      <%= link_to "Show me the recipe", recipe_path(recipe.id), :class => 'btn btn-default' %>
       </div>
     </div>
     <% end %>
