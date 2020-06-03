@@ -1,4 +1,4 @@
-class MailRecipeController < ApplicationController
+class MailRecipesController < ApplicationController
   before_action :require_user
 
   def create
@@ -9,7 +9,9 @@ class MailRecipeController < ApplicationController
         recipe_title: params[:title],
         recipe_id: params[:id],
       }
-      RecipeMailer.inform(email_info).deliver_now
+      RecipeMailerJob.perform_now(email_info)
+      # RecipeMailerJob.perform_later(email_info)
+      # RecipeMailer.inform(email_info).deliver_now
     end
     flash['alert alert-success'] = 'This recipe has been sent to ALL of your friends'
     redirect_back(fallback_location: root_path)

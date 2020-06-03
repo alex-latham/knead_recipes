@@ -86,6 +86,22 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  config.action_mailer.default_url_options = { :host => "https://knead-recipes.herokuapp.com/" }
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # ActionMailer::Base.smtp_settings = {
+  #   :user_name => 'alexlath',
+  #   :password => ENV['SENDGRID_PW'],
+  #   :domain => 'heroku.com',
+  #   :address => 'smtp.sendgrid.net',
+  #   :port => '465',
+  #   :authentication => :plain,
+  #   :enable_starttls_auto => true,
+  #   :openssl_verify_mode =>  'none',
+  #   :ssl =>                  true,
+  #   :tls   =>                true
+  # }
+
 end

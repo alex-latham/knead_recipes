@@ -1,3 +1,5 @@
 Hello <%= @to_user.name %>,
 
-<%= @from_user.username %> has sent you a recipe. Check it out at <%= link_to @recipe_title, recipe_path(@recipe_id), host: 'localhost:3000' %>.
+<%= @from_user.username %> has sent you a recipe.
+
+Check it out at <%= link_to @recipe_title, recipe_url(@recipe_id) %>.
