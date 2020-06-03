@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :friends, only: [:index, :create, :destroy]
   end
 
+  post '/recipes/send_email', to: 'mail#create'
   get '/:username', to: 'users#show', as: :user
   get '/:username/favorites', to: 'favorites#index', as: :user_favorites
   get '/:username/friends', to: 'friends#index', as: :user_friends
