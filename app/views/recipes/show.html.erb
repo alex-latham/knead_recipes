@@ -9,7 +9,7 @@
       <% else %>
         <%= button_to 'Add to Favorites', profile_favorites_path(id: @recipe.id), method: :post, :class => "btn btn-default" %>
       <% end %>
-      <%= button_to 'Share with Friends', recipe_send_email_path(title: @recipe.title, id: @recipe.id), method: :post, :class => "btn btn-default" %>
+      <%= button_to 'Share with Friends', recipes_send_email_path(title: @recipe.title, id: @recipe.id), method: :post, :class => "btn btn-default" %>
     </div>
   <div class="col-sm-6">
     <section id="ingredients">

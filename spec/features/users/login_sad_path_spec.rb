@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'as a user I can log in' do
-  it 'I can connect to Google through OAuth' do
+  xit 'I can connect to Google through OAuth' do
 
     user = build(:user)
 
