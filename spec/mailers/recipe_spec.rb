@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe RecipeMailer, type: :mailer do
-  describe "inform" do
+  describe "mails a recipe" do
     email_info = {
       user: "User",
       friend: "Friend",
