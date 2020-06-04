@@ -92,4 +92,18 @@ Rails.application.configure do
   # Set default url host to knead-recipes.herokuapp.com
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { :host => "knead-recipes.herokuapp.com" }
+
+
+  # Set ActionMailer to use SendGrid
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.sendgrid.net',
+    user_name: 'apikey',
+    password: ENV['SENDGRID_API_KEY'],
+    domain: 'knead-recipes.herokuapp.com',
+    port: 587,
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
 end
