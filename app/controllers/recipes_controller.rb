@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.search(search_params)
-    return unless @recipes.empty?
+    return unless @recipes.nil?
 
     flash['alert alert-danger'] = "Sorry, we couldn't find any recipes matching your
       specification. Here are some random recipes you might like."
@@ -12,6 +12,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.search_by_id(params[:id])
+
     return unless @recipe.nil?
 
     flash['alert alert-danger'] = "Sorry, we couldn't find any recipes with that ID.

@@ -16,12 +16,4 @@ class RecipeNutrition
     @sodium = nutrition_info[:sodium]
     @sugar = nutrition_info[:sugar]
   end
-
-  def self.from_json(nutrition_json)
-    nutrition_info = nutrition_json.each_with_object({}) do |nutrient_json, acc|
-      acc[nutrient_json[:title].downcase.to_sym] = nutrient_json[:amount]
-      acc
-    end
-    RecipeNutrition.new(nutrition_info)
-  end
 end
