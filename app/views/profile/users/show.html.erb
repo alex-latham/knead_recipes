@@ -1,38 +1,40 @@
 <h1>My Profile</h1>
 <div class="container">
   <div class="well">
-    <h2><%= @user.name %></h2>
-    <p><%= @user.email %></p>
-    <%= link_to "Edit Profile", profile_edit_path, :class => "btn btn-outline-success" %>
-    <%= link_to "Favorites", profile_favorites_path, :class => "btn btn-outline-success" %>
-    <%= link_to "My Friends", profile_friends_path, :class => "btn btn-outline-success" %>
-    <div class="container" style="margin-top:30px">
-        <div class="col-sm-4">
-          <div class="info-<%= @user.id %>">
-            <h3>Username:</h3>
-              <h4><%= @user.username %><h4>
-            <div class="thumbnail">
-              <%= image_tag @user.image %>
-            </div>
+    <div class="container">
+      <div class="row">
+        <h2><%= @user.name %></h2>
+        <p><%= @user.email %></p>
+        <%= link_to "Edit Profile", profile_edit_path, :class => "btn btn-outline-success" %>
+        <%= link_to "Favorites", profile_favorites_path, :class => "btn btn-outline-success" %>
+        <%= link_to "My Friends", profile_friends_path, :class => "btn btn-outline-success" %>
+      </div>
+      <div class="col-sm-4">
+        <div class="info-<%= @user.id %>">
+          <h3>Username:</h3>
+            <h4><%= @user.username %><h4>
+          <div class="thumbnail">
+            <%= image_tag @user.image %>
           </div>
         </div>
-        <div class="col-sm-4">
-          <h3>About Me:</h3>
-          <% if @user.bio %>
-            <p><%= @user.bio %></p>
-          <% else %>
-            <p>You can update your bio within Edit Profile</p>
+      </div>
+      <div class="col-sm-4">
+        <h3>About Me:</h3>
+        <% if @user.bio %>
+          <p><%= @user.bio %></p>
+        <% else %>
+          <p>You can update your bio within Edit Profile</p>
+        <% end %>
+      </div>
+      <div class="col-sm-4">
+        <h3>Diet:</h3>
+        <% if current_user.restrictions.length.zero? %>
+          <p>You have no dietary restrictions selected</p>
+        <% else %>
+          <% @user.restrictions.each do |restriction| %>
+            <p><%= restriction.name.capitalize %></p>
           <% end %>
-        </div>
-        <div class="col-sm-4">
-          <h3>Diet:</h3>
-          <% if current_user.restrictions.length.zero? %>
-            <p>You have no dietary restrictions selected</p>
-          <% else %>
-            <% @user.restrictions.each do |restriction| %>
-              <p><%= restriction.name.capitalize %></p>
-            <% end %>
-          <% end %>
+        <% end %>
       </div>
     </div>
   </div>
