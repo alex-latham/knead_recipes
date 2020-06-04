@@ -40,7 +40,7 @@
         <p>Instructions are unavailable for this recipe.</p>
       <% else %>
         <% @recipe.instructions.list.each do |instruction| %>
-          <p><li><%= instruction.values[0] %></li></p>
+          <p><%= instruction.values[0] %></p>
         <% end %>
       <% end %>
     </section>
