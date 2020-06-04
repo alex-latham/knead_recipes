@@ -22,11 +22,11 @@ class User < ApplicationRecord
   def share_recipe_with_friends(recipe_mailer_params)
     friends.each do |friend|
       email_info = {
-        user: self.username,
+        user: username,
         friend: friend.username,
         friend_email: friend.email,
         recipe_title: recipe_mailer_params[:title],
-        recipe_id: recipe_mailer_params[:id],
+        recipe_id: recipe_mailer_params[:id]
       }
       RecipeMailerJob.perform_later(email_info)
     end
