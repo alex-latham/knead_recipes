@@ -1,16 +1,16 @@
 class RecipeIngredient
   attr_reader :list, :missing_ingredients
 
-  def initialize(recipe_json)
-    @list = ingredient_list(recipe_json)
-    @missing_ingredients = recipe_json[:missedIngredientCount]
+  def initialize(ingredients)
+    @list = ingredient_list(ingredients)
+    @missing_ingredients = ingredients[:missing_ingredients]
   end
 
   private
 
-  def ingredient_list(recipe_json)
-    recipe_json[:extendedIngredients].reduce([]) do |acc, ingredient|
-      acc << ingredient[:originalString]
+  def ingredient_list(ingredients)
+    ingredients[:ingredients].reduce([]) do |acc, ingredient|
+      acc << ingredient[:detailed_name]
     end
   end
 end

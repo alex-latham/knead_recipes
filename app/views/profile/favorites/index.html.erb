@@ -2,22 +2,26 @@
 <div class="container">
   <div class="row display-flex">
     <% unless @recipes.nil? %>
-    <% @recipes.each do |recipe| %>
-    <div class="col-sm-4">
-      <div class="panel panel-default">
-        <div class="recipe-<%= recipe.id %>">
-          <h4><%= recipe.title %></h4>
-          <div class="thumbnail">
-          <%= image_tag recipe.image %><br>
+      <% @recipes.each do |recipe| %>
+        <div class="col-sm-4">
+          <div class="panel panel-default">
+            <div class="recipe-<%= recipe.id %>">
+              <div class="thumbnail">
+                <%= image_tag recipe.image %><br>
+              </div>
+              <h4><%= recipe.title %></h4>
+              <div class="caption">
+                <%= link_to "Show me the recipe", recipe_path(recipe.id), :class => 'btn btn-default' %>
+                <%= link_to 'Delete from Favorites', profile_favorite_path(recipe.id), method: :delete, :class => 'btn btn-primary' %><br><br>
+              </div>
+            </div>
           </div>
           <%= link_to "Show me the recipe", recipe_path(recipe.id), :class => 'btn btn-default' %>
-          <%= link_to 'Delete from Favorites', profile_favorite_path(recipe.id), method: :delete, :class => 'btn btn-primary' %>
+          <%= link_to 'Delete from Favorites', profile_favorite_path(recipe.id), method: :delete, :class => 'btn btn-danger' %>
         </div>
-      </div>
-    </div>
-    <% end %>
+      <% end %>
     <% else %>
-    <p>You have not favorited any recipes.</p>
-  <% end %>
+      <p>You have not favorited any recipes.</p>
+    <% end %>
   </div>
 </div>

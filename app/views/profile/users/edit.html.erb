@@ -24,7 +24,7 @@
           <%= check_box_tag :gluten_free, nil, @restrictions.include?('gluten free') %>
           <%= label_tag "gluten free" %><br>
           <%= check_box_tag :dairy_free, nil, @restrictions.include?('dairy free') %>
-          <%= label_tag "dairy free" %><br>
+          <%= label_tag "dairy free" %><br><br>
         </div>
         <%= submit_tag "Update Profile", :class => "btn btn-primary" %>
         <% end %>

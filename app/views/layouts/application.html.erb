@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>KneadRecipes</title>
-
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,54 +16,53 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/cover/">
 
     <!-- Bootstrap core CSS -->
-<link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
-
   <body class="text-center bg-ambiance">
-
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto"></header>
+      <main role="main" class="inner cover">
 
-  <header class="masthead mb-auto"></header>
+        <div class="jumbotron text-center">
+          <div class="header-opacity">
+            Welcome to Knead Recipes!
+          </div>
+        </div>
 
-  <main role="main" class="inner cover">
-
-    <style>
-      .jumbotron {
-      background-image: url("https://res.cloudinary.com/sanitarium/image/fetch/q_auto/https://www.sanitarium.com.au/getmedia%2Fae51f174-984f-4a70-ad3d-3f6b517b6da1%2Ffruits-vegetables-healthy-fats.jpg%3Fwidth%3D1180%26height%3D524%26ext%3D.jpg");
-      background-size: cover;
-      color: white;
-      margin-top: 0px;
-      margin-bottom: 0px;
-    }
-    </style>
-    <div class="jumbotron text-center">
-      <h1>Welcome to Knead Recipes!</h1>
+        <div class="navbar navbar-inverse">
+          <div class="container">
+            <ul class="nav navbar-nav navbar-left">
+              <li><%= link_to "Home", root_path %></li>
+              <li><%= link_to "Profile", profile_path if current_user %></li>
+              <li><%= link_to "Friends", profile_friends_path if current_user %></li>
+              <li><%= link_to "Favorites", profile_favorites_path if current_user %></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to "Logout", logout_path, method: :delete if current_user %></li>
+            </ul>
+          </div>
+        </div>
+        
+    <div class="jumbotron ">
+      <h1 style="font-family:american typewriter"><u><%= link_to "Knead Recipes", root_path, :style => "color:white" %></u></h1>
     </div>
 
-    <div class="navbar navbar-inverse">
-      <div class="container">
+        <div class="flash-message">
+          <% flash.each do |name, msg| %>
+            <%= content_tag :div, msg.html_safe, class: name %>
+          <% end %>
+        </div>
 
-      <ul class="nav navbar-nav navbar-left">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Profile", profile_path if current_user %></li>
-        <li><%= link_to "Friends", profile_friends_path  if current_user %></li>
-        <li><%= link_to "Favorites", profile_favorites_path  if current_user %></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Logout", logout_path, method: :delete if current_user %></li>
-      </ul>
-      </div>
+        <%= yield %>
+
+        <footer class="fixed-bottom">
+          <div class="container">
+            <div class="col-sm-12">
+              Knead Recipes was designed and created by Turing students
+            </div>
+          </div>
+        </footer>
+      </main>
     </div>
-
-    <div class="flash-message">
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg.html_safe, class: name %>
-      <% end %>
-    </div>
-    <%= yield %>
-  </main>
-</div>
-
-</body>
+  </body>
 </html>

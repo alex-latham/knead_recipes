@@ -98,5 +98,12 @@ RSpec.describe User, type: :model do
       expect(user.restriction_list).to include('gluten_free')
       expect(user.restriction_list.length).to eq(2)
     end
+
+    it "knows if a recipe has been favorited" do
+      user = create(:user)
+      Favorite.create(user: user, recipe_id: 123)
+      expect(user.favorited?(123)).to eq(true)
+      expect(user.favorited?(234)).to eq(false)
+    end
   end
 end

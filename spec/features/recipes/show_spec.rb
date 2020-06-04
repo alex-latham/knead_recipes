@@ -21,8 +21,8 @@ RSpec.describe User do
 
       within('#instructions') do
         expect(page).to have_content('Instructions:')
-        expect(page.all('li')[0]).to have_content('Remove and discard root ends and 1 inch of top green portions of green onions, and set green onions aside.')
-        expect(page.all('li')[1]).to have_content('Toss together hash browns, dill, and salt in a large bowl.')
+        expect(page).to have_content('Remove and discard root ends and 1 inch of top green portions of green onions, and set green onions aside.')
+        expect(page).to have_content('Toss together hash browns, dill, and salt in a large bowl.')
       end
 
       within('#nutrition') do

@@ -36,6 +36,10 @@ class User < ApplicationRecord
     restrictions.map(&:name)
   end
 
+  def favorited?(recipe_id)
+    favorites.pluck(:recipe_id).include?(recipe_id)
+  end
+
   def self.from_omniauth(response)
     find_or_create_by(email: response['info']['email']) do |user|
       user.name = response['info']['name']

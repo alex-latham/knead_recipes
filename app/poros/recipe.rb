@@ -7,52 +7,56 @@ class Recipe
               :instructions,
               :nutrition
 
-  def initialize(recipe_json)
-    @id = recipe_json[:id]
-    @title = recipe_json[:title]
-    @image = recipe_json[:image]
-    @time = recipe_json[:readyInMinutes]
-    @ingredients = get_ingredients(recipe_json)
-    @instructions = get_instructions(recipe_json[:analyzedInstructions])
-    @nutrition = get_nutrition(recipe_json[:nutrition])
+  def initialize(recipe)
+    @id = recipe[:id]
+    @title = recipe[:title]
+    @image = recipe[:image]
+    @time = recipe[:time]
+    @diets = recipe[:diets]
+    @summary = recipe[:summary]
+    @ingredients = get_ingredients(recipe[:ingredients])
+    @instructions = get_instructions(recipe[:instructions])
+    @nutrition = get_nutrition(recipe[:nutrition])
   end
 
   def self.search(search_params)
-    recipes_json = SpoonacularService.new.complex_search(search_params)
-    recipes_json[:results].map do |recipe_json|
-      Recipe.new(recipe_json)
+    recipes = SpoonacularService.new.complex_search(search_params)
+    return nil if recipes.nil?
+
+    recipes.map do |recipe|
+      Recipe.new(recipe)
     end
   end
 
   def self.search_by_id(recipe_id)
-    recipe_json = SpoonacularService.new.search_by_id(recipe_id)
-    return nil if recipe_json[:code] == 404
+    recipe = SpoonacularService.new.search_by_id(recipe_id)
+    return nil if recipe.nil?
 
-    recipe_json[:nutrition] = recipe_json[:nutrition][:nutrients]
-    Recipe.new(recipe_json)
+    Recipe.new(recipe)
   end
 
   def self.search_by_ids(recipe_ids)
     return nil if recipe_ids.empty?
 
-    recipes_json = SpoonacularService.new.search_by_ids(recipe_ids)
-    recipes_json.map do |recipe_json|
-      recipe_json[:nutrition] = recipe_json[:nutrition][:nutrients]
-      Recipe.new(recipe_json)
+    recipes = SpoonacularService.new.search_by_ids(recipe_ids)
+    return nil if recipes.nil?
+
+    recipes.map do |recipe|
+      Recipe.new(recipe)
     end
   end
 
   private
 
-  def get_ingredients(recipe_json)
-    RecipeIngredient.new(recipe_json)
+  def get_ingredients(ingredients)
+    RecipeIngredient.new(ingredients)
   end
 
-  def get_instructions(instructions_json)
-    RecipeInstructions.new(instructions_json)
+  def get_instructions(instructions)
+    RecipeInstructions.new(instructions)
   end
 
-  def get_nutrition(nutrition_json)
-    RecipeNutrition.from_json(nutrition_json)
+  def get_nutrition(nutrition)
+    RecipeNutrition.new(nutrition)
   end
 end
