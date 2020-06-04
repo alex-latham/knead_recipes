@@ -1,19 +1,21 @@
-<h1>My Friends</h1>
-
+<h1><%= "My Friends" %></h1>
 <div class="container">
+  <% if current_user.friends.empty? %>
   <div class="well">
-    <%= form_tag profile_friends_path do %>
-      <%= label_tag :username %>
-      <%= text_field_tag :username %>
-      <%= submit_tag "Add Friend" %>
-    <% end %>
-
-    <% if @friends.empty? %>
-      <p>You have no friends, try adding some :^)</p>
-    <% else %>
-      <% @friends.each do |friend| %>
-        <%= link_to friend.username, user_path(friend.username), :class => 'btn btn-standard' %>
-      <% end %>
-    <% end %>
+    <p>You haven't added any friends, try adding some. :^)</p>
   </div>
+  <% else %>
+  <% current_user.friends.each do |friend| %>
+    <div class="col-sm-4">
+      <div class="panel panel-default">
+        <div class="friend">
+          <div class="thumbnail">
+            <%= image_tag friend.image %>
+          </div>
+          <h3><%= link_to friend.username, user_path(friend.username) %></h3>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
 </div>
