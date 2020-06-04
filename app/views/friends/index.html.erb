@@ -1,13 +1,21 @@
 <h1><%= "#{@user.name}'s Friends" %></h1>
-
 <div class="container">
+  <% if @user.friends.empty? %>
   <div class="well">
-    <% if @user.friends.empty? %>
     <p><%= @user.name %> has no friends</p>
-    <% else %>
-    <% @user.friends.each do |friend| %>
-    <%= link_to friend.username, user_path(friend.username) %>
-    <% end %>
-    <% end %>
   </div>
+  <% else %>
+  <% @user.friends.each do |friend| %>
+    <div class="col-sm-4">
+      <div class="panel panel-default">
+        <div class="friend">
+          <div class="thumbnail">
+            <%= image_tag friend.image %>
+          </div>
+          <h3><%= link_to friend.username, user_path(friend.username) %></h3>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
 </div>
