@@ -25,7 +25,7 @@
 
         <div class="jumbotron text-center">
           <div class="header-opacity">
-            Welcome to Knead Recipes!
+            <h1><u><%= link_to "Knead Recipes", root_path, :style => "color:white" %></u></h1>
           </div>
         </div>
 
@@ -42,10 +42,6 @@
             </ul>
           </div>
         </div>
-        
-    <div class="jumbotron ">
-      <h1 style="font-family:american typewriter"><u><%= link_to "Knead Recipes", root_path, :style => "color:white" %></u></h1>
-    </div>
 
         <div class="flash-message">
           <% flash.each do |name, msg| %>
@@ -55,13 +51,13 @@
 
         <%= yield %>
 
-        <footer class="fixed-bottom">
+        <div class="footer navbar-fixed-bottom">
           <div class="container">
             <div class="col-sm-12">
               Knead Recipes was designed and created by Turing students
             </div>
           </div>
-        </footer>
+        </div>
       </main>
     </div>
   </body>

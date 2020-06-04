@@ -15,7 +15,7 @@
  @import "bootstrap";
 
  .jumbotron {
- background-image: url("https://res.cloudinary.com/sanitarium/image/fetch/q_auto/https://www.sanitarium.com.au/getmedia%2Fae51f174-984f-4a70-ad3d-3f6b517b6da1%2Ffruits-vegetables-healthy-fats.jpg%3Fwidth%3D1180%26height%3D524%26ext%3D.jpg");
+ background-image: url("https://github.com/mikez321/order_of_the_phoenix_part_2/blob/master/app/assets/images/fresh_veg.jpg?raw=true");
  background-size: cover;
  color: white;
  margin-top: 0px;
@@ -99,14 +99,16 @@ h3 {
   padding: 20px
 }
 
-footer {
+.footer {
   color: rgb(140, 140, 140);
   margin-top: 70px;
   background-size: cover;
   background-color: rgb(35, 35, 35);
   font-size: 18px;
   padding: 14px;
-  position: static;
-  width: 100%;
   bottom: 0;
+}
+
+.well {
+  background: rgba(76, 175, 80, 0.8);
 }
