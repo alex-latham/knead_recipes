@@ -16,6 +16,8 @@
               </div>
             </div>
           </div>
+          <%= link_to "Show me the recipe", recipe_path(recipe.id), :class => 'btn btn-default' %>
+          <%= link_to 'Delete from Favorites', profile_favorite_path(recipe.id), method: :delete, :class => 'btn btn-danger' %>
         </div>
       <% end %>
     <% else %>

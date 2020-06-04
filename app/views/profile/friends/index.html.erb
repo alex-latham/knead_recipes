@@ -10,9 +10,18 @@
     <% if @friends.empty? %>
       <p>You can add friends if you know their username!</p>
     <% else %>
-      <% @friends.each do |friend| %>
-        <%= link_to friend.username, user_path(friend.username), :class => 'btn btn-standard' %>
-      <% end %>
+    </div>
+    <% current_user.friends.each do |friend| %>
+      <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="friend">
+            <div class="thumbnail">
+              <%= image_tag friend.image %>
+            </div>
+            <h3><%= link_to friend.username, user_path(friend.username) %></h3>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </div>
+  <% end %>
 </div>

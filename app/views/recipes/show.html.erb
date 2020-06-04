@@ -3,21 +3,19 @@
   <div class="row">
     <div class="col-sm-6" class="panel panel-default">
       <%= image_tag @recipe.image, :class => "thumbnail", :width => "100%" %><br>
-        <p style="color:white">Prep time: <%= @recipe.time %> minutes</p>
-        <% if current_user.has_favorited?(@recipe.id) %>
-          <%= link_to 'Delete from Favorites', profile_favorite_path(@recipe.id), method: :delete, :class => "btn btn-default" %>
-        <% else %>
-          <%= button_to 'Add to Favorites', profile_favorites_path(id: @recipe.id), method: :post, :class => "btn btn-default" %>
-        <% end %>
+      <p class='white-info'>Prep time: <%= @recipe.time %> minutes</p>
+      <% if current_user.favorited?(@recipe.id) %>
+      <%= link_to 'Delete from Favorites', profile_favorite_path(@recipe.id), method: :delete, :class => "btn btn-default" %>
+      <% else %>
+      <%= button_to 'Add to Favorites', profile_favorites_path(id: @recipe.id), method: :post, :class => "btn btn-default" %>
+      <% end %>
     </div>
   <div class="col-sm-6">
     <section id="ingredients">
       <h3 style="color:white">Ingredients:</h3>
-      <ul>
         <% @recipe.ingredients.list.each do |ingredient| %>
-          <p style="color:white"><%= ingredient %></p>
+        <p class='white-info'><%= ingredient %></p>
         <% end %>
-      </ul>
     </section>
   </div>
 </div>
@@ -25,27 +23,27 @@
   <div class="col-sm-6">
     <section id="nutrition">
       <h3 style="color:white">Nutrition Information:</h3>
-        <p style="color:white"><%= @recipe.nutrition.calories %> calories</p>
-        <p style="color:white"><%= @recipe.nutrition.protein %> g protein</p>
-        <p style="color:white"><%= @recipe.nutrition.fat %> g fat</p>
-        <p style="color:white"><%= @recipe.nutrition.carbohydrates %> g carbohydrates</p>
-        <p style="color:white"><%= @recipe.nutrition.cholesterol %> mg cholesterol</p>
-        <p style="color:white"><%= @recipe.nutrition.sodium %> mg sodium</p>
-        <p style="color:white"><%= @recipe.nutrition.sugar %> g sugar</p>
+        <p class='white-info'><%= @recipe.nutrition.calories %> calories</p>
+        <p class='white-info'><%= @recipe.nutrition.protein %> g protein</p>
+        <p class='white-info'><%= @recipe.nutrition.fat %> g fat</p>
+        <p class='white-info'><%= @recipe.nutrition.carbohydrates %> g carbohydrates</p>
+        <p class='white-info'><%= @recipe.nutrition.cholesterol %> mg cholesterol</p>
+        <p class='white-info'><%= @recipe.nutrition.sodium %> mg sodium</p>
+        <p class='white-info'><%= @recipe.nutrition.sugar %> g sugar</p>
     </section>
   </div>
   <div class="col-sm-6">
     <section id="instructions">
-      <h3 style="color:white">Instructions:</h3>
+      <div class="well">
+      <h3>Instructions:</h3>
       <% if @recipe.instructions.list.nil? %>
-        <p style="color:white">Instructions are unavailable for this recipe.</p>
+        <p style="font-size:18px">Instructions are unavailable for this recipe.</p>
       <% else %>
-        <ol>
-          <% @recipe.instructions.list.each do |instruction| %>
-            <li style="color:white"><%= instruction %></li>
-          <% end %>
-        </ol>
+        <% @recipe.instructions.list.each do |instruction| %>
+          <p style="font-size:18px"><%= instruction %></p>
+        <% end %>
       <% end %>
+    </div>
     </section>
   </div>
 </div>

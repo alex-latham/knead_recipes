@@ -1,8 +1,12 @@
-<h2><%= @user.username %></h2>
+<h1><%= @user.username %></h1>
 
-<%= link_to "#{@user.username}'s Favorites", user_favorites_path(@user.username) %> |
-<%= link_to "#{@user.username}'s Friends", user_friends_path(@user.username) %><br>
-<p>Name: <%= @user.name %></p><br>
-<p>Username: <%= @user.username %></p><br>
-<p>Bio: <%= @user.bio %></p>
-<%= image_tag @user.image %>
+<div class="container">
+  <div class="well">
+    <%= link_to "#{@user.username}'s Favorites", user_favorites_path(@user.username) %> |
+    <%= link_to "#{@user.username}'s Friends", user_friends_path(@user.username) %>
+    <div class="container"><%= image_tag @user.image %></div>
+    <h3>Name:</h3><b><%= @user.name %></b>
+    <h3>Username:</h3><b><%= @user.username %></b>
+    <h3>Bio:</h3> <%= @user.bio %><br>
+  </div>
+</div>

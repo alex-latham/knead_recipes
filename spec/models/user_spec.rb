@@ -111,8 +111,8 @@ RSpec.describe User, type: :model do
     it "knows if a recipe has been favorited" do
       user = create(:user)
       Favorite.create(user: user, recipe_id: 123)
-      expect(user.has_favorited?(123)).to eq(true)
-      expect(user.has_favorited?(234)).to eq(false)
+      expect(user.favorited?(123)).to eq(true)
+      expect(user.favorited?(234)).to eq(false)
     end
   end
 end

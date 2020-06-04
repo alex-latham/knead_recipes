@@ -29,7 +29,7 @@ class User < ApplicationRecord
     restrictions.map(&:name)
   end
 
-  def has_favorited?(recipe_id)
+  def favorited?(recipe_id)
     favorites.pluck(:recipe_id).include?(recipe_id)
   end
 
