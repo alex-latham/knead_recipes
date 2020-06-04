@@ -12,19 +12,17 @@
     </div>
   <div class="col-sm-6">
     <section id="ingredients">
-      <h3 class='white-info'>Ingredients:</h3>
-      <ul>
+      <h3 style="color:white">Ingredients:</h3>
         <% @recipe.ingredients.list.each do |ingredient| %>
         <p class='white-info'><%= ingredient %></p>
         <% end %>
-      </ul>
     </section>
   </div>
 </div>
 <div class="row">
   <div class="col-sm-6">
     <section id="nutrition">
-      <h3 class='white-info'>Nutrition Information:</h3>
+      <h3 style="color:white">Nutrition Information:</h3>
         <p class='white-info'><%= @recipe.nutrition.calories %> calories</p>
         <p class='white-info'><%= @recipe.nutrition.protein %> g protein</p>
         <p class='white-info'><%= @recipe.nutrition.fat %> g fat</p>
@@ -36,16 +34,17 @@
   </div>
   <div class="col-sm-6">
     <section id="instructions">
-      <h3 class='white-info'>Instructions:</h3>
+      <div class="well">
+      <h3>Instructions:</h3>
       <% if @recipe.instructions.list.nil? %>
-        <p class='white-info'>Instructions are unavailable for this recipe.</p>
+
+        <p style="font-size:18px">Instructions are unavailable for this recipe.</p>
       <% else %>
-        <ol>
-          <% @recipe.instructions.list.each do |instruction| %>
-            <li class='white-info'><%= instruction %></li>
-          <% end %>
-        </ol>
+        <% @recipe.instructions.list.each do |instruction| %>
+          <p style="font-size:18px"><%= instruction %></p>
+        <% end %>
       <% end %>
+    </div>
     </section>
   </div>
 </div>
