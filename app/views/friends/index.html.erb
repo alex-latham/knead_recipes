@@ -12,7 +12,7 @@
           <div class="thumbnail">
             <%= image_tag friend.image %>
           </div>
-          <h3><%= link_to friend.username, user_path(friend.username) %></h3>
+          <%= link_to friend.username, user_path(friend.username), style:"font-size: 24px;" %>
         </div>
       </div>
     </div>

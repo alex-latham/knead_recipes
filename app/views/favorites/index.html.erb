@@ -16,7 +16,11 @@
     </div>
     <% end %>
     <% else %>
-    <p><%= @user.username %> has not favorited any recipes.</p>
+    <div class="container">
+      <div class="well">
+        <p><%= @user.username %> has not favorited any recipes.</p>
+      </div>
+    </div>
   <% end %>
   </div>
 </div>
