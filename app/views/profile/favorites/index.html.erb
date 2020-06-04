@@ -11,17 +11,21 @@
               </div>
               <h4><%= recipe.title %></h4>
               <div class="caption">
-                <%= link_to "Show me the recipe", recipe_path(recipe.id), :class => 'btn btn-default' %>
-                <%= link_to 'Delete from Favorites', profile_favorite_path(recipe.id), method: :delete, :class => 'btn btn-primary' %><br><br>
+                <%= link_to "Show me the recipe", recipe_path(recipe.id), :class => 'btn btn-default' %><br><br>
+                <%= link_to 'Delete from Favorites', profile_favorite_path(recipe.id), method: :delete, :class => 'btn btn-danger' %><br><br>
               </div>
             </div>
           </div>
-          <%= link_to "Show me the recipe", recipe_path(recipe.id), :class => 'btn btn-default' %>
-          <%= link_to 'Delete from Favorites', profile_favorite_path(recipe.id), method: :delete, :class => 'btn btn-danger' %>
         </div>
       <% end %>
     <% else %>
-      <p>You have not favorited any recipes.</p>
+    <div class="container">
+      <div class="col-sm-12">
+        <div class="well">
+          <h4>You have not favorited any recipes.</h4>
+        </div>
+      </div>
+    </div>
     <% end %>
   </div>
 </div>

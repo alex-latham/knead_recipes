@@ -76,7 +76,7 @@ describe 'as a user when I visit my profile' do
 
     expect(page).to have_content user.name
     expect(page).to have_content user.email
-    expect(page).to have_content "You haven't added any personal info yet, try adding some :^)"
+    expect(page).to have_content "You can update your bio within Edit Profile"
     expect(page).to have_content "You have no dietary restrictions selected"
   end
 end
