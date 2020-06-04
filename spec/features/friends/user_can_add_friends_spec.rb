@@ -36,7 +36,20 @@ describe "As a user" do
     click_button "Add Friend"
 
     expect(page).to_not have_content("Friend Added Successfully")
-    expect(page).to have_content("Invalid Email Entered, Try Again")
+    expect(page).to have_content("Invalid entry, please try a different username")
+  end
+
+  it "I cannot add myself as a friend" do
+    user = create(:user, username: 'user')
+
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    visit profile_friends_path
+    fill_in :username, with: "user"
+    click_button "Add Friend"
+
+    expect(page).to_not have_content("Friend Added Successfully")
+    expect(page).to have_content("Invalid entry, please try a different username")
   end
 
   it "I cannot add a friend that is already on my friends list" do
@@ -55,6 +68,6 @@ describe "As a user" do
 
     fill_in :username, with: user_2.username
     click_button "Add Friend"
-    expect(page).to have_content("Invalid Email Entered, Try Again")
+    expect(page).to have_content("Invalid entry, please try a different username")
   end
 end

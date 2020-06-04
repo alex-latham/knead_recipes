@@ -12,11 +12,9 @@ class User < ApplicationRecord
 
   def add_friend(username)
     new_friend = User.find_by(username: username)
-    return false if new_friend.nil? || friends.include?(new_friend)
+    return unless friendable?(new_friend)
 
-    Friendship.create!(user_id: id, friend_id: new_friend.id)
-    Friendship.create!(user_id: new_friend.id, friend_id: id)
-    true
+    Friendship.create(user_id: id, friend_id: new_friend.id)
   end
 
   def share_recipe_with_friends(recipe_mailer_params)
@@ -43,8 +41,14 @@ class User < ApplicationRecord
   def self.from_omniauth(response)
     find_or_create_by(email: response['info']['email']) do |user|
       user.name = response['info']['name']
-      user.username = response['info']['email'].split('@').first if user.username.nil?
+      user.username = response['info']['email'].split('@').first
       user.image = response['info']['image']
     end
+  end
+
+  private
+
+  def friendable?(new_friend)
+    !(new_friend.nil? || friends.include?(new_friend) || new_friend == self)
   end
 end

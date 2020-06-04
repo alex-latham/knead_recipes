@@ -13,8 +13,9 @@
         <%= label_tag %><br>
         <%= text_area_tag :username, @user.username, :class => "form-control", :rows => 1 %>
         <h3>About Me</h3>
-        <%= label_tag %><br>
         <%= text_area_tag :bio, @user.bio, :class => "form-control", :rows => 5 %>
+        <h3>Profile Picture</h3>
+        <%= text_area_tag :image, @user.image, :class => "form-control", :rows => 2 %>
         <h3>Default Diet Preferences</h3>
         <div class="form-check">
           <%= check_box_tag :vegetarian, nil, @restrictions.include?('vegetarian') %>
