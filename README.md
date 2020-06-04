@@ -1,5 +1,5 @@
 
-![Knead Recipies Logo](https://i.imgur.com/RTE6Gh1.png)
+![Knead Recipies Logo](https://i.imgur.com/QFrJuy4.png)
 
  
 <p align="center">
@@ -30,12 +30,12 @@ git clone https://github.com/alex-latham/knead_recipes_microservice.git
 # Setup
 #### Navigate into directories seperatly:
 ```javascript
-cd knead_recipies
-cd knead_recipies_microservice
+cd knead_recipes
+cd knead_recipes_microservice
 ```
 #### Install gems in microservice and main app:
+Run on each
 ```javascript
-bundle install
 bundle install
 ```
 #### Configure Main App
@@ -73,11 +73,10 @@ bundle exec shotgun
 rails s
 ```
 #### Enjoy App Locally:
-Visit
+Visit localhost in your Browser
 ```javascript
 localhost:3000
 ```
-In your Browser
 
 # Developers
 <p>
