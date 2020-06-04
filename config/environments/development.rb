@@ -26,8 +26,6 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
@@ -52,25 +50,27 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  #Default ActionMailer default url host to localhost
-  config.action_mailer.default_url_options = { :host => "localhost:3000" }
-
   # Set ActionMailer to send to mailcatcher. View at http://127.0.0.1:1080/
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
+  # config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
 
   # Set ActionMailer to use SendGrid
-  # config.action_mailer.perform_deliveries = true
-  # ActionMailer::Base.smtp_settings = {
-  #   :user_name => 'alexlath',
-  #   :password => ENV['SENDGRID_PW'],
-  #   :domain => 'localhost',
-  #   :address => 'smtp.sendgrid.net',
-  #   :port => '465',
-  #   :authentication => :plain,
-  #   :enable_starttls_auto => true,
-  #   :openssl_verify_mode =>  'none',
-  #   :ssl =>                  true,
-  #   :tls   =>                true
+  # config.action_mailer.delivery_method = :sendgrid_actionmailer
+  # config.action_mailer.default_url_options = { :host => "knead-recipes.herokuapp.com" }
+  # config.action_mailer.sendgrid_actionmailer_settings = {
+  #   api_key: ENV['SENDGRID_API_KEY'],
+  #   raise_delivery_errors: true
   # }
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.sendgrid.net',
+    user_name: ENV['SENDGRID_USERNAME'],
+    password: ENV['SENDGRID_PASSWORD'],
+    domain: 'localhost:3000',
+    port: '2525',
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
 end

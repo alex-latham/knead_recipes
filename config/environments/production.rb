@@ -90,5 +90,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Set default url host to knead-recipes.herokuapp.com
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { :host => "knead-recipes.herokuapp.com" }
 end
