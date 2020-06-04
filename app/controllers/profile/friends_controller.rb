@@ -2,7 +2,7 @@ class Profile::FriendsController < ApplicationController
   before_action :require_user
 
   def index
-    @friends = current_user.load_friends
+    @friends = current_user.friends
   end
 
   def create

@@ -26,9 +26,6 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
-
   config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.
@@ -51,4 +48,8 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  # Set ActionMailer to send to mailcatcher. View at http://127.0.0.1:1080/
+  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
+  config.action_mailer.delivery_method = :smtp
 end

@@ -12,16 +12,23 @@ class User < ApplicationRecord
 
   def add_friend(username)
     new_friend = User.find_by(username: username)
-    return false if new_friend.nil? || load_friends.include?(new_friend)
+    return false if new_friend.nil? || friends.include?(new_friend)
 
     Friendship.create!(user_id: id, friend_id: new_friend.id)
     Friendship.create!(user_id: new_friend.id, friend_id: id)
     true
   end
 
-  def load_friends
-    friendships.map do |friend|
-      User.find(friend.friend_id)
+  def share_recipe_with_friends(recipe_mailer_params)
+    friends.each do |friend|
+      email_info = {
+        user: username,
+        friend: friend.username,
+        friend_email: friend.email,
+        recipe_title: recipe_mailer_params[:title],
+        recipe_id: recipe_mailer_params[:id]
+      }
+      RecipeMailerJob.perform_later(email_info)
     end
   end
 

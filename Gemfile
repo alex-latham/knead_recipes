@@ -38,6 +38,9 @@ gem 'faraday'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'coffee-script'
+gem 'sidekiq'
+gem 'sinatra'
+gem 'sendgrid-ruby'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
