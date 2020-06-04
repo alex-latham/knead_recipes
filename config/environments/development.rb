@@ -52,9 +52,14 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  #Default host in dev: localhost
+  #Default ActionMailer default url host to localhost
   config.action_mailer.default_url_options = { :host => "localhost:3000" }
 
+  # Set ActionMailer to send to mailcatcher. View at http://127.0.0.1:1080/
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
+
+  # Set ActionMailer to use SendGrid
   # config.action_mailer.perform_deliveries = true
   # ActionMailer::Base.smtp_settings = {
   #   :user_name => 'alexlath',
@@ -68,7 +73,4 @@ Rails.application.configure do
   #   :ssl =>                  true,
   #   :tls   =>                true
   # }
-
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
 end

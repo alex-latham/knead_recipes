@@ -1,3 +1,2 @@
 :queues:
-    - default
-    - recipe_mailer
+    - mailers

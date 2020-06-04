@@ -16,8 +16,8 @@ RSpec.describe RecipeMailerJob, type: :job do
       ActiveJob::Base.queue_adapter = :test
 
       expect {
-        RecipeMailerJob.set(queue: :recipe).perform_later(email_info)
-      }.to have_enqueued_job.with(email_info).on_queue(:recipe).at(:no_wait)
+        RecipeMailerJob.perform_later(email_info)
+      }.to have_enqueued_job.with(email_info).on_queue(:mailers).at(:no_wait)
     end
   end
 end
