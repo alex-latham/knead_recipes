@@ -14,7 +14,7 @@ describe "As a user" do
     click_link ("My Friends")
 
     expect(current_path).to eq(profile_friends_path)
-    expect(page).to have_content("You have no friends, try adding some :^)")
+    expect(page).to have_content("You can add friends if you know their username!")
 
     fill_in :username, with: user_2.username
     click_button "Add Friend"

@@ -30,8 +30,8 @@ describe 'as a user when I visit my profile' do
     expect(current_path).to eq profile_path
 
     expect(page).to have_content("Profile Successfully Updated")
-    expect(page).to have_content("vegetarian")
-    expect(page).to have_content("gluten free")
+    expect(page).to have_content("Vegetarian")
+    expect(page).to have_content("Gluten free")
 
     visit profile_edit_path
 
