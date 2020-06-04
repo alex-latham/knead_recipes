@@ -26,7 +26,6 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-
   config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.
@@ -51,25 +50,19 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # Set ActionMailer to send to mailcatcher. View at http://127.0.0.1:1080/
-  # config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
+  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
 
   # Set ActionMailer to use SendGrid
-  # config.action_mailer.delivery_method = :sendgrid_actionmailer
-  # config.action_mailer.default_url_options = { :host => "knead-recipes.herokuapp.com" }
-  # config.action_mailer.sendgrid_actionmailer_settings = {
-  #   api_key: ENV['SENDGRID_API_KEY'],
-  #   raise_delivery_errors: true
-  # }
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: 'smtp.sendgrid.net',
-    user_name: ENV['SENDGRID_USERNAME'],
-    password: ENV['SENDGRID_PASSWORD'],
+    user_name: 'apiKey',
+    password: ENV['SENDGRID_API_KEY'],
     domain: 'localhost:3000',
-    port: '2525',
+    port: 587,
     authentication: :plain,
     enable_starttls_auto: true
   }
