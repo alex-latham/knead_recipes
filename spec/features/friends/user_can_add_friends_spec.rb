@@ -39,6 +39,19 @@ describe "As a user" do
     expect(page).to have_content("Invalid entry, please try a different username")
   end
 
+  it "I cannot add myself as a friend" do
+    user = create(:user, username: 'user')
+
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    visit profile_friends_path
+    fill_in :username, with: "user"
+    click_button "Add Friend"
+
+    expect(page).to_not have_content("Friend Added Successfully")
+    expect(page).to have_content("Invalid entry, please try a different username")
+  end
+
   it "I cannot add a friend that is already on my friends list" do
     user_1 = User.create!(name: "F", email: "F@example.com", bio: "Fun Guy", username: '321')
     user_2 = User.create!(name: "G", email: "G@example.com", bio: "Also a Fun Guy", username: '123')

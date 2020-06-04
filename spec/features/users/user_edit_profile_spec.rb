@@ -53,6 +53,7 @@ describe 'as a user when I visit my profile' do
 
     fill_in 'bio', with: "I'm blowin' up like you thought I would, call the crib same number same hood it's all good"
     fill_in 'username', with: 'newusername'
+    fill_in 'image', with: 'https://www.sbmania.net/pictures/40b/194.png'
 
     click_button "Update Profile"
 
@@ -63,7 +64,7 @@ describe 'as a user when I visit my profile' do
     expect(page).to_not have_content(old_bio)
     expect(page).to have_content(user.bio)
     expect(page).to have_content('newusername')
-    expect(page).to have_css("img[src*='https://i.kym-cdn.com/photos/images/newsfeed/001/076/734/879.jpg']")
+    expect(page).to have_css("img[src*='https://www.sbmania.net/pictures/40b/194.png']")
   end
 
   it 'by default I do not have any dietary restrictions or bio' do
