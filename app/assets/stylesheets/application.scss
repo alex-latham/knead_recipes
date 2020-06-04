@@ -15,7 +15,7 @@
  @import "bootstrap";
 
  .jumbotron {
- background-image: url("https://github.com/mikez321/order_of_the_phoenix_part_2/blob/master/app/assets/images/fresh_veg.jpg?raw=true");
+ background-image: url("https://raw.githubusercontent.com/mikez321/order_of_the_phoenix_part_2/master/app/assets/images/fresh_veg.jpg");
  background-size: cover;
  color: white;
  margin-top: 0px;
@@ -55,7 +55,7 @@
 .text-field {
   padding: 6px 8px 8px 8px;
   border-radius: 6px;
-  background-color: rgb(35, 35, 35);
+  background-color: white;
   color: rgb(140, 140, 140);
 }
 
@@ -89,7 +89,6 @@ h3 {
 .white-info {
   font-size: 18px;
   color: white;
-  text-decoration: underline;
 }
 
 .login-link {
@@ -99,16 +98,19 @@ h3 {
   padding: 20px
 }
 
-.footer {
+footer {
   color: rgb(140, 140, 140);
   margin-top: 70px;
   background-size: cover;
   background-color: rgb(35, 35, 35);
   font-size: 18px;
   padding: 14px;
+  position: static;
+  width: 100%;
   bottom: 0;
 }
 
 .well {
-  background: rgba(76, 175, 80, 0.8);
+  background-color: rgba(145, 134, 113, 0.7);
+  color: black;
 }
