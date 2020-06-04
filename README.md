@@ -10,6 +10,7 @@
 # Quick Links
 
 - [About](#about)
+- [Features](#features)
 - [Installing](#Installing)
 - [Setup](#Setup)
 - [Developers](#developers)
@@ -17,6 +18,30 @@
 
 # About
 Knead Recipes is an app designed to take the hassle and confusion out of what’s for dinner. All you need to do is enter the ingredients you have on hand, and our app will return a list of recipes you can make using what you have on hand, or only need a few more ingredients for. Knead Recipes is built to account for many dietary restrictions such as vegetarian, vegan, ketogenic, gluten free, and dairy free. This web app is built on Rails 5.1.7 and ruby 2.5.0p0. All API calls are encapsulated in a Sinatra based micro service that communicates with the main rails app. Front end design created using Bootstrap 3.
+
+### Schema
+![DBSchema](https://i.imgur.com/NGjyawb.png)
+
+# Features
+
+## Sign in using Google
+
+---
+## Set up user profile
+
+
+---
+## Enter Ingredients and other Parameters 
+
+
+---
+## Favorite Recipies
+
+---
+## Add Friends and Share Recepies 
+
+
+---
 
 # Installing
 #### Clone Main repository:
@@ -42,6 +67,8 @@ $ bundle install
 ```shell
 $ rake db:{create,migrate,seed}
 $ bundle exec figaro install
+$ bundle exec sidekiq -C config/sidekiq.yml
+$ redis-server
 ```
 
 Insert into config/application.yml
@@ -91,5 +118,4 @@ localhost:3000
  <p>
   <a href="https://github.com/DavidTTran">David Tran</a>
  </p>
-
 
