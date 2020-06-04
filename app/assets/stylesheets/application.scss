@@ -14,10 +14,25 @@
  // Custom bootstrap variables must be set or imported *before* bootstrap.
  @import "bootstrap";
 
+ .jumbotron {
+ background-image: url("https://res.cloudinary.com/sanitarium/image/fetch/q_auto/https://www.sanitarium.com.au/getmedia%2Fae51f174-984f-4a70-ad3d-3f6b517b6da1%2Ffruits-vegetables-healthy-fats.jpg%3Fwidth%3D1180%26height%3D524%26ext%3D.jpg");
+ background-size: cover;
+ color: white;
+ margin-top: 0px;
+ margin-bottom: 0px;
+ font-size: 60px
+}
+
+.header-opacity {
+  background-color: rgba(0, 0, 0, 0.3);
+  background-size: cover;
+}
+
 .row.display-flex {
   display: flex;
   flex-wrap: wrap;
 }
+
 .row.display-flex > [class*='col-'] {
   display: flex;
   flex-direction: column;
@@ -30,9 +45,59 @@
   background-size: cover;
   background-attachment: fixed;
   position: relative;
+}
 
+.btn {
+  background-color: rgb(35, 35, 35);
+  color: rgb(140, 140, 140);
+}
+
+.text-field {
+  padding: 6px 8px 8px 8px;
+  border-radius: 6px;
+  background-color: rgb(35, 35, 35);
+  color: rgb(140, 140, 140);
+}
+
+.panel {
+  background-color: rgb(35, 35, 35);
+  color: rgb(140, 140, 140);
+}
+
+.thumbnail {
+  background-color: rgb(140, 140, 140);
+}
+
+.lead {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px
 }
 
 h1 {
   color: white;
+  text-decoration: underline;
+}
+
+h2 {
+  color: white;
+  text-decoration: underline;
+}
+
+.login-link {
+  color: rgb(72, 133, 237);
+  text-decoration: underline;
+  font-size: 36px;
+  padding: 20px
+}
+
+footer {
+  color: rgb(140, 140, 140);
+  margin-top: 70px;
+  background-size: cover;
+  background-color: rgb(35, 35, 35);
+  font-size: 18px;
+  padding: 14px;
+  position: static;
+  width: 100%;
+  bottom: 0;
 }
