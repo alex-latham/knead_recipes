@@ -24,15 +24,19 @@
 }
 
 .bg-ambiance {
-  background-image: url("https://images.pexels.com/photos/1565982/pexels-photo-1565982.jpeg");
+  background-image: url("https://github.com/mikez321/file_store/blob/master/dark_bg_food.png?raw=true");
   background-color: #cccccc;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   position: relative;
-
 }
 
 h1 {
+  color: white;
+}
+
+.white-info {
+  font-size: 18px;
   color: white;
 }
