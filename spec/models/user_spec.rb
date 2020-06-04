@@ -26,7 +26,7 @@ RSpec.describe User, type: :model do
       user_1.reload
       user_2.reload
       expect(user_1.friendships.length).to eq(1)
-      expect(user_2.friendships.length).to eq(1)
+      expect(user_2.friendships.length).to eq(0)
     end
 
     it "add_friend returns false when presented email address of current friend" do
@@ -35,12 +35,12 @@ RSpec.describe User, type: :model do
       user_1.add_friend(user_2.username)
       user_1.reload
       user_2.reload
-      expect(user_1.add_friend(user_2.email)).to eq(false)
+      expect(user_1.add_friend(user_2.email)).to eq(nil)
     end
 
     it "add_friend returns false when given invalid email address" do
       user_1 = User.create!(name: "F", email: "F@example.com", bio: "Fun Guy")
-      expect(user_1.add_friend("asdf")).to eq(false)
+      expect(user_1.add_friend("asdf")).to eq(nil)
     end
 
     it 'can initalize a new user from google Omniauth' do
