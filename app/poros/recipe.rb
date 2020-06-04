@@ -42,19 +42,6 @@ class Recipe
     end
   end
 
-  def self.share_with_friends(user, recipe_mailer_params)
-    user.friends.each do |friend|
-      email_info = {
-        user: user.username,
-        friend: friend.username,
-        friend_email: friend.email,
-        recipe_title: recipe_mailer_params[:title],
-        recipe_id: recipe_mailer_params[:id],
-      }
-      RecipeMailerJob.perform_later(email_info)
-    end
-  end
-
   private
 
   def get_ingredients(recipe_json)
