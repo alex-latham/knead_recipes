@@ -4,15 +4,17 @@ class MailRecipesController < ApplicationController
   def create
     current_user.friends.each do |friend|
       email_info = {
-        from_user: current_user,
-        to_user: friend,
+        user: current_user.username,
+        friend: friend.username,
+        friend_email: friend.email,
         recipe_title: params[:title],
         recipe_id: params[:id],
       }
-      RecipeMailerJob.perform_now(email_info)
+      # RecipeMailerJob.perform_now(email_info)
       # RecipeMailerJob.perform_later(email_info)
-      # RecipeMailer.inform(email_info).deliver_now
+      RecipeMailer.share_with_friend(email_info).deliver_now
     end
+
     flash['alert alert-success'] = 'This recipe has been sent to ALL of your friends'
     redirect_back(fallback_location: root_path)
   end

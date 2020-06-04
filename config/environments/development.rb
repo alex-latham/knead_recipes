@@ -55,7 +55,7 @@ Rails.application.configure do
   #Default host in dev: localhost
   config.action_mailer.default_url_options = { :host => "localhost:3000" }
 
-  config.action_mailer.perform_deliveries = true
+  # config.action_mailer.perform_deliveries = true
   # ActionMailer::Base.smtp_settings = {
   #   :user_name => 'alexlath',
   #   :password => ENV['SENDGRID_PW'],
