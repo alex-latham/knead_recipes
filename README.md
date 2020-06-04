@@ -20,32 +20,32 @@ Knead Recipes is an app designed to take the hassle and confusion out of what’
 
 # Installing
 #### Clone Main repository:
-```javascript
-git clone https://github.com/alex-latham/knead_recipes
+```shell
+$ git clone https://github.com/alex-latham/knead_recipes
 ```
 #### Clone Microservice repository:
-```javascript
-git clone https://github.com/alex-latham/knead_recipes_microservice.git
+```shell
+$ git clone https://github.com/alex-latham/knead_recipes_microservice.git
 ```
 # Setup
 #### Navigate into directories seperatly:
-```javascript
-cd knead_recipes
-cd knead_recipes_microservice
+```shell
+$ cd knead_recipes
+$ cd knead_recipes_microservice
 ```
 #### Install gems in microservice and main app:
 Run on each
-```javascript
-bundle install
+```shell
+$ bundle install
 ```
 #### Configure Main App
-```javascript
-rake db:{create,migrate,seed}
-bundle exec figaro install
+```shell
+$ rake db:{create,migrate,seed}
+$ bundle exec figaro install
 ```
 
 Insert into config/application.yml
-```javascript
+```shell
 MICROSERVICE_URL: http://localhost:9393
 GOOGLE_CLIENT_ID: YOUR GOOGLE CLIENT UD
 GOOGLE_CLIENT_SECRET: YOUR GOOGLE CLIENT SECRET ID
@@ -53,28 +53,28 @@ GOOGLE_CLIENT_SECRET: YOUR GOOGLE CLIENT SECRET ID
 #### Configure Microservice:
 Create var.env in root microservice directory
 Insert Spoonacular API key into var.env
-```javascript
+```shell
 SPOONACULAR_KEY= YOUR API KEY
 ```
 #### Run test suite in main app:
-```javascript
-rspec
+```shell
+$ rspec
 ```
 #### Run test suite in microservice:
-```javascript
-ruby spec/requests/spoonacular_spec.rb
+```shell
+$ ruby spec/requests/spoonacular_spec.rb
 ```
 #### Launch Microservice:
-```javascript
-bundle exec shotgun
+```shell
+$ bundle exec shotgun
 ```
 #### Launch Main app:
-```javascript
-rails s
+```shell
+$ rails s
 ```
 #### Enjoy App Locally:
 Visit localhost in your Browser
-```javascript
+```shell
 localhost:3000
 ```
 
