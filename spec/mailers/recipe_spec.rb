@@ -16,7 +16,7 @@ RSpec.describe RecipeMailer, type: :mailer do
     it "renders the headers" do
       expect(mail.subject).to eq("#{email_info[:user]} has sent you a recipe!")
       expect(mail.to).to eq([email_info[:friend_email]])
-      expect(mail.from).to eq(["alexlthm@gmail.com"])
+      expect(mail.from).to eq(["no-reply@knead-recipes.herokuapp.com"])
     end
 
     it "renders the body" do
