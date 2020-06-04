@@ -23,6 +23,10 @@
  font-size: 60px
 }
 
+.nav {
+  font-size: 18px;
+}
+
 .header-opacity {
   background-color: rgba(0, 0, 0, 0.3);
   background-size: cover;
@@ -50,6 +54,9 @@
 .btn {
   background-color: rgb(35, 35, 35);
   color: rgb(140, 140, 140);
+  border-color: black;
+  border-radius: 5px;
+  font-size: 18px;
 }
 
 .text-field {
@@ -84,6 +91,12 @@ h2 {
 
 h3 {
   font-family: american typewriter;
+  text-decoration: underline;
+  font-size: 36px;
+}
+
+p {
+  font-size: 16px;
 }
 
 .white-info {
@@ -98,19 +111,18 @@ h3 {
   padding: 20px
 }
 
-footer {
+.footer {
   color: rgb(140, 140, 140);
   margin-top: 70px;
   background-size: cover;
   background-color: rgb(35, 35, 35);
   font-size: 18px;
   padding: 14px;
-  position: static;
   width: 100%;
   bottom: 0;
 }
 
 .well {
-  background-color: rgba(145, 134, 113, 0.7);
+  background-color: rgba(164, 181, 143, 0.7);
   color: black;
 }
