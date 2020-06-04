@@ -1,50 +1,52 @@
 <h1><%= @recipe.title %></h1>
-<div class="well">
 <div class="container">
-  <div class="row">
-    <div class="col-sm-6" class="panel panel-default">
-      <%= image_tag @recipe.image, :class => "thumbnail", :width => "100%" %><br>
-      <p>Prep time: <%= @recipe.time %> minutes</p>
-      <% if current_user.favorited?(@recipe.id) %>
-      <%= link_to 'Delete from Favorites', profile_favorite_path(@recipe.id), method: :delete, :class => "btn btn-default" %>
-      <% else %>
-        <%= button_to 'Add to Favorites', profile_favorites_path(id: @recipe.id), method: :post, :class => "btn btn-default" %>
-      <% end %>
-      <%= button_to 'Share with Friends', recipes_send_email_path(title: @recipe.title, id: @recipe.id), method: :post, :class => "btn btn-default" %>
+  <div class="well">
+  <div>
+    <div class="row">
+      <div class="col-sm-6" class="panel panel-default">
+        <%= image_tag @recipe.image, :class => "thumbnail", :width => "100%" %><br>
+        <p>Prep time: <%= @recipe.time %> minutes</p>
+        <% if current_user.favorited?(@recipe.id) %>
+        <%= link_to 'Delete from Favorites', profile_favorite_path(@recipe.id), method: :delete, :class => "btn btn-default" %>
+        <% else %>
+          <%= button_to 'Add to Favorites', profile_favorites_path(id: @recipe.id), method: :post, :class => "btn btn-default" %>
+        <% end %><br>
+        <%= button_to 'Share with Friends', recipes_send_email_path(title: @recipe.title, id: @recipe.id), method: :post, :class => "btn btn-default" %>
+      </div>
+    <div class="col-sm-6">
+      <section id="ingredients">
+        <h3>Ingredients:</h3>
+          <% @recipe.ingredients.list.each do |ingredient| %>
+          <p><%= ingredient %></p>
+          <% end %>
+      </section>
     </div>
-  <div class="col-sm-6">
-    <section id="ingredients">
-      <h3>Ingredients:</h3>
-        <% @recipe.ingredients.list.each do |ingredient| %>
-        <p><%= ingredient %></p>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <section id="nutrition">
+        <h3>Nutrition Information:</h3>
+          <p><%= @recipe.nutrition.calories %> calories</p>
+          <p><%= @recipe.nutrition.protein %> g protein</p>
+          <p><%= @recipe.nutrition.fat %> g fat</p>
+          <p><%= @recipe.nutrition.carbohydrates %> g carbohydrates</p>
+          <p><%= @recipe.nutrition.cholesterol %> mg cholesterol</p>
+          <p><%= @recipe.nutrition.sodium %> mg sodium</p>
+          <p><%= @recipe.nutrition.sugar %> g sugar</p>
+      </section>
+    </div>
+    <div class="col-sm-6">
+      <section id="instructions">
+        <h3>Instructions:</h3>
+        <% if @recipe.instructions.list.nil? %>
+          <p>Instructions are unavailable for this recipe.</p>
+        <% else %>
+          <% @recipe.instructions.list.each do |instruction| %>
+            <p><%= instruction.values[0] %></p>
+          <% end %>
         <% end %>
-    </section>
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-6">
-    <section id="nutrition">
-      <h3>Nutrition Information:</h3>
-        <p><%= @recipe.nutrition.calories %> calories</p>
-        <p><%= @recipe.nutrition.protein %> g protein</p>
-        <p><%= @recipe.nutrition.fat %> g fat</p>
-        <p><%= @recipe.nutrition.carbohydrates %> g carbohydrates</p>
-        <p><%= @recipe.nutrition.cholesterol %> mg cholesterol</p>
-        <p><%= @recipe.nutrition.sodium %> mg sodium</p>
-        <p><%= @recipe.nutrition.sugar %> g sugar</p>
-    </section>
-  </div>
-  <div class="col-sm-6">
-    <section id="instructions">
-      <h3>Instructions:</h3>
-      <% if @recipe.instructions.list.nil? %>
-        <p>Instructions are unavailable for this recipe.</p>
-      <% else %>
-        <% @recipe.instructions.list.each do |instruction| %>
-          <p><%= instruction.values[0] %></p>
-        <% end %>
-      <% end %>
-    </section>
-  </div>
+      </section>
+    </div>
+    </div>
   </div>
 </div>
