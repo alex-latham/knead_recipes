@@ -4,15 +4,13 @@
   <% @recipes.each do |recipe| %>
     <div class="col-sm-4">
       <div class="panel panel-default">
-        <div class="recipes">
-          <div class="thumbnail">
-            <%= image_tag recipe.image %>
-          </div>
-          <h4><%= recipe.title %></h4>
-          <div class="caption">
+        <div class="thumbnail recipes">
+          <%= image_tag recipe.image %>
+        </div>
+        <h4><%= recipe.title %></h4>
+        <div class="caption">
           <p>You will need <%= recipe.ingredients.missing_ingredients %> more ingredients to make this dish.</p>
-          <%= link_to "Show me the recipe", recipe_path(recipe.id), :class => 'btn btn-default' %>
-          </div>
+          <%= link_to "Show me the recipe", recipe_path(recipe.id), :class => 'btn btn-default' %><br><br>
         </div>
       </div>
     </div>

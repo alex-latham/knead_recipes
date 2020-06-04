@@ -33,7 +33,6 @@ describe "searching recipes" do
       visit "/"
       click_on "Search Recipes"
       expect(page).to have_css('.recipes', count: 12)
-
     end
   end
 

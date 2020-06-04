@@ -1,6 +1,7 @@
+<h1>My Profile</h1>
 <div class="container">
   <div class="well">
-    <h2><%= @user.name %></h2>
+    <h3><%= @user.name %></h3>
     <p><%= @user.email %></p>
     <%= link_to "Edit Profile", profile_edit_path, :class => "btn btn-outline-success" %> |
     <%= link_to "Favorites", profile_favorites_path, :class => "btn btn-outline-success" %> |
@@ -19,7 +20,7 @@
           </div>
         </div>
         <div class="col-sm-4">
-          <h3>About Me</h3>
+          <h3>About Me:</h3>
           <% if @user.bio %>
             <p><%= @user.bio %></p>
           <% else %>
@@ -27,12 +28,12 @@
           <% end %>
         </div>
         <div class="col-sm-4">
-          <h3>Diet</h3>
+          <h3>Dietary Restrictions:</h3>
           <% if current_user.restrictions.length.zero? %>
-            <p class="lead">You have no dietary restrictions selected</p>
+            <p>You have no dietary restrictions selected</p>
           <% else %>
             <% @user.restrictions.each do |restriction| %>
-              <p><%= restriction.name %></p>
+              <p><%= restriction.name.capitalize %></p>
             <% end %>
           <% end %>
         </div>
