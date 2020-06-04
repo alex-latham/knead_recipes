@@ -10,7 +10,7 @@ class Profile::FriendsController < ApplicationController
       current_user.reload
       flash['alert alert-success'] = 'Friend Added Successfully'
     else
-      flash['alert alert-danger'] = 'Invalid Email Entered, Try Again'
+      flash['alert alert-danger'] = 'Invalid entry, please try a different username'
     end
     redirect_to profile_friends_path
   end

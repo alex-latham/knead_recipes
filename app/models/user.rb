@@ -42,9 +42,9 @@ class User < ApplicationRecord
 
   def self.from_omniauth(response)
     find_or_create_by(email: response['info']['email']) do |user|
-      user.name = response['info']['name']
-      user.username = response['info']['email'].split('@').first if user.username.nil?
-      user.image = response['info']['image']
+      user.name ||= response['info']['name']
+      user.username ||= response['info']['email'].split('@').first
+      user.image ||= response['info']['image']
     end
   end
 end
