@@ -17,7 +17,7 @@
 
 
 # About
-Knead Recipes is an app designed to take the hassle and confusion out of what’s for dinner. All you need to do is enter the ingredients you have on hand, and our app will return a list of recipes you can make using what you have on hand, or only need a few more ingredients for. Knead Recipes is built to account for many dietary restrictions such as vegetarian, vegan, ketogenic, gluten free, and dairy free. This web app is built on Rails 5.1.7 and ruby 2.5.0p0. All API calls are encapsulated in a Sinatra based micro service that communicates with the main rails app. Front end design created using Bootstrap 3.
+Knead Recipes is an app designed to take the hassle and confusion out of what’s for dinner. All you need to do is enter the ingredients you have on hand, and our app will return a list of recipes you can make, or only recipes where you only need a few more ingredients. Knead Recipes is built to account for many dietary restrictions such as vegetarian, vegan, ketogenic, gluten free, and dairy free. This web app is built on Rails 5.1.7 and ruby 2.5.3. All API calls are encapsulated in a Sinatra based micro service that communicates with the main rails app. Front end design created using Bootstrap 3.
 
 ### Schema
 ![DBSchema](https://i.imgur.com/NGjyawb.png)
@@ -25,23 +25,32 @@ Knead Recipes is an app designed to take the hassle and confusion out of what’
 # Features
 
 ## Sign in using Google
-
+![Landing Page](https://i.imgur.com/igWKviA.jpg)
+![Google Sign in](https://i.imgur.com/U6g4wqf.png)
 ---
 ## Set up user profile
-
-
+From this page we can edit a user's profile information, such as username, profile picture and set default dietary restrictions
+![Profile Edit](https://i.imgur.com/ctzssyV.jpg)
 ---
-## Enter Ingredients and other Parameters 
-
-
+## Search for recipes by entering in your ingredients and optional parameters
+![Search Page](https://i.imgur.com/Ts7scHx.jpg)
 ---
-## Favorite Recipies
-
+## Recipe Index reflects your search parameters, otherwise it'll generate 12 random recipes.
+![Recipe Index](https://i.imgur.com/3DA6mdA.jpg)
 ---
-## Add Friends and Share Recepies 
-
-
+## Recipe Show
+This page has all information about a recipe, as well as the ability to favorite and share
+![Recipe Show](https://i.imgur.com/oxX1Net.jpg)
 ---
+## Favorite Recipes
+![Favorite Index](https://i.imgur.com/mgOaasD.jpg)
+---
+## Add Friends and Share Recipes through email 
+![Friends Index](https://i.imgur.com/Ar55ccd.jpg)
+---
+## View other users profile pages
+![Friends Show](https://i.imgur.com/m7NjPGO.jpg)
+--
 
 # Installing
 #### Clone Main repository:
@@ -78,10 +87,11 @@ GOOGLE_CLIENT_ID: YOUR GOOGLE CLIENT UD
 GOOGLE_CLIENT_SECRET: YOUR GOOGLE CLIENT SECRET ID
 ```
 #### Configure Microservice:
+Get a Spoonacular key from <a href="https://spoonacular.com/food-api">Spoonacular</a>
 Create var.env in root microservice directory
 Insert Spoonacular API key into var.env
 ```shell
-SPOONACULAR_KEY= YOUR API KEY
+SPOONACULAR_KEY=<YOUR API KEY>
 ```
 #### Run test suite in main app:
 ```shell
