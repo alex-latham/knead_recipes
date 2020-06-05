@@ -17,7 +17,7 @@
 
 
 # About
-Knead Recipes is an app designed to take the hassle and confusion out of what’s for dinner. All you need to do is enter the ingredients you have on hand, and our app will return a list of recipes you can make, or only recuoes where you only need a few more ingredients. Knead Recipes is built to account for many dietary restrictions such as vegetarian, vegan, ketogenic, gluten free, and dairy free. This web app is built on Rails 5.1.7 and ruby 2.5.3. All API calls are encapsulated in a Sinatra based micro service that communicates with the main rails app. Front end design created using Bootstrap 3.
+Knead Recipes is an app designed to take the hassle and confusion out of what’s for dinner. All you need to do is enter the ingredients you have on hand, and our app will return a list of recipes you can make, or only recipes where you only need a few more ingredients. Knead Recipes is built to account for many dietary restrictions such as vegetarian, vegan, ketogenic, gluten free, and dairy free. This web app is built on Rails 5.1.7 and ruby 2.5.3. All API calls are encapsulated in a Sinatra based micro service that communicates with the main rails app. Front end design created using Bootstrap 3.
 
 ### Schema
 ![DBSchema](https://i.imgur.com/NGjyawb.png)
