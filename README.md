@@ -47,6 +47,8 @@ This page has all information about a recipe, as well as the ability to favorite
 ---
 ## Add Friends and Share Recipes through email 
 ![Friends Index](https://i.imgur.com/Ar55ccd.jpg)
+---
+## View other users profile pages
 ![Friends Show](https://i.imgur.com/m7NjPGO.jpg)
 --
 
