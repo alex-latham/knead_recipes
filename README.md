@@ -39,7 +39,7 @@ From this page we can edit a user's profile information, such as username, profi
 ![Recipe Index](https://i.imgur.com/3DA6mdA.jpg)
 ---
 ## Recipe Show
-This page has all information about a recipie, as well as the ability to favorite and share
+This page has all information about a recipe, as well as the ability to favorite and share
 ![Recipe Show](https://i.imgur.com/oxX1Net.jpg)
 ---
 ## Favorite Recipes
