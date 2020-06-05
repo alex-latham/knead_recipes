@@ -9,12 +9,13 @@
       </div>
       <div class="col-sm-4">
         <%= form_tag profile_path, method: :patch, :class => 'form-group' do %>
-        <h3><%= label_tag "Username" %></h3><br>
+        <h3>Username</h3>
+        <%= label_tag %><br>
         <%= text_area_tag :username, @user.username, :class => "form-control", :rows => 1 %>
-        <h3><%= label_tag "Image" %></h3><br>
-        <%= text_area_tag :image, @user.image, :class => "form-control", :rows => 2 %>
-        <h3><%= label_tag "About Me" %></h3><br>
+        <h3>About Me</h3>
         <%= text_area_tag :bio, @user.bio, :class => "form-control", :rows => 5 %>
+        <h3>Profile Picture</h3>
+        <%= text_area_tag :image, @user.image, :class => "form-control", :rows => 2 %>
         <h3>Default Diet Preferences</h3>
         <div class="form-check">
           <%= check_box_tag :vegetarian, nil, @restrictions.include?('vegetarian') %>
