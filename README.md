@@ -34,7 +34,7 @@ Knead Recipes is an app designed to take the hassle and confusion out of what’
 ## Enter Ingredients and other Parameters 
 ![Search Page](https://i.imgur.com/Ts7scHx.jpg)
 ---
-## Recipie Index
+## Recipe Index
 ![Recipe Index](https://i.imgur.com/3DA6mdA.jpg)
 ---
 ## Recipe Show
