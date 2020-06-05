@@ -29,16 +29,18 @@ Knead Recipes is an app designed to take the hassle and confusion out of what’
 ![Google Sign in](https://i.imgur.com/U6g4wqf.png)
 ---
 ## Set up user profile
-![Profile Edit](https://i.imgur.com/9cdQ3kf.jpg)
+From this page we can edit a users profile attributes, and dietary restrictions 
+![Profile Edit](https://i.imgur.com/ctzssyV.jpg)
 ---
 ## Enter Ingredients and other Parameters 
 ![Search Page](https://i.imgur.com/Ts7scHx.jpg)
 ---
-## Recipe Index
+## Recipie Index
 ![Recipe Index](https://i.imgur.com/3DA6mdA.jpg)
 ---
 ## Recipe Show
-![Recipe Show](https://i.imgur.com/xvc28FA.jpg)
+This page has all information about a recipie, as well as the ability to favorite and share
+![Recipe Show](https://i.imgur.com/oxX1Net.jpg)
 ---
 ## Favorite Recipies
 ![Favorite Index](https://i.imgur.com/mgOaasD.jpg)
