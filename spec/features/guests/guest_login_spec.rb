@@ -28,9 +28,15 @@ RSpec.describe 'as a guest I can log in' do
     expect(page).to_not have_link 'Profile'
     expect(page).to_not have_link 'Friends'
     expect(page).to_not have_link 'Favorites'
+    expect(page).to have_link 'Login'
+    expect(page).to have_link 'Home'
     expect(page).to have_content('INGREDIENTS')
     expect(page).to have_content('PREP TIME')
     expect(page).to have_button('Search Recipes')
+
+    click_link('Home')
+
+    expect(current_path).to eq guest_home_path
   end
 
   it 'guests do not have a profile' do

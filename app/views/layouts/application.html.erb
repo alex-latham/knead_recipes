@@ -32,12 +32,14 @@
         <div class="navbar navbar-inverse">
           <div class="container">
             <ul class="nav navbar-nav navbar-left">
-              <li><%= link_to "Home", root_path %></li>
+              <li><%= link_to "Home", root_path if current_user %></li>
+              <li><%= link_to "Home", guest_home_path if session[:guest] == true %></li>
               <li><%= link_to "Profile", profile_path if current_user %></li>
               <li><%= link_to "Friends", profile_friends_path if current_user %></li>
               <li><%= link_to "Favorites", profile_favorites_path if current_user %></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to "Login", google_login_path if session[:guest] == true %></li>
               <li><%= link_to "Logout", logout_path, method: :delete if current_user %></li>
             </ul>
           </div>
