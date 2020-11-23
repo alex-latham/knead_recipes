@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   namespace :guest do
     get '/', to: 'sessions#create', as: 'login'
     get '/home/', to: 'home#index', as: 'home'
+    resources :search, only: [:create]
+    resources :recipes, only: [:index, :show]
   end
 
   post '/recipes/send_email', to: 'recipe_mailers#create'
