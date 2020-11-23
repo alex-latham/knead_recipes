@@ -12,10 +12,4 @@ class SessionsController < ApplicationController
     flash['alert alert-success'] = 'You have been successfully logged out.'
     redirect_to root_path
   end
-
-  def guest
-    session[:user_id] = 'guest'
-    flash['alert alert-success'] = "Logged in as Guest"
-    redirect_to root_path
-  end
 end

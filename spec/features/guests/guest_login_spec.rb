@@ -11,7 +11,7 @@ RSpec.describe 'as a guest I can log in' do
 
     expect(page).to have_content("Logged in as Guest")
 
-    expect(current_path).to eq(root_path)
+    expect(current_path).to eq(guest_home_path)
 
     expect(page).to_not have_link 'Log In With Google'
 
@@ -23,7 +23,7 @@ RSpec.describe 'as a guest I can log in' do
 
     click_link 'Continue as Guest'
 
-    expect(current_path).to eq(root_path)
+    expect(current_path).to eq(guest_home_path)
 
     expect(page).to_not have_link 'Profile'
     expect(page).to_not have_link 'Friends'

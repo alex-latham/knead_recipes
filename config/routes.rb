@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
   get 'auth/google_oauth2', as: 'google_login'
   get 'auth/google_oauth2/callback', to: 'sessions#create'
-  get 'guest/', to: 'sessions#guest', as: 'guest_login'
   delete '/logout', to: 'sessions#destroy'
 
   resources :search, only: [:create]
@@ -18,6 +17,11 @@ Rails.application.routes.draw do
     patch '/', to: 'users#update'
     resources :favorites, only: [:index, :create, :destroy]
     resources :friends, only: [:index, :create, :destroy]
+  end
+
+  namespace :guest do
+    get '/', to: 'sessions#create', as: 'login'
+    get '/home/', to: 'home#index', as: 'home'
   end
 
   post '/recipes/send_email', to: 'recipe_mailers#create'
