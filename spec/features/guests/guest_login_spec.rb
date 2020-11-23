@@ -44,4 +44,11 @@ RSpec.describe 'as a guest I can log in' do
     expect(page).to_not have_link("Friends")
     expect(page).to have_content("404")
   end
+
+  it 'guests do not have friends or favorites' do
+    visit '/friends'
+    expect(page).to have_content("404")
+    visit '/favroties'
+    expect(page).to have_content("404")
+  end
 end
