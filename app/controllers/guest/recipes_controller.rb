@@ -5,7 +5,7 @@ class Guest::RecipesController < ApplicationController
 
     flash['alert alert-danger'] = "Sorry, we couldn't find any recipes matching your
       specification. Here are some random recipes you might like."
-    redirect_to recipes_path
+    redirect_to guest_recipes_path
   end
 
   def show
@@ -15,7 +15,7 @@ class Guest::RecipesController < ApplicationController
 
     flash['alert alert-danger'] = "Sorry, we couldn't find any recipes with that ID.
       Here are some random recipes you might like."
-    redirect_to recipes_path
+    redirect_to guest_recipes_path
   end
 
   private
