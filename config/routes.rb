@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get 'auth/google_oauth2', as: 'google_login'
   get 'auth/google_oauth2/callback', to: 'sessions#create'
+  get 'guest/', to: 'sessions#guest', as: 'guest_login'
   delete '/logout', to: 'sessions#destroy'
 
   resources :search, only: [:create]

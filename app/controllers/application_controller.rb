@@ -4,7 +4,12 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    if session[:user_id] == 'guest'
+      guest = Guest.new('Guest', 'Guest')
+      @current_user ||= guest if session[:user_id] == 'guest'
+    else
+      @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    end
   end
 
   def require_user

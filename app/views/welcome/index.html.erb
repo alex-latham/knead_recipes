@@ -49,6 +49,9 @@
   </div>
 <% else %>
   <div class="h3">
+    <%= link_to 'Continue as Guest', guest_login_path, class:"login-link btn" %><br><br>
+  </div>
+  <div class="h3">
     <%= link_to 'Log In With Google', google_login_path, class:"login-link btn" %><br><br>
   </div>
     <div class="row" style="margin: 40px">
