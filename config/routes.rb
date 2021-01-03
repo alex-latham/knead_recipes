@@ -19,6 +19,13 @@ Rails.application.routes.draw do
     resources :friends, only: [:index, :create, :destroy]
   end
 
+  namespace :guest do
+    get '/', to: 'sessions#create', as: 'login'
+    get '/home/', to: 'home#index', as: 'home'
+    resources :search, only: [:create]
+    resources :recipes, only: [:index, :show]
+  end
+
   post '/recipes/send_email', to: 'recipe_mailers#create'
   get '/:username', to: 'users#show', as: :user
   get '/:username/favorites', to: 'favorites#index', as: :user_favorites

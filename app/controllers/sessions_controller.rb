@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def create
+    session[:guest] = false if session[:guest] == true
     response = request.env['omniauth.auth']
     user = User.from_omniauth(response)
     session[:user_id] = user.id
